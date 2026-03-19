@@ -693,6 +693,7 @@ export default function Home() {
       {/* ── SECTION 1.5: WHY AI ────────────────────────────── */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
+
           {/* Header */}
           <Reveal className="text-center mb-16">
             <div className="section-label mb-3">The Shift</div>
@@ -711,43 +712,43 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* Reason cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+          {/* Stat cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
             {[
               {
                 icon: "⏱️",
-                stat: "40+ hours",
+                stat: "40+ hrs",
                 label: "saved per month",
-                body: "The average SMB owner spends over 40 hours a month on admin tasks — payroll computation, contribution filings, bookkeeping. That's a full work week. AI gives it back.",
+                body: "The average SMB owner spends over 40 hours a month on admin — payroll, filings, bookkeeping. That's a full work week. AI gives it back.",
               },
               {
                 icon: "⚠️",
                 stat: "₱25,000+",
                 label: "average BIR penalty",
-                body: "Missing a BIR deadline or filing the wrong form can cost your business tens of thousands in fines. AI tracks every deadline automatically — so you never miss one.",
+                body: "Missing a BIR deadline or filing the wrong form costs tens of thousands in fines. AI tracks every deadline automatically — so you never miss one.",
               },
               {
                 icon: "📊",
                 stat: "78%",
                 label: "of SMBs lack real-time data",
-                body: "Most Filipino business owners make decisions based on gut feel — not data. AI gives you instant answers: cashflow, payroll costs, government liabilities — in seconds.",
+                body: "Most Filipino business owners decide on gut feel, not data. AI gives instant answers on cashflow, payroll costs, and liabilities — in seconds.",
               },
               {
                 icon: "🚀",
                 stat: "3×",
                 label: "faster decisions",
-                body: "Businesses that use AI tools make operational decisions 3× faster than those that don't. In a competitive market, speed is the advantage you can't afford to ignore.",
+                body: "Businesses using AI make operational decisions 3× faster. In a competitive market, speed is the advantage you can't afford to ignore.",
               },
             ].map((card, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div
-                  className="rounded-2xl p-6 h-full flex flex-col border border-[#e8e6f0] hover:border-[oklch(0.88_0.10_264)] transition-all hover:shadow-md"
+                  className="rounded-2xl p-6 h-full flex flex-col border border-[#e8e6f0] hover:shadow-md transition-all"
                   style={{ background: "#faf9f7" }}
                 >
                   <div className="text-3xl mb-4">{card.icon}</div>
                   <div
                     className="font-extrabold mb-0.5"
-                    style={{ fontSize: "clamp(1.6rem, 3vw, 2rem)", letterSpacing: "-0.02em", color: "oklch(0.46 0.25 264)" }}
+                    style={{ fontSize: "clamp(1.5rem, 3vw, 1.9rem)", letterSpacing: "-0.02em", color: "oklch(0.46 0.25 264)" }}
                   >
                     {card.stat}
                   </div>
@@ -760,22 +761,161 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Use case scenarios — before vs after */}
+          <Reveal className="text-center mb-10">
+            <div className="section-label mb-3">Real-World Impact</div>
+            <h3
+              className="font-extrabold text-[#1c1a2e] mb-3"
+              style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)", letterSpacing: "-0.025em", lineHeight: 1.1 }}
+            >
+              A day in the life — with and without AI
+            </h3>
+            <p className="text-lg text-[#5c5878] max-w-xl mx-auto" style={{ lineHeight: 1.7 }}>
+              See how AI transforms the same tasks for both business owners and employees.
+            </p>
+          </Reveal>
+
+          <div className="space-y-5 mb-20">
+            {[
+              {
+                role: "Business Owner",
+                emoji: "👔",
+                scenario: "Payroll cutoff — end of month",
+                without: [
+                  "Manually compute SSS, PhilHealth, Pag-IBIG for each employee",
+                  "Cross-check timesheets with a spreadsheet",
+                  "Print, sign, and distribute payslips one by one",
+                  "Encode disbursements manually into the bank portal",
+                ],
+                with: [
+                  "Payroll auto-computed based on actual attendance data",
+                  "Government contributions calculated instantly and correctly",
+                  "Payslips emailed to every employee in one click",
+                  "Bank disbursement file exported and ready to upload",
+                ],
+              },
+              {
+                role: "HR Officer",
+                emoji: "👩‍💼",
+                scenario: "Employee files a leave request",
+                without: [
+                  "Employee fills out a paper form and hands it to HR",
+                  "HR manually checks remaining leave balance in a spreadsheet",
+                  "Manager approves via text message or email chain",
+                  "HR updates the spreadsheet and hopes payroll gets the memo",
+                ],
+                with: [
+                  "Employee submits leave via self-service portal in 30 seconds",
+                  "System checks leave balance and flags conflicts automatically",
+                  "Manager approves with one tap — everyone's notified instantly",
+                  "Payroll is updated automatically — no manual entry needed",
+                ],
+              },
+              {
+                role: "Accountant / Finance",
+                emoji: "📒",
+                scenario: "BIR quarterly filing",
+                without: [
+                  "Manually gather income data from multiple spreadsheets",
+                  "Recompute withholding tax for each employee",
+                  "Spend 2–3 days preparing the 1601-C and supporting docs",
+                  "Scramble to meet the deadline or risk penalties",
+                ],
+                with: [
+                  "All income and deduction data already organized in one place",
+                  "Withholding tax computed automatically throughout the quarter",
+                  "BIR-ready reports generated in minutes, not days",
+                  "Deadline reminders sent weeks in advance — never scramble again",
+                ],
+              },
+              {
+                role: "Employee",
+                emoji: "👷",
+                scenario: "Checking your payslip and benefits",
+                without: [
+                  "Wait for HR to print and hand you your payslip",
+                  "Have no idea how your deductions were computed",
+                  "Call HR just to ask about your remaining leave balance",
+                  "No visibility into your benefits or employment records",
+                ],
+                with: [
+                  "Access your payslip anytime from your phone",
+                  "See exactly how every deduction was calculated",
+                  "Check your leave balance and request time off in seconds",
+                  "Full visibility into your benefits, history, and records",
+                ],
+              },
+            ].map((item, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="rounded-2xl border border-[#e8e6f0] overflow-hidden">
+                  {/* Header row */}
+                  <div
+                    className="flex items-center gap-3 px-6 py-4 border-b border-[#e8e6f0]"
+                    style={{ background: "#faf9f7" }}
+                  >
+                    <span className="text-2xl">{item.emoji}</span>
+                    <div>
+                      <span className="text-xs font-semibold uppercase tracking-wider text-[#9896aa]">{item.role}</span>
+                      <p className="font-bold text-[#1c1a2e] text-sm leading-tight">{item.scenario}</p>
+                    </div>
+                  </div>
+
+                  {/* Before / After columns */}
+                  <div className="grid grid-cols-1 md:grid-cols-2">
+                    {/* Without AI */}
+                    <div className="p-5 md:p-6 border-b md:border-b-0 md:border-r border-[#e8e6f0]">
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-[10px]">✕</span>
+                        <span className="text-xs font-bold uppercase tracking-wider text-red-400">Without AI</span>
+                      </div>
+                      <ul className="space-y-2.5">
+                        {item.without.map((point, j) => (
+                          <li key={j} className="flex items-start gap-2.5 text-sm text-[#5c5878]">
+                            <span className="mt-1 w-1.5 h-1.5 rounded-full bg-red-300 flex-shrink-0" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* With AI */}
+                    <div className="p-5 md:p-6" style={{ background: "oklch(0.97 0.03 264)" }}>
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] text-white"
+                          style={{ background: "oklch(0.46 0.25 264)" }}>✓</span>
+                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "oklch(0.46 0.25 264)" }}>With YAHSHUA One</span>
+                      </div>
+                      <ul className="space-y-2.5">
+                        {item.with.map((point, j) => (
+                          <li key={j} className="flex items-start gap-2.5 text-sm text-[#1c1a2e]">
+                            <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                              style={{ background: "oklch(0.46 0.25 264)" }} />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
           {/* Pull quote */}
           <Reveal>
             <div
-              className="rounded-2xl p-8 md:p-10 text-center relative overflow-hidden"
+              className="rounded-2xl p-8 md:p-12 text-center relative overflow-hidden"
               style={{ background: "oklch(0.46 0.25 264)" }}
             >
-              {/* Decorative quote mark */}
               <div
-                className="absolute top-4 left-8 text-8xl font-serif leading-none select-none pointer-events-none"
-                style={{ color: "rgba(255,255,255,0.08)" }}
+                className="absolute top-4 left-8 text-9xl font-serif leading-none select-none pointer-events-none"
+                style={{ color: "rgba(255,255,255,0.07)" }}
               >
                 "
               </div>
               <p
                 className="relative font-bold text-white max-w-2xl mx-auto mb-4"
-                style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", lineHeight: 1.4 }}
+                style={{ fontSize: "clamp(1.2rem, 3vw, 1.65rem)", lineHeight: 1.45 }}
               >
                 The businesses that thrive in the next decade won't be the ones with the most employees.
                 They'll be the ones where every employee is empowered by AI.
