@@ -284,7 +284,22 @@ function UpdateLog() {
 
         {/* Updates list */}
         {!loaded ? (
-          <div className="text-slate-500 text-sm py-8">Loading updates…</div>
+          <div className="flex flex-col gap-6" aria-label="Loading updates">
+            {[1, 2].map((i) => (
+              <div key={i} className="flex gap-6">
+                <div className="w-6 h-6 rounded-full mt-1 flex-shrink-0 bg-white/10 animate-pulse" />
+                <div className="flex-1 rounded-2xl p-6 glass-card space-y-3">
+                  <div className="flex gap-3">
+                    <div className="h-4 w-24 rounded-full bg-white/10 animate-pulse" />
+                    <div className="h-4 w-16 rounded-full bg-white/10 animate-pulse" />
+                  </div>
+                  <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />
+                  <div className="h-4 w-full rounded bg-white/[0.06] animate-pulse" />
+                  <div className="h-4 w-5/6 rounded bg-white/[0.06] animate-pulse" />
+                </div>
+              </div>
+            ))}
+          </div>
         ) : updates.length === 0 ? (
           <div
             className="rounded-2xl p-8 text-center glass-card"

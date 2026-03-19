@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #080d1a;
-  --bg-surface: #0f1629;
-  --bg-card: #111827;
-  --indigo-600: #4f46e5;
-  --indigo-500: #6366f1;
-  --indigo-400: #818cf8;
-  --amber-500: #f59e0b;
-  --amber-400: #fbbf24;
+  /* OKLCH color tokens — perceptually uniform, easy to derive harmonious variants */
+  --bg-deep:    oklch(0.11 0.035 255);   /* deep navy */
+  --bg-surface: oklch(0.14 0.04  255);   /* surface layer */
+  --bg-card:    oklch(0.16 0.035 255);   /* card background */
+
+  --indigo-600: oklch(0.48 0.22 264);    /* primary indigo */
+  --indigo-500: oklch(0.53 0.22 264);
+  --indigo-400: oklch(0.66 0.18 264);    /* lighter indigo for text */
+
+  --amber-500:  oklch(0.72 0.18  70);    /* primary amber CTA */
+  --amber-400:  oklch(0.80 0.17  72);    /* lighter amber */
+
   --font-display: var(--font-fraunces), Georgia, serif;
-  --font-body: var(--font-jakarta), system-ui, sans-serif;
+  --font-body:    var(--font-jakarta), ui-sans-serif, sans-serif;
 }
 
 @theme inline {
@@ -104,7 +108,7 @@ body {
 
 /* ── Fade in animations ── */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes fade-in {
@@ -114,11 +118,26 @@ body {
 
 .animate-fade-up {
   opacity: 0;
-  animation: fade-up 0.7s ease forwards;
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .animate-fade-in {
   opacity: 0;
-  animation: fade-in 0.6s ease forwards;
+  animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .orb,
+  .glass-card,
+  .btn-amber,
+  .btn-indigo {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .delay-100 { animation-delay: 0.1s; }
@@ -133,32 +152,42 @@ body {
 
 /* ── Amber CTA button ── */
 .btn-amber {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #0a0500;
+  background: linear-gradient(135deg, oklch(0.72 0.18 70), oklch(0.62 0.19 60));
+  color: oklch(0.15 0.03 70);
   font-weight: 700;
   letter-spacing: 0.01em;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
+  transition: background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px oklch(0.72 0.18 70 / 0.25);
 }
 .btn-amber:hover {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  box-shadow: 0 6px 32px rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, oklch(0.80 0.17 72), oklch(0.72 0.18 70));
+  box-shadow: 0 6px 32px oklch(0.72 0.18 70 / 0.4);
   transform: translateY(-1px);
 }
-.btn-amber:active {
-  transform: translateY(0);
+.btn-amber:active { transform: translateY(0); }
+.btn-amber:focus-visible {
+  outline: 2px solid oklch(0.72 0.18 70);
+  outline-offset: 3px;
 }
 
 /* ── Indigo outline button ── */
 .btn-indigo {
-  border: 1.5px solid rgba(99, 102, 241, 0.5);
-  color: #a5b4fc;
-  transition: all 0.2s ease;
+  border: 1.5px solid oklch(0.53 0.22 264 / 0.5);
+  color: oklch(0.66 0.18 264);
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .btn-indigo:hover {
-  border-color: #6366f1;
+  border-color: oklch(0.53 0.22 264);
   color: #fff;
-  background: rgba(99, 102, 241, 0.1);
+  background: oklch(0.53 0.22 264 / 0.1);
+}
+.btn-indigo:focus-visible {
+  outline: 2px solid oklch(0.66 0.18 264);
+  outline-offset: 3px;
 }
 
 /* ── Feature icon badge ── */
@@ -201,16 +230,22 @@ body {
 
 /* ── Input styles ── */
 .form-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: oklch(1 0 0 / 0.05);
+  border: 1px solid oklch(1 0 0 / 0.1);
   color: #f8fafc;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .form-input:focus {
   outline: none;
-  border-color: rgba(99, 102, 241, 0.6);
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  border-color: oklch(0.53 0.22 264 / 0.7);
+  background: oklch(1 0 0 / 0.07);
+  /* Visible ring — 20% opacity is legible on dark bg */
+  box-shadow: 0 0 0 3px oklch(0.53 0.22 264 / 0.2);
+}
+.form-input:focus-visible {
+  outline: none; /* handled by box-shadow above */
 }
 .form-input::placeholder {
   color: rgba(248, 250, 252, 0.3);
