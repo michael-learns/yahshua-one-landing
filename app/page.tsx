@@ -592,13 +592,21 @@ export default function Home() {
               YAHSHUA One
             </span>
           </div>
-          <a
-            href="#waitlist"
-            className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2"
-            style={{ background: "oklch(0.46 0.25 264)" }}
-          >
-            Join Waitlist
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="/updates"
+              className="text-sm font-medium text-[#5c5878] hover:text-[#1c1a2e] transition-colors hidden sm:block"
+            >
+              Dev Log
+            </a>
+            <a
+              href="#waitlist"
+              className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2"
+              style={{ background: "oklch(0.46 0.25 264)" }}
+            >
+              Join Waitlist
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -960,9 +968,22 @@ export default function Home() {
             >
               We build in public.
             </h2>
-            <p className="text-lg text-[#5c5878] mb-10" style={{ lineHeight: 1.7 }}>
-              Every update, in plain language.
-            </p>
+            <div className="flex items-center gap-4 mb-10 flex-wrap">
+              <p className="text-lg text-[#5c5878]" style={{ lineHeight: 1.7 }}>
+                Every update, in plain language.
+              </p>
+              <a
+                href="/updates"
+                className="text-sm font-semibold px-4 py-2 rounded-full border transition-colors hover:opacity-80 whitespace-nowrap"
+                style={{
+                  color: "oklch(0.46 0.25 264)",
+                  borderColor: "oklch(0.46 0.25 264 / 0.35)",
+                  background: "oklch(0.46 0.25 264 / 0.06)",
+                }}
+              >
+                View all updates →
+              </a>
+            </div>
           </Reveal>
 
           {/* Loading skeleton */}

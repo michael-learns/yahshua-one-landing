@@ -103,7 +103,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
           We're building in public and moving fast. You'll get updates as we hit milestones — no spam, just honest progress reports.
         </p>
         <div style="text-align: center; margin-bottom: 28px;">
-          <a href="https://yahshua-one-landing.vercel.app" style="display: inline-block; background: #3730a3; color: white; text-decoration: none; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 15px;">
+          <a href="https://yahshua-one-landing.vercel.app/updates" style="display: inline-block; background: #3730a3; color: white; text-decoration: none; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 15px;">
             Follow Our Progress →
           </a>
         </div>
@@ -132,7 +132,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
     ``,
     `We hope to get this in your hands as soon as possible. If you have questions or want to share what your business needs most, just reply to this email. We read everything.`,
     ``,
-    `Follow our progress: https://yahshua-one-landing.vercel.app`,
+    `Follow our progress: https://yahshua-one-landing.vercel.app/updates`,
     ``,
     `— The YAHSHUA One Team`,
     `ABBA Initiative · Built in the Philippines 🇵🇭`,
