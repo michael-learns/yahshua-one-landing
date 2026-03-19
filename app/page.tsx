@@ -570,8 +570,8 @@ export default function Home() {
     }
   }
 
-  const heroWords1 = ["Your", "backoffice,"];
-  const heroWords2 = ["finally", "sorted."];
+  const heroWords1 = ["Your", "AI", "knows"];
+  const heroWords2 = ["your", "business."];
 
   return (
     <div className="text-[#1c1a2e]" style={{ fontFamily: "var(--font-geist-sans, sans-serif)" }}>
@@ -613,7 +613,7 @@ export default function Home() {
             className="hero-badge inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold mb-8"
             style={{ background: "#f0eef9", color: "oklch(0.46 0.25 264)" }}
           >
-            Beta · Building in public
+            ✦ Now in Beta · Building in public
           </span>
 
           {/* Headline — word-by-word stagger */}
@@ -657,8 +657,7 @@ export default function Home() {
             className="hero-subtext text-xl text-[#5c5878] max-w-lg mb-10"
             style={{ lineHeight: 1.7 }}
           >
-            Payroll. Accounting. Tax compliance. HR. All in one place. All AI-powered. Built for
-            Filipino businesses.
+            Ask ChatGPT or Claude about your payroll, taxes, and finances — and get real answers from your actual business data. YAHSHUA One is the AI-powered backoffice built for Filipino businesses.
           </p>
 
           {/* CTAs */}
