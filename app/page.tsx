@@ -690,6 +690,104 @@ export default function Home() {
         />
       </section>
 
+      {/* ── SECTION 1.5: WHY AI ────────────────────────────── */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <Reveal className="text-center mb-16">
+            <div className="section-label mb-3">The Shift</div>
+            <h2
+              className="font-extrabold text-[#1c1a2e] mb-4"
+              style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)", letterSpacing: "-0.03em", lineHeight: 1.1 }}
+            >
+              Your competitors are already
+              <br />
+              using AI. Are you?
+            </h2>
+            <p className="text-lg text-[#5c5878] max-w-2xl mx-auto" style={{ lineHeight: 1.7 }}>
+              Running a business in the Philippines has always meant juggling payroll, BIR deadlines,
+              and government contributions — all at once. AI doesn't remove that complexity.
+              It handles it for you.
+            </p>
+          </Reveal>
+
+          {/* Reason cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+            {[
+              {
+                icon: "⏱️",
+                stat: "40+ hours",
+                label: "saved per month",
+                body: "The average SMB owner spends over 40 hours a month on admin tasks — payroll computation, contribution filings, bookkeeping. That's a full work week. AI gives it back.",
+              },
+              {
+                icon: "⚠️",
+                stat: "₱25,000+",
+                label: "average BIR penalty",
+                body: "Missing a BIR deadline or filing the wrong form can cost your business tens of thousands in fines. AI tracks every deadline automatically — so you never miss one.",
+              },
+              {
+                icon: "📊",
+                stat: "78%",
+                label: "of SMBs lack real-time data",
+                body: "Most Filipino business owners make decisions based on gut feel — not data. AI gives you instant answers: cashflow, payroll costs, government liabilities — in seconds.",
+              },
+              {
+                icon: "🚀",
+                stat: "3×",
+                label: "faster decisions",
+                body: "Businesses that use AI tools make operational decisions 3× faster than those that don't. In a competitive market, speed is the advantage you can't afford to ignore.",
+              },
+            ].map((card, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div
+                  className="rounded-2xl p-6 h-full flex flex-col border border-[#e8e6f0] hover:border-[oklch(0.88_0.10_264)] transition-all hover:shadow-md"
+                  style={{ background: "#faf9f7" }}
+                >
+                  <div className="text-3xl mb-4">{card.icon}</div>
+                  <div
+                    className="font-extrabold mb-0.5"
+                    style={{ fontSize: "clamp(1.6rem, 3vw, 2rem)", letterSpacing: "-0.02em", color: "oklch(0.46 0.25 264)" }}
+                  >
+                    {card.stat}
+                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[#9896aa] mb-3">
+                    {card.label}
+                  </div>
+                  <p className="text-sm text-[#5c5878] leading-relaxed flex-1">{card.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Pull quote */}
+          <Reveal>
+            <div
+              className="rounded-2xl p-8 md:p-10 text-center relative overflow-hidden"
+              style={{ background: "oklch(0.46 0.25 264)" }}
+            >
+              {/* Decorative quote mark */}
+              <div
+                className="absolute top-4 left-8 text-8xl font-serif leading-none select-none pointer-events-none"
+                style={{ color: "rgba(255,255,255,0.08)" }}
+              >
+                "
+              </div>
+              <p
+                className="relative font-bold text-white max-w-2xl mx-auto mb-4"
+                style={{ fontSize: "clamp(1.2rem, 3vw, 1.6rem)", lineHeight: 1.4 }}
+              >
+                The businesses that thrive in the next decade won't be the ones with the most employees.
+                They'll be the ones where every employee is empowered by AI.
+              </p>
+              <p className="text-sm font-medium" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Built for Filipino business owners who want to compete at the highest level.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── SECTION 2: FEATURE 01 — PAYROLL ───────────────── */}
       <section
         id="features"
