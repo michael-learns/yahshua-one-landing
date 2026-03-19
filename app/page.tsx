@@ -386,14 +386,43 @@ function HRMockup() {
 /* ══════════════════════════════════════════════════════════════
    MCP SECTION — AI provider cards
 ══════════════════════════════════════════════════════════════ */
-function AIProviderCard({ brand, color }: { brand: string; color: string }) {
+/* Official ChatGPT logo (OpenAI) */
+function ChatGPTLogo({ size = 28 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ChatGPT">
+      <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.634-2.525 10.079 10.079 0 0 0-9.612 6.977 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.634 2.524 10.079 10.079 0 0 0 9.617-6.981 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.243-11.813zM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496zM6.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zM4.297 13.62A7.469 7.469 0 0 1 8.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L7.044 23.86a7.504 7.504 0 0 1-2.747-10.24zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .114-.012l8.048 4.648a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.647-1.13zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zm1.829-3.943l4.33-2.501 4.332 2.499v4.996l-4.331 2.5-4.331-2.5V18z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+/* Official Claude logo (Anthropic) */
+function ClaudeLogo({ size = 28 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude">
+      <path d="M22.676 5.027c-1.204 3.173-2.498 6.31-3.745 9.464-2.625 6.636-5.358 13.236-7.659 19.98-.327.95-.63 1.91-.893 2.879-.076.283.11.517.405.493 1.814-.15 3.618-.44 5.408-.764.315-.057.578-.278.685-.583.983-2.824 2.07-5.612 3.193-8.386.083-.206.284-.34.507-.34h9.39c.228 0 .432.14.513.353 1.104 2.854 2.17 5.722 3.142 8.617.093.275.346.467.635.489 1.697.128 3.395.306 5.083.527.303.04.513-.21.437-.503a63.43 63.43 0 0 0-.847-2.795c-2.29-6.713-5.007-13.28-7.618-19.887A429.97 429.97 0 0 0 27.48 5.03c-.258-.591-.8-.98-1.437-1.003a1.523 1.523 0 0 0-1.367.999zM24.84 19.52c.56 1.49 1.103 2.989 1.63 4.494.08.228-.09.463-.333.463h-5.93c-.243 0-.412-.235-.333-.463a251.48 251.48 0 0 1 1.676-4.613c.417-1.106.806-2.22 1.215-3.324.065-.176.308-.172.37.006.538 1.478 1.072 2.956 1.704 4.437z" fill="currentColor"/>
+    </svg>
+  );
+}
+
+function AIProviderCard({ brand }: { brand: "ChatGPT" | "Claude" }) {
+  const isChatGPT = brand === "ChatGPT";
   return (
     <div
       className="px-5 py-4 rounded-2xl text-white flex items-center gap-3 whitespace-nowrap"
-      style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}
+      style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.22)" }}
     >
-      <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: color }} />
-      <span className="font-semibold text-sm">{brand}</span>
+      <span
+        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+        style={{ background: isChatGPT ? "#10A37F" : "#D97757" }}
+      >
+        {isChatGPT ? <ChatGPTLogo size={20} /> : <ClaudeLogo size={20} />}
+      </span>
+      <div>
+        <div className="font-bold text-base leading-tight">{brand}</div>
+        <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
+          {isChatGPT ? "by OpenAI" : "by Anthropic"}
+        </div>
+      </div>
     </div>
   );
 }
@@ -408,7 +437,7 @@ function MCPHubCard() {
         <Zap size={16} className="opacity-80" />
         <span className="font-bold text-base">MCP</span>
       </div>
-      <div className="text-xs whitespace-nowrap" style={{ color: "rgba(255,255,255,0.55)" }}>
+      <div className="text-xs whitespace-nowrap" style={{ color: "rgba(255,255,255,0.72)" }}>
         Model Context Protocol
       </div>
     </div>
@@ -429,7 +458,7 @@ function YahshuaOneCard() {
       </div>
       <div>
         <div className="font-semibold text-sm leading-tight">YAHSHUA One</div>
-        <div className="text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>Your backoffice</div>
+        <div className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>Your backoffice</div>
       </div>
     </div>
   );
@@ -448,8 +477,8 @@ function MCPDiagram() {
       <div className="hidden md:flex items-center justify-center gap-0">
         {/* Left: AI providers stacked */}
         <div className="flex flex-col gap-3">
-          <AIProviderCard brand="ChatGPT" color="#10A37F" />
-          <AIProviderCard brand="Claude" color="#D97757" />
+          <AIProviderCard brand="ChatGPT" />
+          <AIProviderCard brand="Claude" />
         </div>
 
         {/* Fork SVG — two branches merging to center */}
@@ -491,8 +520,8 @@ function MCPDiagram() {
 
       {/* ── Mobile: stacked vertically ── */}
       <div className="flex md:hidden flex-col items-center gap-3">
-        <AIProviderCard brand="ChatGPT" color="#10A37F" />
-        <AIProviderCard brand="Claude" color="#D97757" />
+        <AIProviderCard brand="ChatGPT" />
+        <AIProviderCard brand="Claude" />
         <div className="w-px h-5" style={{ background: "rgba(255,255,255,0.25)" }} />
         <MCPHubCard />
         <div className="w-px h-5" style={{ background: "rgba(255,255,255,0.25)" }} />
@@ -672,7 +701,7 @@ export default function Home() {
           {/* Text — slides in from left */}
           <Reveal direction="left">
             <div
-              className="font-light mb-4"
+              className="font-normal mb-4"
               style={{ fontSize: "clamp(3.5rem, 7vw, 5rem)", lineHeight: 1, color: "oklch(0.46 0.25 264)" }}
             >
               01.
@@ -717,7 +746,7 @@ export default function Home() {
           {/* Text — right on desktop, slides in from right */}
           <Reveal direction="right" className="order-1 lg:order-2">
             <div
-              className="font-light mb-4"
+              className="font-normal mb-4"
               style={{ fontSize: "clamp(3.5rem, 7vw, 5rem)", lineHeight: 1, color: "oklch(0.46 0.25 264)" }}
             >
               02.
@@ -753,7 +782,7 @@ export default function Home() {
           {/* Text — slides in from left */}
           <Reveal direction="left">
             <div
-              className="font-light mb-4"
+              className="font-normal mb-4"
               style={{ fontSize: "clamp(3.5rem, 7vw, 5rem)", lineHeight: 1, color: "oklch(0.46 0.25 264)" }}
             >
               03.
@@ -795,7 +824,7 @@ export default function Home() {
           {/* Text — right on desktop, slides in from right */}
           <Reveal direction="right" className="order-1 lg:order-2">
             <div
-              className="font-light mb-4"
+              className="font-normal mb-4"
               style={{ fontSize: "clamp(3.5rem, 7vw, 5rem)", lineHeight: 1, color: "oklch(0.46 0.25 264)" }}
             >
               04.
@@ -830,7 +859,7 @@ export default function Home() {
           {/* Section number + headline + subtext */}
           <Reveal className="text-center">
             <div
-              className="font-light mb-6"
+              className="font-normal mb-6"
               style={{
                 fontSize: "clamp(3.5rem, 7vw, 5rem)",
                 lineHeight: 1,
