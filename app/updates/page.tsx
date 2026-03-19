@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { LogoMark } from "../components/Logo";
 
 /* ══════════════════════════════════════════════════════════════
    TYPES
@@ -122,12 +123,7 @@ export default function UpdatesPage() {
       >
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2.5 group">
-            <div
-              className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold"
-              style={{ background: "oklch(0.46 0.25 264)" }}
-            >
-              Y
-            </div>
+            <LogoMark size={28} />
             <span className="font-semibold text-[#1c1a2e] text-sm tracking-tight group-hover:opacity-70 transition-opacity">
               YAHSHUA One
             </span>
@@ -309,12 +305,7 @@ export default function UpdatesPage() {
       >
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div
-              className="w-6 h-6 rounded-md flex items-center justify-center text-white text-[10px] font-bold"
-              style={{ background: "oklch(0.46 0.25 264)" }}
-            >
-              Y
-            </div>
+            <LogoMark size={24} />
             <span className="font-semibold text-sm text-[#1c1a2e]">YAHSHUA One</span>
           </div>
           <p className="text-xs text-[#9896aa]">

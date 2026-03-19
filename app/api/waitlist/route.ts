@@ -85,7 +85,22 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
   const html = `
     <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1c1a2e;">
       <div style="background: #3730a3; padding: 32px 40px; border-radius: 16px 16px 0 0; text-align: center;">
-        <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; font-weight: 800; font-size: 22px; color: white; margin-bottom: 12px;">Y</div>
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: linear-gradient(135deg, #EFF6FF 0%, #E0F2FE 100%); border-radius: 14px; margin-bottom: 12px;">
+          <svg width="44" height="50" viewBox="0 0 96 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="e0" cx="38%" cy="30%" r="62%"><stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#3B82F6"/></radialGradient>
+              <radialGradient id="e1" cx="38%" cy="30%" r="62%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#2563EB"/></radialGradient>
+              <radialGradient id="e2" cx="38%" cy="30%" r="62%"><stop offset="0%" stop-color="#38BDF8"/><stop offset="100%" stop-color="#06B6D4"/></radialGradient>
+              <radialGradient id="e3" cx="38%" cy="30%" r="62%"><stop offset="0%" stop-color="#7DD3FC"/><stop offset="100%" stop-color="#0EA5E9"/></radialGradient>
+              <radialGradient id="e4" cx="38%" cy="30%" r="62%"><stop offset="0%" stop-color="#A5F3FC"/><stop offset="100%" stop-color="#22D3EE"/></radialGradient>
+            </defs>
+            <circle cx="38" cy="22" r="22" fill="url(#e0)"/>
+            <circle cx="52" cy="36" r="22" fill="url(#e1)"/>
+            <circle cx="44" cy="52" r="22" fill="url(#e2)"/>
+            <circle cx="58" cy="66" r="22" fill="url(#e3)"/>
+            <circle cx="50" cy="82" r="22" fill="url(#e4)"/>
+          </svg>
+        </div>
         <h1 style="margin: 0; color: white; font-size: 22px; font-weight: 700;">You're on the list. 🎉</h1>
       </div>
       <div style="background: #ffffff; padding: 36px 40px; border: 1px solid #e8e6f0; border-top: none; border-radius: 0 0 16px 16px;">

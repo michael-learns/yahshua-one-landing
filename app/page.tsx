@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Check, Zap } from "lucide-react";
+import { LogoMark } from "./components/Logo";
 
 /* ══════════════════════════════════════════════════════════════
    TYPES
@@ -450,12 +451,7 @@ function YahshuaOneCard() {
       className="px-5 py-4 rounded-2xl text-white flex items-center gap-3 whitespace-nowrap"
       style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}
     >
-      <div
-        className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0"
-        style={{ background: "oklch(0.55 0.20 264)", border: "1px solid rgba(255,255,255,0.3)" }}
-      >
-        Y
-      </div>
+      <LogoMark size={28} />
       <div>
         <div className="font-semibold text-sm leading-tight">YAHSHUA One</div>
         <div className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>Your backoffice</div>
@@ -582,12 +578,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div
-              className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold"
-              style={{ background: "oklch(0.46 0.25 264)" }}
-            >
-              Y
-            </div>
+            <LogoMark size={28} />
             <span className="font-semibold text-[#1c1a2e] text-sm tracking-tight">
               YAHSHUA One
             </span>
@@ -1162,12 +1153,7 @@ export default function Home() {
       <footer className="px-6 py-8 border-t border-[#e8e6f0]" style={{ background: "#faf9f7" }}>
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div
-              className="w-6 h-6 rounded-md flex items-center justify-center text-white text-[10px] font-bold"
-              style={{ background: "oklch(0.46 0.25 264)" }}
-            >
-              Y
-            </div>
+            <LogoMark size={24} />
             <span className="font-semibold text-sm text-[#1c1a2e]">YAHSHUA One</span>
           </div>
           <p className="text-xs text-[#9896aa]">
