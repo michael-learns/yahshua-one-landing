@@ -112,7 +112,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
         </p>
         <hr style="border: none; border-top: 1px solid #e8e6f0; margin: 28px 0;" />
         <p style="margin: 0; font-size: 13px; color: #9896aa; line-height: 1.6;">
-          YAHSHUA One · by ABBA Initiative · Built in the Philippines 🇵🇭<br>
+          YAHSHUA One · by The ABBA Initiative, OPC · Built in the Philippines 🇵🇭<br>
           You received this because you signed up at yahshua-one-landing.vercel.app
         </p>
       </div>
@@ -135,7 +135,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
     `Follow our progress: https://yahshua-one-landing.vercel.app/updates`,
     ``,
     `— The YAHSHUA One Team`,
-    `ABBA Initiative · Built in the Philippines 🇵🇭`,
+    `The ABBA Initiative, OPC · Built in the Philippines 🇵🇭`,
   ].join("\n");
 
   await fetch(
