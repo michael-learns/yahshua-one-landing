@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 // Read env vars lazily inside functions — avoids module-level init issues on Vercel edge
 function getEnv() {
-  const NOTION_API_KEY = process.env.NOTION_API_KEY;
-  const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
-  const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY;
+  const NOTION_API_KEY = process.env.NOTION_API_KEY?.trim();
+  const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID?.trim();
+  const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY?.trim();
   if (!NOTION_API_KEY || !NOTION_DATABASE_ID || !AGENTMAIL_API_KEY) {
     throw new Error(`Missing env vars: NOTION_API_KEY=${!!NOTION_API_KEY} NOTION_DATABASE_ID=${!!NOTION_DATABASE_ID} AGENTMAIL_API_KEY=${!!AGENTMAIL_API_KEY}`);
   }
