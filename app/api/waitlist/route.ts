@@ -70,6 +70,82 @@ async function saveToNotion(entry: {
   return { success: true };
 }
 
+async function sendWelcomeEmail(entry: { name: string; email: string }) {
+  const firstName = entry.name.split(" ")[0];
+  const html = `
+    <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1c1a2e;">
+      <div style="background: oklch(0.46 0.25 264); padding: 32px 40px; border-radius: 16px 16px 0 0; text-align: center;">
+        <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; font-weight: 800; font-size: 22px; color: white; margin-bottom: 12px;">Y</div>
+        <h1 style="margin: 0; color: white; font-size: 22px; font-weight: 700;">You're on the list. 🎉</h1>
+      </div>
+      <div style="background: #ffffff; padding: 36px 40px; border: 1px solid #e8e6f0; border-top: none; border-radius: 0 0 16px 16px;">
+        <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6;">Hi ${firstName},</p>
+        <p style="margin: 0 0 16px; font-size: 16px; line-height: 1.6;">
+          Thanks for joining the <strong>YAHSHUA One</strong> waitlist. We're genuinely excited you're here.
+        </p>
+        <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6;">
+          Here's what we're building: a single platform where Filipino businesses can handle <strong>payroll, accounting, tax compliance, and HR</strong> — all in one place, all AI-powered.
+        </p>
+        <p style="margin: 0 0 20px; font-size: 16px; line-height: 1.6;">
+          The big idea? You'll be able to talk to ChatGPT or Claude and get real answers about your business — "How much did we pay in SSS contributions last month?" or "Are all our BIR deadlines covered?" — because your AI will have direct access to your actual data through YAHSHUA One.
+        </p>
+        <p style="margin: 0 0 28px; font-size: 16px; line-height: 1.6;">
+          We're building in public and moving fast. You'll get updates as we hit milestones — no spam, just honest progress reports.
+        </p>
+        <div style="text-align: center; margin-bottom: 28px;">
+          <a href="https://yahshua-one-landing.vercel.app" style="display: inline-block; background: oklch(0.46 0.25 264); color: white; text-decoration: none; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 15px;">
+            Follow Our Progress →
+          </a>
+        </div>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5c5878;">
+          We hope to get this in your hands as soon as possible. In the meantime, if you have questions or want to share what your business needs most — just reply to this email. We read everything.
+        </p>
+        <hr style="border: none; border-top: 1px solid #e8e6f0; margin: 28px 0;" />
+        <p style="margin: 0; font-size: 13px; color: #9896aa; line-height: 1.6;">
+          YAHSHUA One · by ABBA Initiative · Built in the Philippines 🇵🇭<br>
+          You received this because you signed up at yahshua-one-landing.vercel.app
+        </p>
+      </div>
+    </div>
+  `;
+
+  const text = [
+    `Hi ${firstName},`,
+    ``,
+    `Thanks for joining the YAHSHUA One waitlist. We're genuinely excited you're here.`,
+    ``,
+    `Here's what we're building: a single platform where Filipino businesses can handle payroll, accounting, tax compliance, and HR — all in one place, all AI-powered.`,
+    ``,
+    `The big idea? You'll be able to talk to ChatGPT or Claude and get real answers about your business — "How much did we pay in SSS contributions last month?" or "Are all our BIR deadlines covered?" — because your AI will have direct access to your actual data through YAHSHUA One.`,
+    ``,
+    `We're building in public and moving fast. You'll get updates as we hit milestones — no spam, just honest progress reports.`,
+    ``,
+    `We hope to get this in your hands as soon as possible. If you have questions or want to share what your business needs most, just reply to this email. We read everything.`,
+    ``,
+    `Follow our progress: https://yahshua-one-landing.vercel.app`,
+    ``,
+    `— The YAHSHUA One Team`,
+    `ABBA Initiative · Built in the Philippines 🇵🇭`,
+  ].join("\n");
+
+  await fetch(
+    `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${AGENTMAIL_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        to: [entry.email],
+        subject: `You're on the YAHSHUA One waitlist 🎉`,
+        text,
+        html,
+      }),
+    }
+  );
+}
+
 async function sendNotificationEmail(entry: {
   name: string;
   email: string;
@@ -142,8 +218,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Fire-and-forget notification (don't await — don't block response)
+    // Fire-and-forget emails (don't await — don't block response)
     if (!result.alreadyExists) {
+      // Welcome email to the new signup
+      sendWelcomeEmail({ name, email }).catch((e) =>
+        console.error("[waitlist] Welcome email error:", e)
+      );
+      // Internal notification to Michael
       sendNotificationEmail({ name, email, company, size }).catch((e) =>
         console.error("[waitlist] Email notify error:", e)
       );
