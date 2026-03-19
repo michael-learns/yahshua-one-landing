@@ -74,7 +74,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
   const firstName = entry.name.split(" ")[0];
   const html = `
     <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1c1a2e;">
-      <div style="background: oklch(0.46 0.25 264); padding: 32px 40px; border-radius: 16px 16px 0 0; text-align: center;">
+      <div style="background: #3730a3; padding: 32px 40px; border-radius: 16px 16px 0 0; text-align: center;">
         <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; font-weight: 800; font-size: 22px; color: white; margin-bottom: 12px;">Y</div>
         <h1 style="margin: 0; color: white; font-size: 22px; font-weight: 700;">You're on the list. 🎉</h1>
       </div>
@@ -93,7 +93,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
           We're building in public and moving fast. You'll get updates as we hit milestones — no spam, just honest progress reports.
         </p>
         <div style="text-align: center; margin-bottom: 28px;">
-          <a href="https://yahshua-one-landing.vercel.app" style="display: inline-block; background: oklch(0.46 0.25 264); color: white; text-decoration: none; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 15px;">
+          <a href="https://yahshua-one-landing.vercel.app" style="display: inline-block; background: #3730a3; color: white; text-decoration: none; padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 15px;">
             Follow Our Progress →
           </a>
         </div>
@@ -211,12 +211,13 @@ export async function POST(req: NextRequest) {
     });
 
     if (!result.success) {
-      console.error("[waitlist] Notion error:", result.error);
+      console.error("[waitlist] Notion save error:", result.error);
       return NextResponse.json(
         { success: false, message: "Something went wrong. Please try again." },
         { status: 500 }
       );
     }
+    console.log("[waitlist] Saved to Notion. alreadyExists:", result.alreadyExists);
 
     // Fire-and-forget emails (don't await — don't block response)
     if (!result.alreadyExists) {
@@ -235,7 +236,7 @@ export async function POST(req: NextRequest) {
       message: "You're on the list! We'll keep you posted as we build.",
     });
   } catch (err) {
-    console.error("[waitlist] Unhandled error:", err);
+    console.error("[waitlist] Unhandled error:", JSON.stringify(err), err);
     return NextResponse.json(
       { success: false, message: "Something went wrong on our end. Please try again shortly." },
       { status: 500 }
