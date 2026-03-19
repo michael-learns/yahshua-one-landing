@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-03-19",
+    "badge": "Improvement",
+    "title": "Employee Profiles, Encryption & Cleaner Navigation",
+    "description": "Employee management got another round of polish today. You can now view and edit personal information directly from an employee's profile, including for inactive or previously separated employees. The 'Add Employee' button now has a cleaner dropdown, and bulk updates display selected employees more clearly. Employee email addresses are now stored encrypted for better data security. The payroll sidebar navigation was also cleaned up, making it easier to find what you're looking for."
+  },
+  {
+    "date": "2026-03-19",
     "badge": "Progress Update",
     "title": "Staff Portal, Employee Editing & Government Reports",
     "description": "A major push landed today across three areas. First, a full internal staff portal is now live — the YAHSHUA One team can manage companies, users, subscriptions, billing, and audit logs in one place, with proper role-based access and secure account switching between companies. Second, employee management got a big upgrade: you can now edit personal information directly from an employee's profile, view profiles of inactive or separated employees, and bulk-update employees with clearer selections and a faster refresh flow. Third, government contribution reports are now fully available — SSS, PhilHealth, and Pag-IBIG summaries, 13th month pay calculations, and year-to-date tax reports can all be generated from the payroll module. Post-dated check (PDC) requests also now flow through proper approval stages."
