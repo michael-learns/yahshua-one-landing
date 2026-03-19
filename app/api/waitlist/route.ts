@@ -1,8 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const NOTION_API_KEY = process.env.NOTION_API_KEY!;
-const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID!;
-const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY!;
+// Read env vars lazily inside functions — avoids module-level init issues on Vercel edge
+function getEnv() {
+  const NOTION_API_KEY = process.env.NOTION_API_KEY;
+  const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
+  const AGENTMAIL_API_KEY = process.env.AGENTMAIL_API_KEY;
+  if (!NOTION_API_KEY || !NOTION_DATABASE_ID || !AGENTMAIL_API_KEY) {
+    throw new Error(`Missing env vars: NOTION_API_KEY=${!!NOTION_API_KEY} NOTION_DATABASE_ID=${!!NOTION_DATABASE_ID} AGENTMAIL_API_KEY=${!!AGENTMAIL_API_KEY}`);
+  }
+  return { NOTION_API_KEY, NOTION_DATABASE_ID, AGENTMAIL_API_KEY };
+}
+
 const AGENTMAIL_INBOX = "yahshua-one-waitlist@agentmail.to";
 const NOTIFY_EMAIL = "michaelbayron@abba.works";
 
@@ -17,6 +25,7 @@ async function saveToNotion(entry: {
   size?: string;
   joinedAt: string;
 }): Promise<{ success: boolean; alreadyExists?: boolean; error?: string }> {
+  const { NOTION_API_KEY, NOTION_DATABASE_ID } = getEnv();
   // Check for duplicate first
   const checkRes = await fetch(
     `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
@@ -71,6 +80,7 @@ async function saveToNotion(entry: {
 }
 
 async function sendWelcomeEmail(entry: { name: string; email: string }) {
+  const { AGENTMAIL_API_KEY } = getEnv();
   const firstName = entry.name.split(" ")[0];
   const html = `
     <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1c1a2e;">
@@ -152,6 +162,7 @@ async function sendNotificationEmail(entry: {
   company?: string;
   size?: string;
 }) {
+  const { AGENTMAIL_API_KEY, NOTION_DATABASE_ID } = getEnv();
   const body = [
     `🎉 New waitlist signup for YAHSHUA One!`,
     ``,
