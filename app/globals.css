@@ -195,3 +195,104 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-border); }
+
+/* ═══════════════════════════════════════════
+   HERO LOAD ANIMATIONS
+═══════════════════════════════════════════ */
+@keyframes hero-word {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-word {
+  opacity: 0;
+  animation: hero-word 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-badge {
+  opacity: 0;
+  animation: hero-word 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-subtext {
+  opacity: 0;
+  animation: hero-word 0.45s cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+}
+.hero-cta {
+  opacity: 0;
+  animation: hero-word 0.45s cubic-bezier(0.16, 1, 0.3, 1) 350ms forwards;
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL-TRIGGERED DIRECTIONAL REVEALS
+═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════════════
+   BOUNCE CHEVRON
+═══════════════════════════════════════════ */
+@keyframes bounce-chevron {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+.bounce-chevron {
+  animation: bounce-chevron 1.5s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   REDUCED MOTION — new animation classes
+═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-word,
+  .hero-badge,
+  .hero-subtext,
+  .hero-cta {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .bounce-chevron { animation: none !important; }
+}
