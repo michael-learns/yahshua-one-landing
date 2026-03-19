@@ -129,7 +129,7 @@ async function sendWelcomeEmail(entry: { name: string; email: string }) {
   ].join("\n");
 
   await fetch(
-    `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages`,
+    `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages/send`,
     {
       method: "POST",
       headers: {
@@ -164,7 +164,7 @@ async function sendNotificationEmail(entry: {
   ].join("\n");
 
   await fetch(
-    `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages`,
+    `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX}/messages/send`,
     {
       method: "POST",
       headers: {
