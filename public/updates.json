@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-03-20",
+    "badge": "Progress Update",
+    "title": "BIR Forms, Org Structure & 13th Month Pay Live",
+    "description": "Yesterday was a massive day. Your organizational chart is now fully supported in YAHSHUA One — employees can be assigned to sections, units, and sub-units with full history tracking, so payroll always knows exactly who belongs where and when. BIR Forms 2316 and 1604C are now built in, letting you generate government-required tax certificates directly from the platform. The 13th Month Pay report is live too — view per-employee breakdowns, export to Excel, manage adjustments, and recalculate anytime. Cost center tracking and timesheet verification also got wired up and ready."
+  },
+  {
     "date": "2026-03-19",
     "badge": "Improvement",
     "title": "Employee Profiles, Encryption & Cleaner Navigation",
