@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #080d1a;
+  --bg-surface: #0f1629;
+  --bg-card: #111827;
+  --indigo-600: #4f46e5;
+  --indigo-500: #6366f1;
+  --indigo-400: #818cf8;
+  --amber-500: #f59e0b;
+  --amber-400: #fbbf24;
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-jakarta), system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--bg-deep);
+  --color-foreground: #f8fafc;
+  --font-sans: var(--font-jakarta);
+  --font-serif: var(--font-fraunces);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-deep);
+  color: #f8fafc;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Orb backgrounds ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+  animation: orb-drift 12s ease-in-out infinite alternate;
+}
+.orb-1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.25) 0%, transparent 70%);
+  top: -120px;
+  left: -80px;
+  animation-delay: 0s;
+}
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+  top: 100px;
+  right: -60px;
+  animation-delay: -4s;
+}
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  bottom: -80px;
+  left: 40%;
+  animation-delay: -8s;
+}
+
+@keyframes orb-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, 40px) scale(1.08); }
+}
+
+/* ── Dot grid overlay ── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #fff 0%, #c7d2fe 40%, #818cf8 70%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Fade in animations ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.7s ease forwards;
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 0.6s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+
+/* ── Amber CTA button ── */
+.btn-amber {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #0a0500;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
+}
+.btn-amber:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 6px 32px rgba(245, 158, 11, 0.4);
+  transform: translateY(-1px);
+}
+.btn-amber:active {
+  transform: translateY(0);
+}
+
+/* ── Indigo outline button ── */
+.btn-indigo {
+  border: 1.5px solid rgba(99, 102, 241, 0.5);
+  color: #a5b4fc;
+  transition: all 0.2s ease;
+}
+.btn-indigo:hover {
+  border-color: #6366f1;
+  color: #fff;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* ── Feature icon badge ── */
+.icon-badge {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.3), rgba(99, 102, 241, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+/* ── Section label ── */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--indigo-400);
+}
+
+/* ── Update badge variants ── */
+.badge-launch {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.badge-feature {
+  background: rgba(79, 70, 229, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(79, 70, 229, 0.3);
+}
+.badge-improvement {
+  background: rgba(16, 185, 129, 0.1);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.badge-fix {
+  background: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ── Input styles ── */
+.form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.form-input:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.6);
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+.form-input::placeholder {
+  color: rgba(248, 250, 252, 0.3);
+}
+.form-input option {
+  background: #0f1629;
+  color: #f8fafc;
+}
+
+/* ── Divider line ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.5); }
