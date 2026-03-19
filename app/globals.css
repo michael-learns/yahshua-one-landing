@@ -1,138 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  /* OKLCH color tokens — perceptually uniform, easy to derive harmonious variants */
-  --bg-deep:    oklch(0.11 0.035 255);   /* deep navy */
-  --bg-surface: oklch(0.14 0.04  255);   /* surface layer */
-  --bg-card:    oklch(0.16 0.035 255);   /* card background */
-
-  --indigo-600: oklch(0.48 0.22 264);    /* primary indigo */
-  --indigo-500: oklch(0.53 0.22 264);
-  --indigo-400: oklch(0.66 0.18 264);    /* lighter indigo for text */
-
-  --amber-500:  oklch(0.72 0.18  70);    /* primary amber CTA */
-  --amber-400:  oklch(0.80 0.17  72);    /* lighter amber */
-
-  --font-display: var(--font-fraunces), Georgia, serif;
-  --font-body:    var(--font-jakarta), ui-sans-serif, sans-serif;
-}
-
 @theme inline {
-  --color-background: var(--bg-deep);
-  --color-foreground: #f8fafc;
-  --font-sans: var(--font-jakarta);
-  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
 }
 
-* {
-  box-sizing: border-box;
+:root {
+  --accent:       oklch(0.50 0.22 264);
+  --accent-hover: oklch(0.44 0.22 264);
+  --accent-light: oklch(0.96 0.04 264);
+  --accent-border: oklch(0.88 0.10 264);
+  --accent-mid:   oklch(0.92 0.08 264);
+  --text-primary:   #0f172a;
+  --text-secondary: #64748b;
+  --text-muted:     #94a3b8;
+  --border:         #e2e8f0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg-deep);
-  color: #f8fafc;
-  font-family: var(--font-body);
+  background: #ffffff;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Orb backgrounds ── */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-  will-change: transform;
-  animation: orb-drift 12s ease-in-out infinite alternate;
-}
-.orb-1 {
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(circle, rgba(79, 70, 229, 0.25) 0%, transparent 70%);
-  top: -120px;
-  left: -80px;
-  animation-delay: 0s;
-}
-.orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
-  top: 100px;
-  right: -60px;
-  animation-delay: -4s;
-}
-.orb-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-  bottom: -80px;
-  left: 40%;
-  animation-delay: -8s;
-}
-
-@keyframes orb-drift {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(30px, 40px) scale(1.08); }
-}
-
-/* ── Dot grid overlay ── */
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* ── Gradient text ── */
-.gradient-text {
-  background: linear-gradient(135deg, #fff 0%, #c7d2fe 40%, #818cf8 70%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── Glass card ── */
-.glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(99, 102, 241, 0.3);
-  transform: translateY(-2px);
-}
-
-/* ── Fade in animations ── */
+/* ── Animations ── */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
 }
 
 .animate-fade-up {
   opacity: 0;
-  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.animate-fade-in {
+
+/* Scroll-triggered animation */
+.anim {
   opacity: 0;
-  animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(16px);
+  transition:
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay utilities (work for both animation-delay and transition-delay) */
+.delay-100 { animation-delay: 0.1s; transition-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; transition-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; transition-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; transition-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; transition-delay: 0.5s; }
 
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
-  .animate-fade-in,
-  .orb,
-  .glass-card,
-  .btn-amber,
-  .btn-indigo {
+  .anim,
+  .anim.visible,
+  .feature-card,
+  .btn-primary,
+  .btn-ghost,
+  .form-input {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
@@ -140,132 +82,116 @@ body {
   }
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
-.delay-500 { animation-delay: 0.5s; }
-.delay-600 { animation-delay: 0.6s; }
-.delay-700 { animation-delay: 0.7s; }
-.delay-800 { animation-delay: 0.8s; }
-.delay-900 { animation-delay: 0.9s; }
+/* ── Primary button (indigo solid) ── */
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  transition:
+    background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover  { background: var(--accent-hover); }
+.btn-primary:active { transform: translateY(0.5px); }
+.btn-primary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
 
-/* ── Amber CTA button ── */
-.btn-amber {
-  background: linear-gradient(135deg, oklch(0.72 0.18 70), oklch(0.62 0.19 60));
-  color: oklch(0.15 0.03 70);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  transition: background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 24px oklch(0.72 0.18 70 / 0.25);
+/* ── Ghost button (outline) ── */
+.btn-ghost {
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  transition:
+    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-amber:hover {
-  background: linear-gradient(135deg, oklch(0.80 0.17 72), oklch(0.72 0.18 70));
-  box-shadow: 0 6px 32px oklch(0.72 0.18 70 / 0.4);
-  transform: translateY(-1px);
+.btn-ghost:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-light);
 }
-.btn-amber:active { transform: translateY(0); }
-.btn-amber:focus-visible {
-  outline: 2px solid oklch(0.72 0.18 70);
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-/* ── Indigo outline button ── */
-.btn-indigo {
-  border: 1.5px solid oklch(0.53 0.22 264 / 0.5);
-  color: oklch(0.66 0.18 264);
-  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+/* ── Feature card ── */
+.feature-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  transition:
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-indigo:hover {
-  border-color: oklch(0.53 0.22 264);
-  color: #fff;
-  background: oklch(0.53 0.22 264 / 0.1);
-}
-.btn-indigo:focus-visible {
-  outline: 2px solid oklch(0.66 0.18 264);
-  outline-offset: 3px;
-}
-
-/* ── Feature icon badge ── */
-.icon-badge {
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.3), rgba(99, 102, 241, 0.1));
-  border: 1px solid rgba(99, 102, 241, 0.25);
+.feature-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
 }
 
 /* ── Section label ── */
 .section-label {
-  font-family: var(--font-body);
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--indigo-400);
+  color: var(--accent);
 }
 
-/* ── Update badge variants ── */
-.badge-launch {
-  background: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
-}
-.badge-feature {
-  background: rgba(79, 70, 229, 0.15);
-  color: #a5b4fc;
-  border: 1px solid rgba(79, 70, 229, 0.3);
-}
-.badge-improvement {
-  background: rgba(16, 185, 129, 0.1);
-  color: #6ee7b7;
-  border: 1px solid rgba(16, 185, 129, 0.25);
-}
-.badge-fix {
-  background: rgba(239, 68, 68, 0.1);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-/* ── Input styles ── */
+/* ── Form inputs ── */
 .form-input {
-  background: oklch(1 0 0 / 0.05);
-  border: 1px solid oklch(1 0 0 / 0.1);
-  color: #f8fafc;
-  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              background 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  transition:
+    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .form-input:focus {
   outline: none;
-  border-color: oklch(0.53 0.22 264 / 0.7);
-  background: oklch(1 0 0 / 0.07);
-  /* Visible ring — 20% opacity is legible on dark bg */
-  box-shadow: 0 0 0 3px oklch(0.53 0.22 264 / 0.2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px oklch(0.50 0.22 264 / 0.12);
 }
-.form-input:focus-visible {
-  outline: none; /* handled by box-shadow above */
+.form-input:focus-visible { outline: none; }
+.form-input::placeholder { color: var(--text-muted); }
+.form-input option { background: #ffffff; color: var(--text-primary); }
+
+/* ── Update log badge variants ── */
+.badge-launch {
+  background: oklch(0.97 0.05 70);
+  color: oklch(0.52 0.18 70);
+  border: 1px solid oklch(0.88 0.10 70);
 }
-.form-input::placeholder {
-  color: rgba(248, 250, 252, 0.3);
+.badge-feature {
+  background: var(--accent-light);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
 }
-.form-input option {
-  background: #0f1629;
-  color: #f8fafc;
+.badge-improvement {
+  background: oklch(0.97 0.04 160);
+  color: oklch(0.48 0.16 160);
+  border: 1px solid oklch(0.88 0.08 160);
+}
+.badge-fix {
+  background: oklch(0.97 0.04 25);
+  color: oklch(0.52 0.18 25);
+  border: 1px solid oklch(0.88 0.10 25);
 }
 
-/* ── Divider line ── */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+/* ── Skeleton loading ── */
+.skeleton {
+  background: #f1f5f9;
+  border-radius: 4px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
 }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-track { background: #ffffff; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.3);
+  background: var(--border);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.5); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-border); }

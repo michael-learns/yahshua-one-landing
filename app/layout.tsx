@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: "variable",
-  display: "swap",
-});
-
-const jakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "YAHSHUA One — AI-Powered Business Backoffice for Filipino SMBs",
@@ -34,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${jakartaSans.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-[#080d1a] text-white">
+    <html lang="en" className={GeistSans.variable}>
+      <body className="min-h-full flex flex-col bg-white text-[#0f172a]">
         {children}
       </body>
     </html>

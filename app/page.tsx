@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Clock, BarChart2, FileText, Users, Sparkles } from "lucide-react";
 
 /* ─────────────────────────────────────────
    Types
@@ -12,50 +13,55 @@ interface Update {
   badge?: string;
 }
 
+type LucideIcon = typeof Clock;
+
+interface Feature {
+  Icon: LucideIcon;
+  title: string;
+  description: string;
+  delay: number;
+  highlight?: boolean;
+}
+
 /* ─────────────────────────────────────────
    Feature data
 ───────────────────────────────────────── */
-const FEATURES = [
+const FEATURES: Feature[] = [
   {
-    icon: "⏱",
+    Icon: Clock,
     title: "Payroll",
-    description:
-      "Automate timekeeping, government contributions, and payslips.",
-    delay: "delay-100",
+    description: "Automate timekeeping, contributions, and payslips.",
+    delay: 0.1,
   },
   {
-    icon: "📒",
+    Icon: BarChart2,
     title: "Accounting",
-    description:
-      "BIR-ready books, journal entries, and financial reports.",
-    delay: "delay-200",
+    description: "BIR-ready books, journal entries, and financial reports.",
+    delay: 0.2,
   },
   {
-    icon: "🏛",
+    Icon: FileText,
     title: "Tax Compliance",
-    description:
-      "SSS, PhilHealth, Pag-IBIG, and BIR filings made simple.",
-    delay: "delay-300",
+    description: "SSS, PhilHealth, Pag-IBIG, and BIR filings — handled.",
+    delay: 0.3,
   },
   {
-    icon: "👥",
+    Icon: Users,
     title: "HR",
-    description:
-      "Leaves, requests, and employee management that actually works.",
-    delay: "delay-400",
+    description: "Leaves, requests, and employee records that actually work.",
+    delay: 0.4,
   },
   {
-    icon: "✦",
+    Icon: Sparkles,
     title: "AI Copilot",
-    description:
-      "Ask questions, get answers. Your AI-powered backoffice assistant.",
-    delay: "delay-500",
+    description: "Ask questions. Get answers. Your AI backoffice assistant.",
+    delay: 0.5,
     highlight: true,
   },
 ];
 
 /* ─────────────────────────────────────────
-   Badge style resolver
+   Helpers
 ───────────────────────────────────────── */
 function badgeClass(badge: string): string {
   const b = badge.toLowerCase();
@@ -66,13 +72,9 @@ function badgeClass(badge: string): string {
   return "badge-feature";
 }
 
-/* ─────────────────────────────────────────
-   Format date
-───────────────────────────────────────── */
 function formatDate(dateStr: string): string {
   try {
-    const d = new Date(dateStr + "T00:00:00");
-    return d.toLocaleDateString("en-PH", {
+    return new Date(dateStr + "T00:00:00").toLocaleDateString("en-PH", {
       year: "numeric",
       month: "long",
       day: "numeric",
@@ -80,6 +82,68 @@ function formatDate(dateStr: string): string {
   } catch {
     return dateStr;
   }
+}
+
+/* ─────────────────────────────────────────
+   Scroll animation hook
+───────────────────────────────────────── */
+function useScrollAnim() {
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>(".anim");
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+
+/* ─────────────────────────────────────────
+   Feature Card
+───────────────────────────────────────── */
+function FeatureCard({ feature }: { feature: Feature }) {
+  const { Icon, title, description, delay, highlight } = feature;
+  return (
+    <div
+      className="feature-card rounded-2xl p-7 anim flex flex-col gap-5"
+      style={{
+        transitionDelay: `${delay}s`,
+        ...(highlight
+          ? {
+              background: "var(--accent-light)",
+              borderColor: "var(--accent-border)",
+            }
+          : {}),
+      }}
+    >
+      <div
+        className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+        style={{
+          background: highlight ? "var(--accent-mid)" : "var(--accent-light)",
+          border: "1px solid var(--accent-border)",
+        }}
+      >
+        <Icon size={19} style={{ color: "var(--accent)" }} strokeWidth={2} />
+      </div>
+      <div>
+        <h3 className="text-[15px] font-semibold text-[#0f172a] mb-1.5 leading-snug">
+          {title}
+        </h3>
+        <p className="text-sm text-[#64748b] leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
 }
 
 /* ─────────────────────────────────────────
@@ -92,7 +156,9 @@ function WaitlistForm() {
     company: "",
     size: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [message, setMessage] = useState("");
 
   const handleChange = (
@@ -128,15 +194,42 @@ function WaitlistForm() {
     }
   };
 
+  if (status === "success") {
+    return (
+      <div
+        className="rounded-xl p-6 text-center"
+        style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}
+      >
+        <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-3">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#16a34a"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <p className="font-semibold text-emerald-800 text-sm leading-relaxed">
+          {message}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="name"
-            className="text-xs font-medium text-slate-400 tracking-wide"
+            className="text-xs font-semibold text-[#64748b] tracking-wide"
           >
-            Full Name <span className="text-amber-400">*</span>
+            Full Name <span className="text-rose-500">*</span>
           </label>
           <input
             id="name"
@@ -153,9 +246,9 @@ function WaitlistForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="email"
-            className="text-xs font-medium text-slate-400 tracking-wide"
+            className="text-xs font-semibold text-[#64748b] tracking-wide"
           >
-            Email Address <span className="text-amber-400">*</span>
+            Email Address <span className="text-rose-500">*</span>
           </label>
           <input
             id="email"
@@ -172,10 +265,10 @@ function WaitlistForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="company"
-            className="text-xs font-medium text-slate-400 tracking-wide"
+            className="text-xs font-semibold text-[#64748b] tracking-wide"
           >
             Company Name{" "}
-            <span className="text-slate-600 text-xs">(optional)</span>
+            <span className="font-normal text-[#94a3b8]">(optional)</span>
           </label>
           <input
             id="company"
@@ -191,10 +284,10 @@ function WaitlistForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="size"
-            className="text-xs font-medium text-slate-400 tracking-wide"
+            className="text-xs font-semibold text-[#64748b] tracking-wide"
           >
             Company Size{" "}
-            <span className="text-slate-600 text-xs">(optional)</span>
+            <span className="font-normal text-[#94a3b8]">(optional)</span>
           </label>
           <select
             id="size"
@@ -203,7 +296,7 @@ function WaitlistForm() {
             onChange={handleChange}
             className="form-input rounded-lg px-4 py-3 text-sm w-full appearance-none cursor-pointer"
           >
-            <option value="">Select size...</option>
+            <option value="">Select size…</option>
             <option value="1-10">1–10 employees</option>
             <option value="11-50">11–50 employees</option>
             <option value="51-200">51–200 employees</option>
@@ -212,31 +305,22 @@ function WaitlistForm() {
         </div>
       </div>
 
-      {status === "success" ? (
-        <div className="rounded-xl p-5 text-center"
-          style={{ background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.25)" }}>
-          <div className="text-2xl mb-2">🎉</div>
-          <p className="text-emerald-300 font-semibold text-sm leading-relaxed">
-            {message}
-          </p>
+      {status === "error" && (
+        <div
+          className="rounded-lg px-4 py-3 text-sm text-rose-700"
+          style={{ background: "#fff1f2", border: "1px solid #fecdd3" }}
+        >
+          {message}
         </div>
-      ) : (
-        <>
-          {status === "error" && (
-            <div className="rounded-lg px-4 py-3 text-sm text-rose-300"
-              style={{ background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)" }}>
-              {message}
-            </div>
-          )}
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="btn-amber rounded-xl px-8 py-4 text-base w-full sm:w-auto sm:self-start cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
-          >
-            {status === "loading" ? "Joining…" : "Claim My Early Access →"}
-          </button>
-        </>
       )}
+
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="btn-primary rounded-xl px-8 py-4 text-base w-full cursor-pointer"
+      >
+        {status === "loading" ? "Joining…" : "Claim My Early Access →"}
+      </button>
     </form>
   );
 }
@@ -258,109 +342,123 @@ function UpdateLog() {
       .catch(() => setLoaded(true));
   }, []);
 
-  return (
-    <section
-      id="updates"
-      className="relative py-24 px-6"
-      style={{ background: "linear-gradient(180deg, #080d1a 0%, #0a1020 100%)" }}
-    >
-      {/* Subtle top divider */}
-      <div className="divider mb-16 max-w-4xl mx-auto" />
+  // Re-observe update cards after they load
+  useEffect(() => {
+    if (!loaded || updates.length === 0) return;
 
+    const elements = document.querySelectorAll<HTMLElement>(
+      "[data-update-card]"
+    );
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    elements.forEach((el) => {
+      el.classList.add("anim");
+      observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [loaded, updates]);
+
+  return (
+    <section id="updates" className="py-24 px-6" style={{ background: "#f8fafc" }}>
       <div className="max-w-3xl mx-auto">
-        {/* Section header */}
-        <div className="mb-12 animate-fade-up">
+        {/* Header */}
+        <div className="mb-12 anim">
           <p className="section-label mb-3">Build Log</p>
-          <h2
-            className="text-4xl font-bold mb-4 leading-tight"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            What We&apos;re Building
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-3 leading-tight">
+            What we&apos;re building
           </h2>
-          <p className="text-slate-400 text-lg leading-relaxed max-w-xl">
-            Follow our progress — translated for real people, not developers.
+          <p className="text-[#64748b] text-lg leading-relaxed max-w-xl">
+            Follow our progress — in plain language, not developer speak.
           </p>
         </div>
 
-        {/* Updates list */}
+        {/* Loading state */}
         {!loaded ? (
-          <div className="flex flex-col gap-6" aria-label="Loading updates">
+          <div className="flex flex-col gap-4" aria-label="Loading updates">
             {[1, 2].map((i) => (
-              <div key={i} className="flex gap-6">
-                <div className="w-6 h-6 rounded-full mt-1 flex-shrink-0 bg-white/10 animate-pulse" />
-                <div className="flex-1 rounded-2xl p-6 glass-card space-y-3">
-                  <div className="flex gap-3">
-                    <div className="h-4 w-24 rounded-full bg-white/10 animate-pulse" />
-                    <div className="h-4 w-16 rounded-full bg-white/10 animate-pulse" />
-                  </div>
-                  <div className="h-5 w-3/4 rounded bg-white/10 animate-pulse" />
-                  <div className="h-4 w-full rounded bg-white/[0.06] animate-pulse" />
-                  <div className="h-4 w-5/6 rounded bg-white/[0.06] animate-pulse" />
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6"
+                style={{ border: "1px solid var(--border)" }}
+              >
+                <div className="flex gap-3 mb-3">
+                  <div className="skeleton h-4 w-28 rounded-full" />
+                  <div className="skeleton h-4 w-16 rounded-full" />
                 </div>
+                <div className="skeleton h-5 w-3/4 rounded mb-2" />
+                <div className="skeleton h-4 w-full rounded mb-1.5" />
+                <div className="skeleton h-4 w-5/6 rounded" />
               </div>
             ))}
           </div>
         ) : updates.length === 0 ? (
+          /* Empty state */
           <div
-            className="rounded-2xl p-8 text-center glass-card"
+            className="rounded-2xl p-10 text-center bg-white"
+            style={{ border: "1px solid var(--border)" }}
           >
-            <div className="text-3xl mb-3">🔨</div>
-            <p className="text-slate-400 text-sm">
+            <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center mx-auto mb-3">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#94a3b8"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+            </div>
+            <p className="text-[#64748b] text-sm">
               First update coming soon. Check back.
             </p>
           </div>
         ) : (
-          <div className="flex flex-col gap-0">
+          /* Update cards */
+          <div className="flex flex-col gap-4">
             {updates.map((update, i) => (
-              <div key={i} className="relative flex gap-6 pb-10 last:pb-0">
-                {/* Timeline line */}
-                {i < updates.length - 1 && (
-                  <div
-                    className="absolute left-[11px] top-6 bottom-0 w-px"
-                    style={{ background: "linear-gradient(180deg, rgba(99,102,241,0.3) 0%, transparent 100%)" }}
-                  />
-                )}
-
-                {/* Timeline dot */}
-                <div className="relative mt-1 flex-shrink-0">
-                  <div
-                    className="w-6 h-6 rounded-full flex items-center justify-center"
-                    style={{
-                      background: "linear-gradient(135deg, #4f46e5, #6366f1)",
-                      boxShadow: "0 0 12px rgba(99,102,241,0.4)",
-                    }}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-white opacity-90" />
-                  </div>
+              <div
+                key={i}
+                data-update-card
+                className="bg-white rounded-2xl p-6"
+                style={{
+                  border: "1px solid var(--border)",
+                  transitionDelay: `${i * 0.08}s`,
+                }}
+              >
+                <div className="flex flex-wrap items-center gap-3 mb-3">
+                  <time className="text-xs text-[#94a3b8] font-medium">
+                    {formatDate(update.date)}
+                  </time>
+                  {update.badge && (
+                    <span
+                      className={`${badgeClass(update.badge)} text-xs font-semibold px-2.5 py-0.5 rounded-full`}
+                    >
+                      {update.badge}
+                    </span>
+                  )}
                 </div>
-
-                {/* Content */}
-                <div
-                  className="flex-1 rounded-2xl p-6 glass-card animate-fade-up"
-                  style={{ animationDelay: `${i * 0.1}s` }}
-                >
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <time className="text-xs text-slate-500 font-medium">
-                      {formatDate(update.date)}
-                    </time>
-                    {update.badge && (
-                      <span
-                        className={`${badgeClass(update.badge)} text-xs font-semibold px-2.5 py-0.5 rounded-full`}
-                      >
-                        {update.badge}
-                      </span>
-                    )}
-                  </div>
-                  <h3
-                    className="text-lg font-semibold text-white mb-2 leading-snug"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {update.title}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {update.description}
-                  </p>
-                </div>
+                <h3 className="text-[15px] font-semibold text-[#0f172a] mb-1.5 leading-snug">
+                  {update.title}
+                </h3>
+                <p className="text-[#64748b] text-sm leading-relaxed">
+                  {update.description}
+                </p>
               </div>
             ))}
           </div>
@@ -374,196 +472,117 @@ function UpdateLog() {
    Main Page
 ───────────────────────────────────────── */
 export default function Home() {
+  useScrollAnim();
+
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen bg-white">
       {/* ══ NAV ══ */}
-      <nav className="relative z-20 flex items-center justify-between px-6 md:px-12 py-5 border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-            style={{ background: "linear-gradient(135deg, #4f46e5, #818cf8)" }}
-            aria-hidden
-          >
-            Y
+      <nav className="sticky top-0 z-20 bg-white border-b border-[#e2e8f0]">
+        <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center gap-2.5">
+            <div
+              className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
+              style={{ background: "var(--accent)" }}
+              aria-hidden
+            >
+              Y
+            </div>
+            <span className="font-bold text-[#0f172a] tracking-tight text-[15px]">
+              YAHSHUA One
+            </span>
           </div>
-          <span
-            className="font-semibold text-white tracking-tight"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}
+
+          {/* CTA */}
+          <a
+            href="#waitlist"
+            className="btn-primary text-sm px-5 py-2.5 rounded-full hidden sm:inline-flex items-center"
           >
-            YAHSHUA One
-          </span>
+            Join Waitlist
+          </a>
         </div>
-        <a
-          href="#waitlist"
-          className="btn-amber text-xs font-bold px-5 py-2.5 rounded-full hidden sm:inline-flex items-center gap-1.5"
-        >
-          Join Waitlist
-        </a>
       </nav>
 
       {/* ══ HERO ══ */}
-      <section
-        className="relative overflow-hidden px-6 pt-20 pb-28 md:pt-28 md:pb-36"
-        style={{
-          background:
-            "linear-gradient(180deg, #0c1228 0%, #080d1a 60%, #080d1a 100%)",
-        }}
-      >
-        {/* Dot grid */}
-        <div className="dot-grid absolute inset-0 pointer-events-none opacity-60" />
-
-        {/* Animated orbs */}
-        <div className="orb orb-1" />
-        <div className="orb orb-2" />
-
-        {/* Hero content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <section className="px-6 pt-24 pb-32 md:pt-36 md:pb-44 text-center">
+        <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="animate-fade-up inline-flex items-center gap-2 mb-8">
+          <div className="animate-fade-up inline-flex mb-8">
             <span
-              className="text-xs font-semibold px-3 py-1.5 rounded-full"
+              className="text-xs font-semibold px-3.5 py-1.5 rounded-full"
               style={{
-                background: "rgba(79,70,229,0.15)",
-                border: "1px solid rgba(79,70,229,0.3)",
-                color: "#a5b4fc",
+                background: "var(--accent-light)",
+                color: "var(--accent)",
+                border: "1px solid var(--accent-border)",
               }}
             >
-              ✦ Building in Public
+              Now in Beta
             </span>
           </div>
 
           {/* Headline */}
-          <h1
-            className="gradient-text animate-fade-up delay-100 text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.08] tracking-tight mb-6"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Your Entire Backoffice.
+          <h1 className="animate-fade-up delay-100 text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 text-[#0f172a]">
+            Your entire backoffice.
             <br />
-            <span className="text-white">One Platform.</span>
+            <span style={{ color: "var(--accent)" }}>One platform.</span>
             <br />
-            AI-Powered.
+            AI&#8209;powered.
           </h1>
 
           {/* Subtext */}
-          <p className="animate-fade-up delay-200 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
+          <p className="animate-fade-up delay-200 text-lg md:text-xl text-[#64748b] max-w-xl mx-auto leading-relaxed mb-10">
             YAHSHUA One brings payroll, accounting, tax compliance, and HR
             together in one intelligent system built for Filipino businesses.
           </p>
 
           {/* CTAs */}
-          <div className="animate-fade-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="animate-fade-up delay-300 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="#waitlist"
-              className="btn-amber rounded-xl px-8 py-4 text-base font-bold inline-flex items-center gap-2"
+              className="btn-primary rounded-full px-8 py-3.5 text-base inline-flex items-center gap-2"
             >
               Join the Waitlist
-              <span aria-hidden>→</span>
             </a>
             <a
               href="#features"
-              className="btn-indigo rounded-xl px-8 py-4 text-base inline-flex items-center gap-2"
+              className="btn-ghost rounded-full px-8 py-3.5 text-base font-medium inline-flex items-center gap-2"
             >
-              See Features
+              See what&apos;s inside
             </a>
           </div>
 
-          {/* Floating stat pills */}
-          <div className="animate-fade-up delay-500 flex flex-wrap justify-center gap-3 mt-12">
-            {["Payroll", "Accounting", "Tax Filing", "HR", "AI Copilot"].map(
-              (label) => (
-                <span
-                  key={label}
-                  className="text-xs text-slate-400 px-3 py-1.5 rounded-full"
-                  style={{
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                  }}
-                >
-                  {label}
-                </span>
-              )
-            )}
-          </div>
+          {/* Trust line */}
+          <p className="animate-fade-up delay-400 mt-6 text-sm text-[#94a3b8]">
+            No credit card. No commitment. Just early access.
+          </p>
         </div>
-
-        {/* Bottom fade */}
-        <div
-          className="absolute bottom-0 inset-x-0 h-24 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(0deg, #080d1a 0%, transparent 100%)",
-          }}
-        />
       </section>
 
+      {/* ══ DIVIDER ══ */}
+      <div className="border-t border-[#e2e8f0]" />
+
       {/* ══ FEATURES ══ */}
-      <section id="features" className="relative py-24 px-6 overflow-hidden">
-        <div className="orb orb-3" style={{ position: "absolute" }} />
-        <div className="max-w-5xl mx-auto relative z-10">
+      <section id="features" className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-14 animate-fade-up">
+          <div className="text-center mb-14 anim">
             <p className="section-label mb-3">Platform</p>
-            <h2
-              className="text-4xl md:text-5xl font-bold text-white leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Everything You Need.{" "}
-              <span className="gradient-text">Nothing You Don&apos;t.</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] leading-tight">
+              Everything you need. Nothing you don&apos;t.
             </h2>
           </div>
 
-          {/* Feature cards grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {FEATURES.map((f) => (
-              <div
-                key={f.title}
-                className={`glass-card rounded-2xl p-7 animate-fade-up ${f.delay} flex flex-col gap-4 ${
-                  f.highlight
-                    ? "sm:col-span-2 lg:col-span-1"
-                    : ""
-                }`}
-                style={
-                  f.highlight
-                    ? {
-                        background:
-                          "linear-gradient(135deg, rgba(79,70,229,0.12), rgba(99,102,241,0.06))",
-                        borderColor: "rgba(99,102,241,0.3)",
-                      }
-                    : {}
-                }
-              >
-                {/* Icon */}
-                <div
-                  className="icon-badge w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
-                >
-                  {f.icon}
-                </div>
+          {/* First row: 3 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+            {FEATURES.slice(0, 3).map((f) => (
+              <FeatureCard key={f.title} feature={f} />
+            ))}
+          </div>
 
-                {/* Text */}
-                <div>
-                  <h3
-                    className="text-lg font-semibold text-white mb-1.5"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {f.title}
-                    {f.highlight && (
-                      <span
-                        className="ml-2 text-xs font-medium px-2 py-0.5 rounded-full align-middle"
-                        style={{
-                          background: "rgba(245,158,11,0.15)",
-                          color: "#fbbf24",
-                          border: "1px solid rgba(245,158,11,0.3)",
-                        }}
-                      >
-                        AI
-                      </span>
-                    )}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {f.description}
-                  </p>
-                </div>
-              </div>
+          {/* Second row: 2 cards, centered (≈ 2/3 width of parent) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-2/3 mx-auto">
+            {FEATURES.slice(3).map((f) => (
+              <FeatureCard key={f.title} feature={f} />
             ))}
           </div>
         </div>
@@ -573,83 +592,58 @@ export default function Home() {
       <UpdateLog />
 
       {/* ══ WAITLIST ══ */}
-      <section
-        id="waitlist"
-        className="relative py-24 px-6 overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(180deg, #0a1020 0%, #0c1228 50%, #080d1a 100%)",
-        }}
-      >
-        {/* Orb */}
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(79,70,229,0.18) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-
-        <div className="max-w-2xl mx-auto relative z-10">
+      <section id="waitlist" className="py-24 px-6">
+        <div className="max-w-lg mx-auto">
           {/* Header */}
-          <div className="mb-10 animate-fade-up">
+          <div className="text-center mb-10 anim">
             <p className="section-label mb-3">Early Access</p>
-            <h2
-              className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Get Ahead of the Queue.
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-3 leading-tight">
+              Get ahead of the queue.
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-[#64748b] text-lg leading-relaxed">
               Be among the first Filipino businesses to experience YAHSHUA One.
-              We&apos;re building this for you — and we&apos;ll keep you in the loop.
             </p>
           </div>
 
           {/* Form card */}
           <div
-            className="glass-card rounded-3xl p-8 md:p-10 animate-fade-up delay-100"
+            className="bg-white rounded-2xl p-8 anim delay-100"
+            style={{
+              border: "1px solid var(--border)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.05)",
+            }}
           >
             <WaitlistForm />
           </div>
 
           {/* Trust note */}
-          <p className="mt-5 text-center text-xs text-slate-600">
+          <p className="mt-5 text-center text-xs text-[#94a3b8]">
             No spam. No credit card. Just honest updates as we build.
           </p>
         </div>
       </section>
 
       {/* ══ FOOTER ══ */}
-      <footer
-        className="relative py-10 px-6 border-t"
-        style={{ borderColor: "rgba(255,255,255,0.06)" }}
-      >
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+      <footer className="border-t border-[#e2e8f0] py-8 px-6 mt-auto">
+        <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5">
             <div
-              className="w-7 h-7 rounded-md flex items-center justify-center text-white font-bold text-xs"
-              style={{
-                background: "linear-gradient(135deg, #4f46e5, #818cf8)",
-              }}
+              className="w-7 h-7 rounded-lg flex items-center justify-center text-white font-bold text-xs flex-shrink-0"
+              style={{ background: "var(--accent)" }}
               aria-hidden
             >
               Y
             </div>
             <div>
-              <p className="text-sm font-semibold text-white leading-tight">
+              <p className="text-[13px] font-bold text-[#0f172a] leading-tight">
                 YAHSHUA One
               </p>
-              <p className="text-xs text-slate-600">by ABBA Initiative</p>
+              <p className="text-xs text-[#94a3b8]">by ABBA Initiative</p>
             </div>
           </div>
-
-          <div className="flex flex-col sm:flex-row items-center gap-4 text-xs text-slate-600">
-            <span>Built in the Philippines 🇵🇭</span>
-            <span className="hidden sm:inline opacity-30">·</span>
-            <span>© {new Date().getFullYear()} ABBA Initiative</span>
-          </div>
+          <span className="text-sm text-[#94a3b8]">
+            Built in the Philippines 🇵🇭
+          </span>
         </div>
       </footer>
     </main>
