@@ -1,6 +1,12 @@
 [
   {
     "date": "2026-03-19",
+    "badge": "Progress Update",
+    "title": "Approvals, Payroll Exports & AI Engine Live",
+    "description": "You can now set up multi-stage approval workflows for employee data changes — every update goes through Review, Recommend, and Approve stages before it takes effect, with full visibility into who approved what and when. Payroll registers now export directly to bank disbursement formats (RCBC, Metrobank, BDO), and payslips can be emailed to your entire team in one click. Under the hood, the AI copilot engine is now fully wired in — laying the foundation for the smart automation features coming your way."
+  },
+  {
+    "date": "2026-03-19",
     "badge": "Launch",
     "title": "YAHSHUA One is Now in Development",
     "description": "We officially kicked off building YAHSHUA One — your all-in-one backoffice platform. The foundation is set: payroll, accounting, and HR modules are underway. We are building in public and will keep you updated every step of the way."
