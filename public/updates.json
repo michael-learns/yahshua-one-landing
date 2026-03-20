@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-03-21",
+    "badge": "Progress Update",
+    "title": "Recurring Pay, Gov't Contributions & Built-in Help",
+    "description": "Managing your employees' pay just got a lot more powerful. You can now set up recurring earnings — like regular allowances — per employee, with full history, audit trails, and linked deduction support so everything stays in sync. Government contributions (SSS, PhilHealth, Pag-IBIG) are now fully customizable: override amounts per employee, set effectivity dates, apply per-location rules, and track exactly which rates apply at any given time. We also built the foundation for a built-in help system — so contextual guidance will be available right where you need it, without ever leaving the platform."
+  },
+  {
     "date": "2026-03-20",
     "badge": "Progress Update",
     "title": "Dependents, Cost Center History & Smarter Work Schedules",
