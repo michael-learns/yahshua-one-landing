@@ -2,6 +2,12 @@
   {
     "date": "2026-03-20",
     "badge": "Progress Update",
+    "title": "Dependents, Cost Center History & Smarter Work Schedules",
+    "description": "Employee profiles got a serious upgrade today. You can now record employee dependents directly from their profile page, track each employee's cost center history, and set up custom employee ID formats and auto-numbering for your company. Work schedule configurations now cascade automatically — set it once at the top level and it flows down, so your payroll always picks up the right schedule without manual updates. Regularization reports are also live, giving you a clear view of which probationary employees are approaching their regularization date. Organizational data like locations, departments, employment types, and sections now each have their own dedicated pages, making your company structure much easier to manage. You can also bulk-import divisions and remove sections or units you no longer need."
+  },
+  {
+    "date": "2026-03-20",
+    "badge": "Progress Update",
     "title": "BIR Forms, Org Structure & 13th Month Pay Live",
     "description": "Yesterday was a massive day. Your organizational chart is now fully supported in YAHSHUA One — employees can be assigned to sections, units, and sub-units with full history tracking, so payroll always knows exactly who belongs where and when. BIR Forms 2316 and 1604C are now built in, letting you generate government-required tax certificates directly from the platform. The 13th Month Pay report is live too — view per-employee breakdowns, export to Excel, manage adjustments, and recalculate anytime. Cost center tracking and timesheet verification also got wired up and ready."
   },
