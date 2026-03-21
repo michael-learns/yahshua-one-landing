@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Check, Zap } from "lucide-react";
+import { ChevronDown, Check } from "lucide-react";
 import { LogoMark } from "./components/Logo";
 
 /* ══════════════════════════════════════════════════════════════
@@ -384,148 +384,7 @@ function HRMockup() {
   );
 }
 
-/* ══════════════════════════════════════════════════════════════
-   MCP SECTION — AI provider cards
-══════════════════════════════════════════════════════════════ */
-/* Official ChatGPT logo (OpenAI) */
-function ChatGPTLogo({ size = 28 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ChatGPT">
-      <path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-6.634-2.525 10.079 10.079 0 0 0-9.612 6.977 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 6.634 2.524 10.079 10.079 0 0 0 9.617-6.981 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.243-11.813zM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496zM6.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103l-8.051 4.649a7.504 7.504 0 0 1-10.24-2.744zM4.297 13.62A7.469 7.469 0 0 1 8.2 10.333c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L7.044 23.86a7.504 7.504 0 0 1-2.747-10.24zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .114-.012l8.048 4.648a7.498 7.498 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.647-1.13zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l8.05-4.645a7.497 7.497 0 0 1 11.135 7.763zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.497 7.497 0 0 1 12.293-5.756 6.94 6.94 0 0 0-.236.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.006 11.225zm1.829-3.943l4.33-2.501 4.332 2.499v4.996l-4.331 2.5-4.331-2.5V18z" fill="currentColor"/>
-    </svg>
-  );
-}
 
-/* Official Claude logo (Anthropic) */
-function ClaudeLogo({ size = 28 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Claude">
-      <path d="M22.676 5.027c-1.204 3.173-2.498 6.31-3.745 9.464-2.625 6.636-5.358 13.236-7.659 19.98-.327.95-.63 1.91-.893 2.879-.076.283.11.517.405.493 1.814-.15 3.618-.44 5.408-.764.315-.057.578-.278.685-.583.983-2.824 2.07-5.612 3.193-8.386.083-.206.284-.34.507-.34h9.39c.228 0 .432.14.513.353 1.104 2.854 2.17 5.722 3.142 8.617.093.275.346.467.635.489 1.697.128 3.395.306 5.083.527.303.04.513-.21.437-.503a63.43 63.43 0 0 0-.847-2.795c-2.29-6.713-5.007-13.28-7.618-19.887A429.97 429.97 0 0 0 27.48 5.03c-.258-.591-.8-.98-1.437-1.003a1.523 1.523 0 0 0-1.367.999zM24.84 19.52c.56 1.49 1.103 2.989 1.63 4.494.08.228-.09.463-.333.463h-5.93c-.243 0-.412-.235-.333-.463a251.48 251.48 0 0 1 1.676-4.613c.417-1.106.806-2.22 1.215-3.324.065-.176.308-.172.37.006.538 1.478 1.072 2.956 1.704 4.437z" fill="currentColor"/>
-    </svg>
-  );
-}
-
-function AIProviderCard({ brand }: { brand: "ChatGPT" | "Claude" }) {
-  const isChatGPT = brand === "ChatGPT";
-  return (
-    <div
-      className="px-5 py-4 rounded-2xl text-white flex items-center gap-3 whitespace-nowrap"
-      style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.22)" }}
-    >
-      <span
-        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-        style={{ background: isChatGPT ? "#10A37F" : "#D97757" }}
-      >
-        {isChatGPT ? <ChatGPTLogo size={20} /> : <ClaudeLogo size={20} />}
-      </span>
-      <div>
-        <div className="font-bold text-base leading-tight">{brand}</div>
-        <div className="text-xs" style={{ color: "rgba(255,255,255,0.6)" }}>
-          {isChatGPT ? "by OpenAI" : "by Anthropic"}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function MCPHubCard() {
-  return (
-    <div
-      className="px-6 py-5 rounded-2xl text-white text-center"
-      style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.3)" }}
-    >
-      <div className="flex items-center justify-center gap-2 mb-1">
-        <Zap size={16} className="opacity-80" />
-        <span className="font-bold text-base">MCP</span>
-      </div>
-      <div className="text-xs whitespace-nowrap" style={{ color: "rgba(255,255,255,0.72)" }}>
-        Model Context Protocol
-      </div>
-    </div>
-  );
-}
-
-function YahshuaOneCard() {
-  return (
-    <div
-      className="px-5 py-4 rounded-2xl text-white flex items-center gap-3 whitespace-nowrap"
-      style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)" }}
-    >
-      <LogoMark size={28} />
-      <div>
-        <div className="font-semibold text-sm leading-tight">YAHSHUA One</div>
-        <div className="text-xs" style={{ color: "rgba(255,255,255,0.72)" }}>Your backoffice</div>
-      </div>
-    </div>
-  );
-}
-
-function MCPDiagram() {
-  const dashLine = {
-    backgroundImage:
-      "repeating-linear-gradient(90deg, rgba(255,255,255,0.25) 0, rgba(255,255,255,0.25) 4px, transparent 4px, transparent 8px)",
-    height: 1.5,
-  };
-
-  return (
-    <>
-      {/* ── Desktop ── */}
-      <div className="hidden md:flex items-center justify-center gap-0">
-        {/* Left: AI providers stacked */}
-        <div className="flex flex-col gap-3">
-          <AIProviderCard brand="ChatGPT" />
-          <AIProviderCard brand="Claude" />
-        </div>
-
-        {/* Fork SVG — two branches merging to center */}
-        <svg
-          width="72"
-          height="120"
-          viewBox="0 0 72 120"
-          fill="none"
-          aria-hidden
-          className="flex-shrink-0"
-        >
-          <path
-            d="M0 30 L36 30 L36 60 L72 60"
-            stroke="rgba(255,255,255,0.25)"
-            strokeWidth="1.5"
-            strokeDasharray="4 4"
-            fill="none"
-          />
-          <path
-            d="M0 90 L36 90 L36 60"
-            stroke="rgba(255,255,255,0.25)"
-            strokeWidth="1.5"
-            strokeDasharray="4 4"
-            fill="none"
-          />
-        </svg>
-
-        {/* MCP Hub */}
-        <MCPHubCard />
-
-        {/* Straight connector */}
-        <div className="flex-shrink-0" style={{ width: 56 }}>
-          <div style={dashLine} />
-        </div>
-
-        {/* YAHSHUA One */}
-        <YahshuaOneCard />
-      </div>
-
-      {/* ── Mobile: stacked vertically ── */}
-      <div className="flex md:hidden flex-col items-center gap-3">
-        <AIProviderCard brand="ChatGPT" />
-        <AIProviderCard brand="Claude" />
-        <div className="w-px h-5" style={{ background: "rgba(255,255,255,0.25)" }} />
-        <MCPHubCard />
-        <div className="w-px h-5" style={{ background: "rgba(255,255,255,0.25)" }} />
-        <YahshuaOneCard />
-      </div>
-    </>
-  );
-}
 
 /* ══════════════════════════════════════════════════════════════
    PAGE
@@ -656,7 +515,7 @@ export default function Home() {
             className="hero-subtext text-xl text-[#5c5878] max-w-lg mb-10"
             style={{ lineHeight: 1.7 }}
           >
-            Ask ChatGPT or Claude about your payroll, taxes, and finances — and get real answers from your actual business data. YAHSHUA One is the AI-powered backoffice built for Filipino businesses.
+            YAHSHUA One is the AI-powered backoffice built for Filipino businesses — handling payroll, taxes, compliance, and HR so you can focus on growing.
           </p>
 
           {/* CTAs */}
@@ -1082,106 +941,6 @@ export default function Home() {
               <FeatureItem delay={50}>Employee self-service</FeatureItem>
               <FeatureItem delay={100}>Digital HR records</FeatureItem>
             </ul>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── SECTION 6: FEATURE 05 — MCP / AI CONNECTIONS ──── */}
-      <section
-        className="min-h-screen flex items-center justify-center px-6 py-24"
-        style={{ background: "oklch(0.46 0.25 264)" }}
-      >
-        <div className="max-w-5xl mx-auto w-full">
-          {/* Section number + headline + subtext */}
-          <Reveal className="text-center">
-            <div
-              className="font-normal mb-6"
-              style={{
-                fontSize: "clamp(3.5rem, 7vw, 5rem)",
-                lineHeight: 1,
-                color: "rgba(255,255,255,0.4)",
-              }}
-            >
-              05.
-            </div>
-            <h2
-              className="font-extrabold text-white mb-4"
-              style={{
-                fontSize: "clamp(2.5rem, 6vw, 4rem)",
-                letterSpacing: "-0.03em",
-                lineHeight: 1.1,
-              }}
-            >
-              Talk to your business
-              <br />
-              through AI you already know.
-            </h2>
-            <p
-              className="text-lg md:text-xl max-w-2xl mx-auto mt-4"
-              style={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.7 }}
-            >
-              YAHSHUA One connects to ChatGPT and Claude through MCP — giving your AI assistant
-              direct access to your payroll data, financial records, and compliance status. Ask in
-              plain language. Get real answers from your actual business data.
-            </p>
-          </Reveal>
-
-          {/* MCP Connection Diagram */}
-          <Reveal delay={150} className="mt-12">
-            <MCPDiagram />
-          </Reveal>
-
-          {/* Example interaction cards */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                label: "via ChatGPT",
-                labelColor: "#10A37F",
-                user: "How much did we pay in government contributions last month?",
-                answer: "₱42,380 total — SSS ₱18,200, PhilHealth ₱12,600, Pag-IBIG ₱11,580",
-              },
-              {
-                label: "via Claude",
-                labelColor: "#D97757",
-                user: "Are all our BIR deadlines for Q1 covered?",
-                answer: "Yes — 3 filed, 1 due March 25. I'll remind you 3 days before.",
-              },
-              {
-                label: "via any AI",
-                labelColor: "rgba(255,255,255,0.6)",
-                user: "Who has pending overtime requests this week?",
-                answer: "5 employees — Juan, Maria, Pedro, Ana, and Carlo. Approve all?",
-              },
-            ].map((ex, i) => (
-              <Reveal key={i} delay={i * 80}>
-                <div
-                  className="rounded-xl p-4 h-full"
-                  style={{
-                    background: "rgba(255,255,255,0.1)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                  }}
-                >
-                  <div className="text-xs font-semibold mb-3" style={{ color: ex.labelColor }}>
-                    💬 {ex.label}
-                  </div>
-                  <p
-                    className="text-sm italic mb-3"
-                    style={{ color: "rgba(255,255,255,0.75)" }}
-                  >
-                    &ldquo;{ex.user}&rdquo;
-                  </p>
-                  <p className="text-sm font-semibold text-white">{ex.answer}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          {/* Bottom note */}
-          <Reveal delay={200} className="text-center mt-8">
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-              Powered by Model Context Protocol (MCP) — the open standard for connecting AI to
-              your tools.
-            </p>
           </Reveal>
         </div>
       </section>
