@@ -1,33 +1,39 @@
 [
   {
     "date": "2026-03-22",
+    "badge": "Progress Update",
+    "title": "Approvals and User Controls Expanded",
+    "description": "Yesterday we completed a major upgrade to approvals and employee requests: teams can now run cleaner multi-step review flows, track leave conversions end to end, and process bulk profile updates with better visibility. We also expanded user management and reporting controls while tightening permissions and data checks, so day-to-day HR and payroll operations are safer and more reliable for growing Filipino companies."
+  },
+  {
+    "date": "2026-03-22",
     "badge": "Improvement",
     "title": "Landing Page Refresh + SEO Foundations Now Live",
-    "description": "We upgraded the YAHSHUA One landing experience with a cleaner visual system, stronger brand styling, and better readability across sections. We also added core SEO foundations \u2014 richer metadata, structured data, canonical tags, robots/sitemap support, and social preview setup \u2014 so the site is easier to discover and share as we keep shipping product updates."
+    "description": "We upgraded the YAHSHUA One landing experience with a cleaner visual system, stronger brand styling, and better readability across sections. We also added core SEO foundations — richer metadata, structured data, canonical tags, robots/sitemap support, and social preview setup — so the site is easier to discover and share as we keep shipping product updates."
   },
   {
     "date": "2026-03-21",
     "badge": "Progress Update",
     "title": "Payroll Settings Now Fully Configurable",
-    "description": "The team completed the full payroll settings module \u2014 you can now configure every rule that governs how your employees get paid: deduction priorities, leave conversion, net pay rounding, and automatic allowances or deductions by location and employment type. Government contribution rules (SSS, PhilHealth, Pag-IBIG) are now fully customizable down to the employee level, and rate settings let you set night differential windows, pre-shift rates, and flexible pay overrides by department or position. Shift management and multi-level allowance approvals are also now fully built and ready to use."
+    "description": "The team completed the full payroll settings module — you can now configure every rule that governs how your employees get paid: deduction priorities, leave conversion, net pay rounding, and automatic allowances or deductions by location and employment type. Government contribution rules (SSS, PhilHealth, Pag-IBIG) are now fully customizable down to the employee level, and rate settings let you set night differential windows, pre-shift rates, and flexible pay overrides by department or position. Shift management and multi-level allowance approvals are also now fully built and ready to use."
   },
   {
     "date": "2026-03-21",
     "badge": "Progress Update",
     "title": "Recurring Pay, Gov't Contributions & Built-in Help",
-    "description": "Managing your employees' pay just got a lot more powerful. You can now set up recurring earnings \u2014 like regular allowances \u2014 per employee, with full history, audit trails, and linked deduction support so everything stays in sync. Government contributions (SSS, PhilHealth, Pag-IBIG) are now fully customizable: override amounts per employee, set effectivity dates, apply per-location rules, and track exactly which rates apply at any given time. We also built the foundation for a built-in help system \u2014 so contextual guidance will be available right where you need it, without ever leaving the platform."
+    "description": "Managing your employees' pay just got a lot more powerful. You can now set up recurring earnings — like regular allowances — per employee, with full history, audit trails, and linked deduction support so everything stays in sync. Government contributions (SSS, PhilHealth, Pag-IBIG) are now fully customizable: override amounts per employee, set effectivity dates, apply per-location rules, and track exactly which rates apply at any given time. We also built the foundation for a built-in help system — so contextual guidance will be available right where you need it, without ever leaving the platform."
   },
   {
     "date": "2026-03-20",
     "badge": "Progress Update",
     "title": "Dependents, Cost Center History & Smarter Work Schedules",
-    "description": "Employee profiles got a serious upgrade today. You can now record employee dependents directly from their profile page, track each employee's cost center history, and set up custom employee ID formats and auto-numbering for your company. Work schedule configurations now cascade automatically \u2014 set it once at the top level and it flows down, so your payroll always picks up the right schedule without manual updates. Regularization reports are also live, giving you a clear view of which probationary employees are approaching their regularization date. Organizational data like locations, departments, employment types, and sections now each have their own dedicated pages, making your company structure much easier to manage. You can also bulk-import divisions and remove sections or units you no longer need."
+    "description": "Employee profiles got a serious upgrade today. You can now record employee dependents directly from their profile page, track each employee's cost center history, and set up custom employee ID formats and auto-numbering for your company. Work schedule configurations now cascade automatically — set it once at the top level and it flows down, so your payroll always picks up the right schedule without manual updates. Regularization reports are also live, giving you a clear view of which probationary employees are approaching their regularization date. Organizational data like locations, departments, employment types, and sections now each have their own dedicated pages, making your company structure much easier to manage. You can also bulk-import divisions and remove sections or units you no longer need."
   },
   {
     "date": "2026-03-20",
     "badge": "Progress Update",
     "title": "BIR Forms, Org Structure & 13th Month Pay Live",
-    "description": "Yesterday was a massive day. Your organizational chart is now fully supported in YAHSHUA One \u2014 employees can be assigned to sections, units, and sub-units with full history tracking, so payroll always knows exactly who belongs where and when. BIR Forms 2316 and 1604C are now built in, letting you generate government-required tax certificates directly from the platform. The 13th Month Pay report is live too \u2014 view per-employee breakdowns, export to Excel, manage adjustments, and recalculate anytime. Cost center tracking and timesheet verification also got wired up and ready."
+    "description": "Yesterday was a massive day. Your organizational chart is now fully supported in YAHSHUA One — employees can be assigned to sections, units, and sub-units with full history tracking, so payroll always knows exactly who belongs where and when. BIR Forms 2316 and 1604C are now built in, letting you generate government-required tax certificates directly from the platform. The 13th Month Pay report is live too — view per-employee breakdowns, export to Excel, manage adjustments, and recalculate anytime. Cost center tracking and timesheet verification also got wired up and ready."
   },
   {
     "date": "2026-03-19",
@@ -39,18 +45,18 @@
     "date": "2026-03-19",
     "badge": "Progress Update",
     "title": "Staff Portal, Employee Editing & Government Reports",
-    "description": "A major push landed today across three areas. First, a full internal staff portal is now live \u2014 the YAHSHUA One team can manage companies, users, subscriptions, billing, and audit logs in one place, with proper role-based access and secure account switching between companies. Second, employee management got a big upgrade: you can now edit personal information directly from an employee's profile, view profiles of inactive or separated employees, and bulk-update employees with clearer selections and a faster refresh flow. Third, government contribution reports are now fully available \u2014 SSS, PhilHealth, and Pag-IBIG summaries, 13th month pay calculations, and year-to-date tax reports can all be generated from the payroll module. Post-dated check (PDC) requests also now flow through proper approval stages."
+    "description": "A major push landed today across three areas. First, a full internal staff portal is now live — the YAHSHUA One team can manage companies, users, subscriptions, billing, and audit logs in one place, with proper role-based access and secure account switching between companies. Second, employee management got a big upgrade: you can now edit personal information directly from an employee's profile, view profiles of inactive or separated employees, and bulk-update employees with clearer selections and a faster refresh flow. Third, government contribution reports are now fully available — SSS, PhilHealth, and Pag-IBIG summaries, 13th month pay calculations, and year-to-date tax reports can all be generated from the payroll module. Post-dated check (PDC) requests also now flow through proper approval stages."
   },
   {
     "date": "2026-03-19",
     "badge": "Progress Update",
     "title": "Approvals, Payroll Exports & AI Engine Live",
-    "description": "You can now set up multi-stage approval workflows for employee data changes \u2014 every update goes through Review, Recommend, and Approve stages before it takes effect, with full visibility into who approved what and when. Payroll registers now export directly to bank disbursement formats (RCBC, Metrobank, BDO), and payslips can be emailed to your entire team in one click. Under the hood, the AI copilot engine is now fully wired in \u2014 laying the foundation for the smart automation features coming your way."
+    "description": "You can now set up multi-stage approval workflows for employee data changes — every update goes through Review, Recommend, and Approve stages before it takes effect, with full visibility into who approved what and when. Payroll registers now export directly to bank disbursement formats (RCBC, Metrobank, BDO), and payslips can be emailed to your entire team in one click. Under the hood, the AI copilot engine is now fully wired in — laying the foundation for the smart automation features coming your way."
   },
   {
     "date": "2026-03-19",
     "badge": "Launch",
     "title": "YAHSHUA One is Now in Development",
-    "description": "We officially kicked off building YAHSHUA One \u2014 your all-in-one backoffice platform. The foundation is set: payroll, accounting, and HR modules are underway. We are building in public and will keep you updated every step of the way."
+    "description": "We officially kicked off building YAHSHUA One — your all-in-one backoffice platform. The foundation is set: payroll, accounting, and HR modules are underway. We are building in public and will keep you updated every step of the way."
   }
 ]
