@@ -114,7 +114,7 @@ export default function UpdatesPage() {
   return (
     <div
       className="min-h-screen text-[#1c1a2e]"
-      style={{ fontFamily: "var(--font-geist-sans, sans-serif)", background: "#faf9f7" }}
+      style={{ fontFamily: "var(--font-inter, sans-serif)", background: "#faf9f7" }}
     >
       {/* ── NAVBAR ── */}
       <nav
