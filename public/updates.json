@@ -2,6 +2,12 @@
   {
     "date": "2026-03-23",
     "badge": "Progress Update",
+    "title": "Smarter Timesheet Verification & Attendance Reviews",
+    "description": "Timesheet verification just got a major upgrade. The system now checks attendance record by record, per employee, and automatically flags anything suspicious — like overtime logged on a rest day or hours that don't add up — with a red badge so your team never misses an issue. Locked attendance periods can now be unlocked with a password when corrections are needed, and a full activity log tracks every change. Reviews now follow a clean three-stage flow (Reviewer → Recommender → Approver) with live progress bars showing exactly where things stand. You can also add remarks to any individual attendance record, and bulk-approve or bulk-review all records in one click."
+  },
+  {
+    "date": "2026-03-23",
+    "badge": "Progress Update",
     "title": "Daily Product Improvements",
     "description": "We improved account access flows so getting into YAHSHUA One is smoother and more reliable. We also tightened communication workflows so product updates reach users more consistently."
   },
