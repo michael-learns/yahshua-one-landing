@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-03-24",
+    "badge": "Progress Update",
+    "title": "Full Payroll Breakdown — See Every Cent Explained",
+    "description": "You can now open any payroll line item and see a full, transparent breakdown of exactly how each employee's pay was calculated — rate derivation, government contributions with bracket matching, annualized tax computation, and the exact payroll settings that were active on their pay period. No more guessing or calling your accountant to explain a deduction. Everything is clear, organized tab by tab. We also completed the help management system for platform administrators, paving the way for in-app guidance across YAHSHUA One."
+  },
+  {
     "date": "2026-03-23",
     "badge": "Progress Update",
     "title": "Smarter Timesheet Verification & Attendance Reviews",
