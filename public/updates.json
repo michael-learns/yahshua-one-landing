@@ -2,6 +2,12 @@
   {
     "date": "2026-03-24",
     "badge": "Progress Update",
+    "title": "Face Recognition, Pay History & Full Payroll Engines",
+    "description": "YAHSHUA One can now identify employees by their face — enabling biometric clock-ins and image-based attendance lookups directly from your admin dashboard, no manual searching required. We also completed a full set of complex payroll calculation engines: night differential, back pay, longevity pay, half-day leave deductions, double holiday rates, and previous-month government contribution carryovers are all now computed automatically. On top of that, every employee now has a full salary history — every rate change, with dates and audit trail — and bulk overtime or work requests can be imported straight from a CSV instead of entered one by one."
+  },
+  {
+    "date": "2026-03-24",
+    "badge": "Progress Update",
     "title": "Full Payroll Breakdown — See Every Cent Explained",
     "description": "You can now open any payroll line item and see a full, transparent breakdown of exactly how each employee's pay was calculated — rate derivation, government contributions with bracket matching, annualized tax computation, and the exact payroll settings that were active on their pay period. No more guessing or calling your accountant to explain a deduction. Everything is clear, organized tab by tab. We also completed the help management system for platform administrators, paving the way for in-app guidance across YAHSHUA One."
   },
