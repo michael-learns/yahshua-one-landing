@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-03-25",
+    "badge": "Progress Update",
+    "title": "13th Month Pay & Final Pay, Now Fully Automated",
+    "description": "13th month pay can now be generated directly from your payroll data — the system computes everything automatically based on your employees' actual earnings, no more manual spreadsheets or year-end scrambling. Final pay for departing employees also got a major upgrade: the platform now manages the full lifecycle of a separation — tracking each affected employee, computing their last pay, and handling adjustments on the fly. On top of that, the detailed pay breakdown view keeps getting richer, with new tabs showing exactly how each employee's rate and tax were derived so every peso is fully explained."
+  },
+  {
     "date": "2026-03-24",
     "badge": "Progress Update",
     "title": "Final Pay, Employee Schedules & More Payroll Power",
