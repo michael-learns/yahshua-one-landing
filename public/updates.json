@@ -2,6 +2,12 @@
   {
     "date": "2026-03-24",
     "badge": "Progress Update",
+    "title": "Final Pay, Employee Schedules & More Payroll Power",
+    "description": "Big day for payroll. You can now compute Final Pay for departing employees — all the complex stuff like unused leave conversions, prorated pay, and separation scenarios are handled automatically by the system. Recurring work schedules can now be assigned per employee, so the system always knows what hours each person is supposed to work without having to re-enter it every cycle. Workflow configurations now have a dedicated admin section where you can set up, view, and edit your approval processes from one place. The payroll engine itself was also significantly upgraded with more edge-case calculations, moving closer to handling the full range of Filipino payroll scenarios your business will encounter."
+  },
+  {
+    "date": "2026-03-24",
+    "badge": "Progress Update",
     "title": "PhilHealth & SSS Remittance Files, Ready to Submit",
     "description": "You can now export your PhilHealth and SSS government remittance files directly from YAHSHUA One — in the exact CSV format that the agencies require, complete with the correct column headers (MEM_PHIC, MO_SAL, EE_STAT for PhilHealth; EE/ER/EC/MPF breakdown for SSS). No more manually building spreadsheets or reformatting data before submission. Just run your payroll, generate the file, and submit. This brings government contribution compliance from a manual chore to a one-click task."
   },
