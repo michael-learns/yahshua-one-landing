@@ -2,6 +2,12 @@
   {
     "date": "2026-03-24",
     "badge": "Progress Update",
+    "title": "PhilHealth & SSS Remittance Files, Ready to Submit",
+    "description": "You can now export your PhilHealth and SSS government remittance files directly from YAHSHUA One — in the exact CSV format that the agencies require, complete with the correct column headers (MEM_PHIC, MO_SAL, EE_STAT for PhilHealth; EE/ER/EC/MPF breakdown for SSS). No more manually building spreadsheets or reformatting data before submission. Just run your payroll, generate the file, and submit. This brings government contribution compliance from a manual chore to a one-click task."
+  },
+  {
+    "date": "2026-03-24",
+    "badge": "Progress Update",
     "title": "Face Recognition, Pay History & Full Payroll Engines",
     "description": "YAHSHUA One can now identify employees by their face — enabling biometric clock-ins and image-based attendance lookups directly from your admin dashboard, no manual searching required. We also completed a full set of complex payroll calculation engines: night differential, back pay, longevity pay, half-day leave deductions, double holiday rates, and previous-month government contribution carryovers are all now computed automatically. On top of that, every employee now has a full salary history — every rate change, with dates and audit trail — and bulk overtime or work requests can be imported straight from a CSV instead of entered one by one."
   },
