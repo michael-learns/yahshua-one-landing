@@ -2,6 +2,12 @@
   {
     "date": "2026-03-25",
     "badge": "Progress Update",
+    "title": "Payroll Configuration, Leave Requests & Contribution Reports All Live",
+    "description": "A huge wave of updates landed today. Your payroll settings have been completely reorganized — everything from rate settings to pay group configurations now lives in one dedicated Payroll Configuration section, making it much easier to find and manage your rules. Employees can now file leave requests directly through the system, with proper approval routing and lifecycle tracking from submission to resolution. Time-based requests (like overtime or schedule adjustments) also now go through a structured filing process. On the reports side, contribution and remittance summaries are live, alongside attendance and daily hours reports and an employee logs monitoring page — giving you a clear view of everything that happened across your workforce in any given period. We also completed a fully configurable payroll computation engine, which means the system can now handle complex, company-specific computation rules rather than one-size-fits-all formulas."
+  },
+  {
+    "date": "2026-03-25",
+    "badge": "Progress Update",
     "title": "Cash Advances Now Fully Managed End-to-End",
     "description": "Employee cash advances now have a complete lifecycle inside YAHSHUA One. Your team can submit requests, route them through multi-stage approvals, and choose how repayments are structured — including post-dated check (PDC) disbursements and custom scheduled payment plans with specific dates per installment. Attachments can be made required based on your company policy. Two new payroll report pages also went live: the Payroll Summary Detail and Year-to-Date Tax Summary are now fully accessible, giving you a clear, downloadable picture of what was paid and withheld across any pay period."
   },
