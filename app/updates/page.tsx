@@ -3,6 +3,22 @@
 import { useState, useEffect, useRef } from "react";
 import { LogoMark } from "../components/Logo";
 
+/* ═══════════════════════════════════════════════════════════════
+   BRAND — same as landing page
+═══════════════════════════════════════════════════════════════ */
+const BG     = "#07090f";
+const CARD   = "#0c1118";
+const BORDER = "rgba(255,255,255,0.07)";
+const A1     = "#2980B0";
+const A2     = "#28B0E8";
+const A3     = "#7DE5F0";
+const GRAD   = `linear-gradient(135deg, ${A1} 0%, ${A3} 100%)`;
+const W70    = "rgba(255,255,255,0.70)";
+const W50    = "rgba(255,255,255,0.50)";
+const W30    = "rgba(255,255,255,0.30)";
+const W10    = "rgba(255,255,255,0.10)";
+const W07    = "rgba(255,255,255,0.07)";
+
 /* ══════════════════════════════════════════════════════════════
    TYPES
 ══════════════════════════════════════════════════════════════ */
@@ -74,9 +90,7 @@ function Badge({ label }: { label: string }) {
   else if (normalized.includes("improve")) cls = "badge-improvement";
 
   return (
-    <span
-      className={`inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full ${cls}`}
-    >
+    <span className={`inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded-full ${cls}`}>
       {label}
     </span>
   );
@@ -113,61 +127,76 @@ export default function UpdatesPage() {
 
   return (
     <div
-      className="min-h-screen text-[#1c1a2e]"
-      style={{ fontFamily: "var(--font-inter, sans-serif)", background: "#faf9f7" }}
+      className="min-h-screen"
+      style={{ background: BG, color: "#fff", fontFamily: "var(--font-inter, sans-serif)" }}
     >
+      {/* Ambient glow */}
+      <div className="fixed inset-0 pointer-events-none" style={{
+        background: `radial-gradient(ellipse 80% 40% at 50% -5%, rgba(40,176,232,0.08) 0%, transparent 60%)`,
+      }} />
+
       {/* ── NAVBAR ── */}
       <nav
-        className="sticky top-0 z-50 backdrop-blur-sm border-b border-[#e8e6f0]"
-        style={{ background: "rgba(250,249,247,0.92)" }}
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+        style={{ background: "rgba(7,9,15,0.88)", borderBottom: `1px solid ${BORDER}` }}
       >
         <div className="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2.5 group">
             <LogoMark size={28} />
-            <span className="font-semibold text-[#1c1a2e] text-sm tracking-tight group-hover:opacity-70 transition-opacity">
+            <span className="font-semibold text-white text-sm tracking-tight group-hover:opacity-70 transition-opacity">
               YAHSHUA One
             </span>
           </a>
-          <a
-            href="/#waitlist"
-            className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
-            style={{ background: "oklch(0.46 0.25 264)" }}
-          >
-            Join Waitlist
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="/" className="text-sm font-medium hidden sm:block transition-opacity hover:opacity-70"
+              style={{ color: W50 }}>← Back</a>
+            <a
+              href="/#waitlist"
+              className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
+              style={{ background: GRAD }}
+            >
+              Join Waitlist
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* ── HEADER ── */}
-      <header className="max-w-3xl mx-auto px-6 pt-16 pb-12">
-        <div className="hero-badge inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold mb-6"
-          style={{ background: "#f0eef9", color: "oklch(0.46 0.25 264)" }}
-        >
-          ✦ Building in public
-        </div>
-        <h1
-          className="font-extrabold text-[#1c1a2e] mb-4"
-          style={{
-            fontSize: "clamp(2.5rem, 6vw, 3.75rem)",
-            letterSpacing: "-0.035em",
-            lineHeight: 1.05,
-          }}
-        >
-          Dev Log
-        </h1>
-        <p className="text-lg text-[#5c5878] max-w-lg" style={{ lineHeight: 1.7 }}>
-          Every update, every milestone — in plain language.
-          Follow along as we build YAHSHUA One from the ground up.
-        </p>
+      <header className="relative max-w-3xl mx-auto px-6 pt-36 pb-12">
+        <Reveal>
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold mb-6"
+            style={{ background: "rgba(40,176,232,0.1)", color: A3, border: `1px solid rgba(40,176,232,0.2)` }}>
+            ✦ Building in public
+          </span>
+        </Reveal>
+        <Reveal delay={60}>
+          <h1
+            className="font-serif text-white mb-4"
+            style={{
+              fontSize: "clamp(2.5rem, 6vw, 4rem)",
+              letterSpacing: "-0.025em",
+              lineHeight: 1.0,
+              fontWeight: 400,
+            }}
+          >
+            Dev Log
+          </h1>
+        </Reveal>
+        <Reveal delay={120}>
+          <p className="text-lg max-w-lg" style={{ color: W50, lineHeight: 1.7 }}>
+            Every update, every milestone — in plain language.
+            Follow along as we build YAHSHUA One from the ground up.
+          </p>
+        </Reveal>
       </header>
 
       {/* ── DIVIDER ── */}
       <div className="max-w-3xl mx-auto px-6">
-        <div className="border-t border-[#e8e6f0]" />
+        <div style={{ borderTop: `1px solid ${BORDER}` }} />
       </div>
 
       {/* ── UPDATES FEED ── */}
-      <main className="max-w-3xl mx-auto px-6 py-12">
+      <main className="relative max-w-3xl mx-auto px-6 py-12">
 
         {/* Loading skeleton */}
         {updates === null && (
@@ -175,7 +204,8 @@ export default function UpdatesPage() {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl border border-[#e8e6f0] p-6 shadow-sm"
+                className="rounded-2xl p-6"
+                style={{ background: CARD, border: `1px solid ${BORDER}` }}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="skeleton h-6 w-24 rounded-full" />
@@ -195,12 +225,12 @@ export default function UpdatesPage() {
           <div className="text-center py-24">
             <div
               className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl"
-              style={{ background: "#f0eef9" }}
+              style={{ background: "rgba(40,176,232,0.1)" }}
             >
               🔨
             </div>
-            <p className="text-lg font-semibold text-[#1c1a2e] mb-2">We&apos;re building.</p>
-            <p className="text-[#9896aa]">Check back soon — updates are coming.</p>
+            <p className="text-lg font-semibold text-white mb-2">We&apos;re building.</p>
+            <p style={{ color: W30 }}>Check back soon — updates are coming.</p>
           </div>
         )}
 
@@ -210,7 +240,7 @@ export default function UpdatesPage() {
             {/* Vertical timeline line */}
             <div
               className="absolute left-[11px] top-2 bottom-2 w-px hidden sm:block"
-              style={{ background: "linear-gradient(to bottom, oklch(0.46 0.25 264 / 0.3), transparent)" }}
+              style={{ background: `linear-gradient(to bottom, ${A2}4d, transparent)` }}
             />
 
             <div className="space-y-8">
@@ -219,12 +249,13 @@ export default function UpdatesPage() {
                   <div className="sm:pl-10 relative">
                     {/* Timeline dot */}
                     <div
-                      className="absolute left-0 top-[22px] w-[23px] h-[23px] rounded-full border-2 border-white hidden sm:flex items-center justify-center"
+                      className="absolute left-0 top-[22px] w-[23px] h-[23px] rounded-full hidden sm:flex items-center justify-center"
                       style={{
                         background: i === 0
-                          ? "oklch(0.46 0.25 264)"
-                          : "oklch(0.88 0.10 264)",
-                        boxShadow: i === 0 ? "0 0 0 3px oklch(0.46 0.25 264 / 0.2)" : "none",
+                          ? A2
+                          : "rgba(40,176,232,0.2)",
+                        border: `2px solid ${BG}`,
+                        boxShadow: i === 0 ? `0 0 0 3px rgba(40,176,232,0.2)` : "none",
                       }}
                     >
                       {i === 0 && (
@@ -234,19 +265,23 @@ export default function UpdatesPage() {
 
                     {/* Card */}
                     <div
-                      className="bg-white rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-md"
-                      style={{ borderColor: i === 0 ? "oklch(0.88 0.10 264)" : "#e8e6f0" }}
+                      className="rounded-2xl p-6 transition-all hover:border-[rgba(40,176,232,0.2)]"
+                      style={{
+                        background: CARD,
+                        border: `1px solid ${i === 0 ? "rgba(40,176,232,0.18)" : BORDER}`,
+                        boxShadow: i === 0 ? "0 0 40px rgba(40,176,232,0.06)" : undefined,
+                      }}
                     >
                       {/* Meta row */}
                       <div className="flex items-center gap-3 flex-wrap mb-4">
                         <Badge label={update.badge} />
-                        <span className="text-xs text-[#9896aa] font-medium">
+                        <span className="text-xs font-medium" style={{ color: W30 }}>
                           {formatDate(update.date)}
                         </span>
                         {i === 0 && (
                           <span
-                            className="text-[10px] font-semibold px-2 py-0.5 rounded-full text-white"
-                            style={{ background: "oklch(0.46 0.25 264)" }}
+                            className="text-[10px] font-semibold px-2.5 py-1 rounded-full text-white"
+                            style={{ background: A2 }}
                           >
                             Latest
                           </span>
@@ -255,14 +290,14 @@ export default function UpdatesPage() {
 
                       {/* Title */}
                       <h2
-                        className="font-bold text-[#1c1a2e] mb-3 leading-snug"
+                        className="font-bold text-white mb-3 leading-snug"
                         style={{ fontSize: "clamp(1.1rem, 2.5vw, 1.3rem)" }}
                       >
                         {update.title}
                       </h2>
 
                       {/* Description */}
-                      <p className="text-sm text-[#5c5878] leading-relaxed">
+                      <p className="text-sm leading-relaxed" style={{ color: W50 }}>
                         {update.description}
                       </p>
                     </div>
@@ -278,19 +313,23 @@ export default function UpdatesPage() {
       <section className="max-w-3xl mx-auto px-6 pb-20">
         <Reveal>
           <div
-            className="rounded-2xl p-8 text-center"
-            style={{ background: "oklch(0.46 0.25 264)" }}
+            className="rounded-2xl p-8 text-center overflow-hidden relative"
+            style={{
+              background: `linear-gradient(135deg, rgba(41,128,176,0.22) 0%, rgba(125,229,240,0.09) 100%), ${CARD}`,
+              border: `1px solid rgba(40,176,232,0.18)`,
+              boxShadow: "0 0 70px rgba(40,176,232,0.08)",
+            }}
           >
             <p className="text-white font-bold text-xl mb-2">
               Want to be first when we launch?
             </p>
-            <p className="mb-6 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
+            <p className="mb-6 text-sm" style={{ color: W50 }}>
               Join the waitlist — no spam, no credit card.
             </p>
             <a
               href="/#waitlist"
-              className="inline-block px-8 py-3.5 rounded-full font-semibold text-sm transition-opacity hover:opacity-90"
-              style={{ background: "#fff", color: "oklch(0.46 0.25 264)" }}
+              className="inline-block px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-opacity hover:opacity-90"
+              style={{ background: GRAD }}
             >
               Claim My Spot →
             </a>
@@ -300,15 +339,15 @@ export default function UpdatesPage() {
 
       {/* ── FOOTER ── */}
       <footer
-        className="px-6 py-8 border-t border-[#e8e6f0]"
-        style={{ background: "#faf9f7" }}
+        className="px-6 py-8"
+        style={{ borderTop: `1px solid ${BORDER}` }}
       >
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <LogoMark size={24} />
-            <span className="font-semibold text-sm text-[#1c1a2e]">YAHSHUA One</span>
+            <span className="font-semibold text-sm text-white">YAHSHUA One</span>
           </div>
-          <p className="text-xs text-[#9896aa]">
+          <p className="text-xs" style={{ color: W30 }}>
             Built in the Philippines 🇵🇭 · © 2026 ABBA Initiative
           </p>
         </div>

@@ -868,7 +868,7 @@ export default function Home() {
 
           {updates !== null && updates.length > 0 && (
             <div className="space-y-4">
-              {updates.map((update, i) => (
+              {updates.slice(0, 3).map((update, i) => (
                 <Reveal key={i} delay={i * 50}>
                   <div className="rounded-xl p-6" style={{ background: CARD, border: `1px solid ${BORDER}` }}>
                     <div className="flex items-center gap-3 mb-3 flex-wrap">
@@ -880,6 +880,19 @@ export default function Home() {
                   </div>
                 </Reveal>
               ))}
+              {updates.length > 3 && (
+                <Reveal delay={180}>
+                  <div className="text-center pt-2">
+                    <a
+                      href="/updates"
+                      className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-full border transition-opacity hover:opacity-80"
+                      style={{ color: A3, borderColor: "rgba(40,176,232,0.28)", background: "rgba(40,176,232,0.06)" }}
+                    >
+                      View full dev log →
+                    </a>
+                  </div>
+                </Reveal>
+              )}
             </div>
           )}
         </div>
