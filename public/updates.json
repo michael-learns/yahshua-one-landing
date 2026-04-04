@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-04-05",
+    "badge": "Improvement",
+    "title": "Cleaner, Smarter Approvals — Now Fully Role-Based",
+    "description": "We've cleaned up how approvals and task assignments work under the hood. The old manual assignment system has been fully replaced with a proper role-based access control and approval chain setup. This means who can approve, review, or act on any request is now determined by your company's permission structure — no more one-off manual assignments. As your team grows, approvals scale with it automatically, and everything stays consistent and auditable."
+  },
+  {
     "date": "2026-03-25",
     "badge": "Progress Update",
     "title": "Payroll Configuration, Leave Requests & Contribution Reports All Live",
