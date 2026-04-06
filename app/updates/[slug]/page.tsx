@@ -105,7 +105,7 @@ export default async function UpdateDetailPage({
           </a>
           <div className="flex items-center gap-4">
             <a href="/updates" className="text-sm font-medium hidden sm:block transition-opacity hover:opacity-70"
-              style={{ color: W50 }}>← Dev Log</a>
+              style={{ color: W50 }}>← What's New</a>
             <a
               href="/#waitlist"
               className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
@@ -126,7 +126,7 @@ export default async function UpdateDetailPage({
           className="inline-flex items-center gap-1.5 text-sm font-medium mb-10 transition-opacity hover:opacity-70"
           style={{ color: W50 }}
         >
-          ← Back to Dev Log
+          ← Back to What's New
         </a>
 
         {/* Meta row */}

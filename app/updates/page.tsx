@@ -180,7 +180,7 @@ export default function UpdatesPage() {
               fontWeight: 400,
             }}
           >
-            Dev Log
+            What's New
           </h1>
         </Reveal>
         <Reveal delay={120}>

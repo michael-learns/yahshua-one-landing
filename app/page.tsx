@@ -460,7 +460,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-4">
             <a href="/updates" className="text-sm font-medium hidden sm:block transition-opacity hover:opacity-70"
-              style={{ color: W50 }}>Dev Log</a>
+              style={{ color: W50 }}>What's New</a>
             <a href="#waitlist"
               className="text-sm font-semibold text-white px-5 py-2.5 rounded-full transition-opacity hover:opacity-90"
               style={{ background: GRAD }}>
