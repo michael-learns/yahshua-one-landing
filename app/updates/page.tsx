@@ -27,6 +27,7 @@ interface Update {
   badge: string;
   title: string;
   description: string;
+  body?: string[];
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -296,10 +297,25 @@ export default function UpdatesPage() {
                         {update.title}
                       </h2>
 
-                      {/* Description */}
+                      {/* Description / Preview */}
                       <p className="text-sm leading-relaxed" style={{ color: W50 }}>
-                        {update.description}
+                        {update.body
+                          ? update.body[0].length > 200
+                            ? update.body[0].slice(0, 200).trimEnd() + "…"
+                            : update.body[0]
+                          : update.description}
                       </p>
+
+                      {/* Read more link */}
+                      {update.body && (
+                        <a
+                          href={`/updates/${update.date}`}
+                          className="inline-flex items-center gap-1 text-sm font-medium mt-4 transition-opacity hover:opacity-70"
+                          style={{ color: A2 }}
+                        >
+                          Read full update →
+                        </a>
+                      )}
                     </div>
                   </div>
                 </Reveal>
