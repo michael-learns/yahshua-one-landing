@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-04-06",
+    "badge": "Improvement",
+    "title": "Theo, Your AI Payroll Copilot, Just Got a Major Brain Upgrade",
+    "description": "We shipped a massive expansion to Theo, YAHSHUA One's built-in AI assistant. Theo can now help you with nearly every corner of the platform — from running payroll and computing reports, to checking attendance records, looking up compensation details, reviewing compliance and GL settings, and filing employee requests. Theo also gained the ability to accept file uploads, so you can hand it documents directly for processing. Under the hood, Theo now auto-discovers which tools are available, making it smarter and more adaptable as we keep adding features. This is a major step toward a fully conversational payroll experience — where you can just ask, and it gets done."
+  },
+  {
     "date": "2026-04-05",
     "badge": "Improvement",
     "title": "Cleaner, Smarter Approvals — Now Fully Role-Based",
