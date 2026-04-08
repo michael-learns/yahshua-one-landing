@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-08",
+    "badge": "Progress Update",
+    "title": "Smarter Payment Account Controls",
+    "description": "We completed a key payment settings improvement so businesses can now match the right accounting accounts to the right payment types more clearly and with less manual cleanup.",
+    "body": [
+      "As Filipino business owners grow, payroll and payments get more complicated fast. It is no longer enough to simply release money on time because every payment also needs to land in the right accounting bucket. Salaries, reimbursements, advances, and other payment types each tell a different financial story, and mixing them together creates confusion later. That confusion usually shows up during reconciliation, month-end closing, or when someone asks why the books do not match what was actually paid out. This update addresses that exact pain by making payment-related accounting setup more precise from the start.",
+      "We improved the payment settings experience so the right assigned accounts can now be filtered based on the type of payment you are working with. In plain language, that means the system is better at showing only the account choices that make sense for the specific transaction in front of you. Instead of sorting through a messy list and second-guessing which account belongs where, your team gets a cleaner and more guided setup flow. That reduces setup mistakes, shortens admin time, and makes the platform feel more dependable when handling real payroll and disbursement work. It is a small-looking change on the surface, but it fixes a very practical workflow that finance and payroll teams deal with every week.",
+      "For you, this means cleaner books, fewer avoidable posting errors, and more confidence that each payment is being tracked properly. It also means less back-and-forth between payroll staff and accounting staff just to correct category mismatches after the fact. These kinds of foundational improvements matter because a true backoffice platform is not only about calculating pay correctly, but also about making every downstream finance step smoother. YAHSHUA One keeps moving toward that goal by tightening the connection between payroll actions and accounting clarity. We are continuing to close the gaps that stand between a useful payroll tool and a complete operating system for your business."
+    ]
+  },
+  {
     "date": "2026-04-06",
     "badge": "Improvement",
     "title": "Theo, Your AI Payroll Copilot, Just Got a Major Brain Upgrade",
