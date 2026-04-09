@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-04-09",
+    "badge": "Improvement",
+    "title": "Theo Gets Better Controls and Clearer Usage Tracking",
+    "description": "We made it easier for teams to control how Theo is used, see how heavily it is being used, and manage more of their company setup directly inside YAHSHUA One.",
+    "body": [
+      "Yesterday's work focused on making Theo feel less like a hidden experiment and more like a feature your team can confidently manage. Early on, AI features can be exciting but still feel a little black-box if business owners do not know who can access them, how often they are being used, or what settings are in place behind the scenes. That uncertainty matters, especially for payroll and backoffice work where control and trust are everything. We wanted Theo to feel more visible, more intentional, and easier to govern as companies grow. This update is a step in that direction.",
+      "You can now expect better controls around how Theo is enabled and managed inside the platform. In plain language, that means businesses are getting clearer settings for turning Theo on, deciding who should be allowed to use it, and shaping how it behaves in day-to-day operations. We also improved visibility into Theo conversations, so teams can better understand how much it is being used instead of guessing in the dark. On top of that, more company setup details can now be managed directly in the system, which helps reduce manual patchwork and makes the product feel more complete. None of this is flashy for the sake of flash, but it makes the platform more trustworthy and more usable for real teams.",
+      "For early supporters, the takeaway is simple: YAHSHUA One is getting sharper not just in what it can do, but in how safely and clearly it can be rolled out inside a business. AI features are only useful if admins can actually control them and teams can understand their impact, and we are building toward that standard from the start. We are also continuing to close practical setup gaps so companies can manage more of their operating details in one place. That means less duct tape, fewer blind spots, and a smoother path from experimentation to daily use. The product keeps getting more serious in the right ways."
+    ]
+  },
+  {
+    "date": "2026-04-09",
     "badge": "Progress Update",
     "title": "Payroll Engine Gets Real",
     "description": "We shipped a major step toward a truly reliable Philippine payroll core, while also filling in key settings and visibility tools that make the platform more complete for real business use.",
