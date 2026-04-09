@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-09",
+    "badge": "Progress Update",
+    "title": "Payroll Engine Gets Real",
+    "description": "We shipped a major step toward a truly reliable Philippine payroll core, while also filling in key settings and visibility tools that make the platform more complete for real business use.",
+    "body": [
+      "For a Filipino business owner, payroll is where trust either grows or breaks. It is not enough for a system to look polished on the surface if the actual computation underneath is still fragile, incomplete, or too rigid for real-world company rules. The hard part is making sure every deduction, contribution, tax rule, and pay scenario behaves consistently when your team starts depending on it every cutoff. At the same time, the surrounding admin setup has to be complete, because even a strong engine becomes frustrating if the settings around it are full of gaps. Yesterday's work mattered because it pushed YAHSHUA One deeper into that serious backoffice territory where the foundation starts matching the ambition.",
+      "We built out a much stronger payroll computation core behind the scenes. In plain language, that means the system is getting better at taking your payroll rules, applying them in the right order, and producing pay results that are easier to trust and explain. We also expanded the settings side of the platform so more payroll-related company data can now be created, updated, and managed properly instead of being handled through workarounds or missing flows. On top of that, Theo now gives better visibility into usage and settings, which helps teams understand how the built-in AI assistant is being used and controlled. None of this is flashy for its own sake, but it is exactly the kind of work that turns a promising product into one that can carry real operations.",
+      "What this means for you is simple: YAHSHUA One is getting closer to becoming a payroll and HR backoffice you can actually run a business on, not just test in a demo. The engine is becoming more capable of handling the messy logic that Philippine payroll demands, while the admin side is becoming more complete and less dependent on manual fixes. That gives your team a cleaner path from setup, to computation, to review, to day-to-day use. It also means every new layer we add from approvals to reports to AI assistance now has a stronger base to stand on. We are still building fast, but more importantly, we are building the parts that make the platform dependable when the stakes are real."
+    ]
+  },
+  {
     "date": "2026-04-08",
     "badge": "Progress Update",
     "title": "Smarter Payment Account Controls",
