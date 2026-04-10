@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-10",
+    "badge": "Progress Update",
+    "title": "Payroll Engine Crosses a Major Threshold",
+    "description": "We shipped a huge wave of payroll engine capabilities, editing tools, audit visibility, and testing work that brings YAHSHUA One much closer to a payroll and HR backoffice Filipino businesses can truly rely on.",
+    "body": [
+      "For Filipino business owners, payroll is not just a calculation problem but a trust problem. Every deduction, contribution, override, and correction has to make sense when your team asks questions and when government rules come into play. A system can look modern on the surface and still fall apart if the engine underneath is too rigid, too opaque, or too fragile for real business conditions. That is why this stage of work matters so much. We focused on making the payroll core more real, more explainable, and more dependable for the messy situations that happen in actual operations.",
+      "Yesterday we shipped a major block of work that strengthens both the engine itself and the experience around it. YAHSHUA One can now handle more of the real logic behind payroll runs, including how pay components are defined, how formulas are managed, how lookup tables are maintained, and how statutory rules are loaded and applied with greater confidence. We also improved the way teams can review changes before publishing them, inspect version history, drill into audit details, and make controlled corrections for already closed periods. On the front end, the payroll engine pages and editors became far more usable, so admins are not stuck relying on hidden setup or developer intervention just to shape how payroll behaves. On top of that, a serious layer of end-to-end testing and validation was completed so this does not just work in theory, but holds up under more realistic use.",
+      "What this means for you is that YAHSHUA One is moving beyond being a promising payroll product and toward becoming a true operating system for payroll and HR backoffice work. It gives growing businesses a clearer way to define how compensation is computed, see the impact of changes before they go live, and understand why a result came out the way it did. That reduces fear, guesswork, and spreadsheet dependency, which are usually the things that slow teams down as payroll gets more complex. It also lays stronger groundwork for the next layers of the product, from approvals and reporting to AI assistance and compliance workflows. We are still building fast, but more importantly, we are building the parts that make the platform feel trustworthy when real salaries, real rules, and real people are involved."
+    ]
+  },
+  {
     "date": "2026-04-09",
     "badge": "Improvement",
     "title": "Theo Gets Better Controls and Clearer Usage Tracking",
