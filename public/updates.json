@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-04-11",
+    "badge": "Improvement",
+    "title": "Billing Pages Get Clearer and Access Feels Smoother",
+    "description": "We improved how companies view invoice details, tightened access flow behavior, and cleaned up parts of the interface so YAHSHUA One feels more reliable and easier to navigate day to day.",
+    "body": [
+      "As a product gets more serious, the little moments start to matter more. It is not only about whether a feature exists, but whether the right people can get to the right page at the right time, and whether what they see is clear enough to act on without second-guessing. For growing teams handling payroll, billing, and admin work, friction usually shows up in these exact places: missing details, confusing access behavior, or an interface that feels slightly off when you are trying to move fast. Yesterday's work focused on reducing that friction so the product feels steadier in real daily use.",
+      "We improved the staff billing area so invoice pages now show more of the details teams actually need when reviewing charges and account activity. In plain language, that means less clicking around and less guessing when you need to understand what an invoice is for. We also tightened how access-aware routing works across the app, which helps make sure people land in the right place based on what they are allowed to see. On top of that, we restored parts of the interface that had been lost and cleaned up layout spacing, which makes the product feel more consistent and less brittle as you move through it.",
+      "For early supporters, this is the kind of progress that matters more than flashy demos. YAHSHUA One is getting better at the everyday experience of running a real backoffice platform: seeing the right information, reaching the right screens, and trusting the interface not to get in your way. These improvements make billing and admin workflows easier to follow now, while also strengthening the overall product foundation for the bigger payroll, HR, and finance capabilities we are continuing to build. We are still shipping fast, but just as importantly, we are making the experience cleaner, clearer, and more dependable with each pass."
+    ]
+  },
+  {
+    "date": "2026-04-11",
     "badge": "Progress Update",
     "title": "Smarter Payroll Memos, Finally Automated",
     "description": "We shipped automated payroll memo email settings and a dedicated memo response settings page, making it easier for businesses to send the right payroll communications without chasing manual follow-ups.",
