@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-11",
+    "badge": "Progress Update",
+    "title": "Smarter Payroll Memos, Finally Automated",
+    "description": "We shipped automated payroll memo email settings and a dedicated memo response settings page, making it easier for businesses to send the right payroll communications without chasing manual follow-ups.",
+    "body": [
+      "For many Filipino business owners, payroll is not only about getting numbers right but also about getting communication right. A payroll memo that arrives late, goes to the wrong place, or gets lost in manual follow-up creates confusion that quickly turns into stress for both managers and employees. When teams are already juggling cutoff deadlines, approvals, and compliance tasks, even a simple memo workflow can become another avoidable headache. That is especially true for growing businesses that do not have a large HR team watching every small detail. This update matters because it helps payroll communication become more reliable, more consistent, and less dependent on someone remembering to do everything by hand.",
+      "Yesterday we completed two connected improvements that make this workflow far more usable. First, YAHSHUA One can now support automatic email memo settings behind the scenes, which means the platform is better prepared to send payroll-related memo communications on schedule instead of relying on manual sending every time. Second, we added a dedicated settings page for memo responses, so teams now have a clearer place to manage how these communications are handled inside the product. In plain language, this means less hunting around, less guesswork, and a more organized setup for a process that is easy to overlook until it becomes urgent. It is not a flashy headline feature, but it is exactly the kind of practical work that makes a backoffice platform feel mature and dependable in daily operations.",
+      "What this means for you is that YAHSHUA One is getting better at handling the small but critical communication steps that surround payroll. Businesses will be able to manage payroll memo behavior with more confidence, reduce manual reminders, and create a cleaner experience for the people receiving these notices. That helps teams stay aligned without adding extra admin work every cutoff period. It also moves the platform closer to becoming a complete payroll and HR backoffice, where both the core computations and the surrounding workflows are handled in one place. We are continuing to build toward a system that does not just process payroll, but also supports the real operational follow-through that makes payroll work smoothly in the real world."
+    ]
+  },
+  {
     "date": "2026-04-10",
     "badge": "Progress Update",
     "title": "Payroll Engine Crosses a Major Threshold",
