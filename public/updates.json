@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-12",
+    "badge": "Progress Update",
+    "title": "Core Admin Work Gets Real",
+    "description": "We shipped a major wave of admin and payroll foundation work that makes YAHSHUA One easier to manage, safer to operate, and more complete for real business use.",
+    "body": [
+      "For Filipino business owners, backoffice pain rarely comes from one dramatic problem. It usually comes from dozens of small gaps that slow your team down every day, like settings pages that are missing, imports that are hard to track, or company rules that still live in scattered spreadsheets. Those gaps create friction at exactly the wrong time, especially when payroll, HR, and admin work need to move quickly and cleanly. As a company grows, even simple tasks become risky when the system cannot fully reflect how the business actually operates. This update matters because it closes more of those gaps and pushes YAHSHUA One closer to being a platform you can truly run your operations on.",
+      "Yesterday we completed a broad set of product improvements across the admin and payroll foundation of YAHSHUA One. In plain language, we made the system better at managing the lists, settings, and supporting records that businesses rely on behind the scenes, including items like location-based minimum wage setup, inventory-related settings, posting keys, camp codes, geofences, salary status ranks, and import workflows. We also added stronger support for tracking import jobs, which gives teams a clearer way to see what was uploaded and what happened after the upload. On the payroll side, we improved the platform's ability to handle automatic email memo settings and device authentication for timekeeping tools, which helps connect day-to-day operations more smoothly. We also tightened delete and deactivate behavior in key settings areas, so teams can clean up records with more confidence and fewer unsafe workarounds.",
+      "What this means for you is that YAHSHUA One is becoming much more usable in the messy real world of running a business. More of the details that normally get pushed into side spreadsheets, manual follow-up, or developer-only fixes can now live properly inside the platform where they belong. That makes setup cleaner, day-to-day admin work faster, and payroll-related operations easier to trust as your business gets more complex. It also gives us a stronger foundation for the bigger workflows still ahead, because reliable payroll and HR software is built on complete settings, clear records, and safer controls. We are not just adding features for show. We are steadily turning YAHSHUA One into a complete payroll and HR backoffice that feels ready for real companies, not just demos."
+    ]
+  },
+  {
     "date": "2026-04-11",
     "badge": "Improvement",
     "title": "Billing Pages Get Clearer and Access Feels Smoother",
