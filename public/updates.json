@@ -2,6 +2,16 @@
   {
     "date": "2026-04-12",
     "badge": "Progress Update",
+    "title": "Admin Setup, Payroll Rules, and Device Access Got Better",
+    "description": "We made it easier to manage employee details, set minimum wage rules inside the platform, and securely connect timekeeping devices — while also fixing backend issues so the product feels more reliable day to day.",
+    "body": [
+      "Yesterday's work focused on the kind of improvements that make a business platform feel more usable in real life. We cleaned up important employee and company information, added better support for minimum wage settings, and tightened how timekeeping and kiosk devices connect securely to the system. We also fixed backend migration issues that help the product behave more reliably behind the scenes.",
+      "For early supporters, the simple version is this: YAHSHUA One is getting stronger in the practical details that teams deal with every day. It is becoming easier to keep employee records accurate, apply the right payroll rules, and trust that connected devices and admin tools will work the way they should. Not flashy for the sake of flash — just steady progress toward a backoffice platform businesses can actually depend on."
+    ]
+  },
+  {
+    "date": "2026-04-12",
+    "badge": "Progress Update",
     "title": "Core Admin Work Gets Real",
     "description": "We shipped a major wave of admin and payroll foundation work that makes YAHSHUA One easier to manage, safer to operate, and more complete for real business use.",
     "body": [
