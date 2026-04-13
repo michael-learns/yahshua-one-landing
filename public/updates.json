@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-13",
+    "badge": "Progress Update",
+    "title": "Secure Device Access Gets Simpler",
+    "description": "We completed a cleaner, more secure way for timekeeping and kiosk devices to connect to YAHSHUA One, making hardware setup easier to trust as businesses scale their attendance operations.",
+    "body": [
+      "For many Filipino business owners, attendance hardware is only helpful when it works reliably in the real world. A timekeeping device at the entrance, a kiosk on the floor, or a shared station for employee check-ins can quickly become a headache if connection and security are shaky. When devices are difficult to authorize, teams fall back to manual workarounds, and that creates room for delays, confusion, and avoidable errors. That problem gets worse as a company adds more people, more locations, or more devices across operations. This update matters because a serious payroll and HR platform needs secure device access that feels practical, not fragile.",
+      "Yesterday we finished a token-based authentication flow for timekeeping and kiosk devices inside YAHSHUA One. In plain language, that means devices now have a clearer and safer way to prove that they are allowed to connect to your system. Instead of relying on looser access patterns, the platform can now recognize approved devices more cleanly and reduce the risk of the wrong hardware connecting where it should not. This is the kind of work users may not see as a flashy screen change, but it directly improves how dependable the product feels when connected to real attendance tools. It also gives us a stronger base for device-driven workflows that businesses will depend on every single day.",
+      "What this means for you is more confidence that the bridge between physical attendance devices and your backoffice system is getting stronger. Businesses using kiosks or timekeeping tools will be better positioned to scale without feeling like each new device introduces new risk. It moves YAHSHUA One closer to being a complete payroll and HR backoffice because attendance capture is not a side feature; it is one of the first points where operational truth enters the system. When that entry point is more secure and easier to manage, everything downstream becomes more trustworthy too. We are continuing to tighten the foundation so the platform can support not just software workflows, but the real devices and daily routines that power a growing company."
+    ]
+  },
+  {
     "date": "2026-04-12",
     "badge": "Progress Update",
     "title": "Admin Setup, Payroll Rules, and Device Access Got Better",
