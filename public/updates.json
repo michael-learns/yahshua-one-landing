@@ -2,6 +2,16 @@
   {
     "date": "2026-04-17",
     "badge": "Progress Update",
+    "title": "More Reports, Better Access Control",
+    "description": "We added clearer payroll reporting, stronger privacy controls for sensitive employee information, and better admin tools so teams can run payroll and backoffice work with more confidence.",
+    "body": [
+      "Yesterday's work pushed YAHSHUA One forward in a few practical ways that business teams will actually feel. We improved payroll reporting so admins can review important summaries more clearly, expanded employee and company management tools, and tightened who can view sensitive information inside the system. In plain language: the platform is getting easier to use while also getting safer.",
+      "We also continued strengthening the admin side of the product with better access controls, cleaner setup pages, and more help documentation for payroll and accounting workflows. That means less guesswork for teams, better protection for private records, and a smoother path toward running more of your operations in one place."
+    ]
+  },
+  {
+    "date": "2026-04-17",
+    "badge": "Progress Update",
     "title": "Reports and Controls Get Real",
     "description": "We shipped a strong mix of payroll reporting, tighter access controls, and smarter accounting foundations so business owners can see more clearly, operate more safely, and rely less on manual patchwork.",
     "body": [
