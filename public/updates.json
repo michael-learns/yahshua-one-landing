@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-17",
+    "badge": "Progress Update",
+    "title": "Reports and Controls Get Real",
+    "description": "We shipped a strong mix of payroll reporting, tighter access controls, and smarter accounting foundations so business owners can see more clearly, operate more safely, and rely less on manual patchwork.",
+    "body": [
+      "For many Filipino business owners, growth creates two kinds of pressure at the same time: you need clearer reports to understand what is happening, and you need tighter controls so the wrong people do not touch the wrong data. When those two things are missing, teams end up juggling spreadsheets, messaging screenshots, and relying on memory just to answer simple operational questions. That slows down payroll, weakens accountability, and makes backoffice work feel heavier than it should. Yesterday's progress mattered because it focused on visibility and control, which are two of the biggest ingredients of a platform you can actually trust as your company gets more complex. These are the kinds of improvements that make a system feel less like a prototype and more like a serious operating tool for real businesses in the Philippines.",
+      "We shipped new payroll reporting pages that make it easier to review annual plans, attendance breakdowns, and standard output formats teams often need when coordinating operations. In plain language, that means business owners and admins are getting more ways to see the story behind their workforce data without needing a developer to dig it out for them. We also strengthened who can see sensitive employee information by enforcing confidentiality rules based on the viewer's assigned level, which helps protect private data inside the system. On the accounting side, a wide set of management pages and core controls continued moving forward, covering practical things like customer types, payment types, vendor types, units of measure, purchase orders, debit memo behavior, attachment security, and settings that shape how transactions are organized. None of that is flashy for the sake of flash, but it is exactly the kind of infrastructure that makes a backoffice platform cleaner, safer, and easier to run every day.",
+      "What this means for you is a more usable YAHSHUA One experience from two directions at once: better visibility into operations and better protection around important business data. Teams can make decisions faster when reports are easier to access, and they can work with more confidence when permissions and record controls are handled properly inside the product. It also means less dependence on side systems, manual follow-up, or tribal knowledge just to keep payroll and accounting workflows moving. Every one of these updates helps YAHSHUA One grow into a complete payroll and HR backoffice, where reporting, permissions, and operational setup all live together in one dependable place. We are continuing to build toward a platform that does not just process work, but helps businesses lead with more clarity, control, and confidence."
+    ]
+  },
+  {
     "date": "2026-04-13",
     "badge": "Progress Update",
     "title": "Secure Device Access Gets Simpler",
