@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-18",
+    "badge": "Progress Update",
+    "title": "Payroll Visibility Gets Deeper",
+    "description": "We shipped a major wave of payroll reports, employee self-service payroll access, and bulk payroll workflow improvements that help growing businesses see more, do more, and rely less on manual work.",
+    "body": [
+      "For many Filipino business owners, payroll stress does not only come from calculations. It also comes from not being able to see the right reports fast enough, answer employee questions clearly, or handle growing payroll complexity without adding more manual work. As teams grow, leaders need better visibility into status changes, cash advances, final pay, annual planning, attendance breakdowns, and the overall story behind payroll activity. Employees also expect a more modern experience where they can see their own records instead of chasing HR for every small request. This update matters because a true backoffice platform needs to serve both the operators running payroll and the people affected by it every payday.",
+      "Yesterday we shipped a broad set of improvements that make YAHSHUA One more complete and much more practical in daily use. We added more payroll report coverage, including employee status reports, cash advance reporting, attendance breakdown views, final pay visibility, annual planning support, and summary pages that help admins understand what is happening across the business. We also expanded employee self-service capabilities so workers can access their payslips, payroll history, deductions, certificates, and several application flows more directly inside the system. On top of that, we improved bulk payroll-related workflows, including time uploads with flexible column mapping and stronger support for employees who work across multiple assignments. In plain language, this means less spreadsheet wrangling, fewer repetitive HR follow-ups, and a cleaner path from raw payroll activity to useful action.",
+      "What this means for you is a payroll and HR backoffice that is getting more usable from every angle. Business owners and admins can review more of the reports they need without depending on scattered exports or developer help, while employees gain better access to their own payroll information and request flows. That reduces friction across the whole company because the system starts answering more questions on its own. It also moves YAHSHUA One closer to being a complete operating layer for payroll and HR, where reporting, employee access, and operational control all live together in one place. We are continuing to build toward a product that does not just process payroll correctly, but helps businesses run with more clarity, speed, and confidence."
+    ]
+  },
+  {
     "date": "2026-04-17",
     "badge": "Progress Update",
     "title": "More Reports, Better Access Control",
