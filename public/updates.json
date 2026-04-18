@@ -1,6 +1,17 @@
 [
   {
     "date": "2026-04-18",
+    "badge": "Improvement",
+    "title": "Payroll Imports Get More Accurate, Leave Permissions Get Clearer",
+    "description": "We improved payroll imports so daily pay calculations stay aligned with each company's setup, and we added clearer leave approval controls so the right people can review and approve each leave type.",
+    "body": [
+      "Yesterday's work focused on two practical things that help teams trust the system more in daily use: cleaner payroll imports and clearer leave permissions. These may not be flashy headline features, but they solve the kinds of small friction points that slow teams down when payroll and leave processes need to move quickly and correctly.",
+      "On the payroll side, YAHSHUA One now handles imported calculator records more accurately by respecting each company's own working-day setup when figuring out daily rates. In plain language, that means less manual correction when bringing payroll data into the system. On the people-management side, admins can now set leave-type authorities more clearly, including who can review, recommend, approve, or simply view each kind of leave request.",
+      "What this means for you is a product that keeps getting safer and smoother where it counts. Payroll imports become more dependable, and leave requests are easier to route to the right people without confusion. It is another steady step toward a backoffice platform that feels reliable not just in demos, but in real day-to-day operations."
+    ]
+  },
+  {
+    "date": "2026-04-18",
     "badge": "Progress Update",
     "title": "Payroll Visibility Gets Deeper",
     "description": "We shipped a major wave of payroll reports, employee self-service payroll access, and bulk payroll workflow improvements that help growing businesses see more, do more, and rely less on manual work.",
