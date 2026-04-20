@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-20",
+    "badge": "Progress Update",
+    "title": "Budgets Meet Real Payroll Visibility",
+    "description": "We added budget management and budget-versus-actual reporting so businesses can finally compare payroll plans against what is really happening, while also tightening access to sensitive payroll reports.",
+    "body": [
+      "For many Filipino business owners, payroll and HR pressure does not end once a salary is computed correctly. The harder question usually comes after that: are we still operating within the budget we planned, and where are the gaps starting to show? When that visibility is missing, leaders end up bouncing between spreadsheets, exports, and gut feel just to understand whether labor costs are still under control. That makes planning slower, decisions riskier, and month-end conversations more stressful than they need to be. This update matters because YAHSHUA One is starting to close that gap between payroll activity and financial clarity.",
+      "Yesterday we moved budget management forward in a big way inside the product. In plain language, the system is gaining a proper place to create and manage budgets, along with a clear report that compares what you planned against what actually happened. That means teams can review variances without piecing the story together by hand from separate tools. We also pushed the user experience around these budget screens so the workflow feels practical instead of half-built. On top of that, we tightened access around at least one payroll report area so the right information stays visible to the right people and not everyone by default.",
+      "What this means for you is a backoffice platform that is getting smarter about both control and decision-making. You are not only moving toward accurate payroll processing, but toward a system that helps you see whether your people costs are lining up with the business plan. That kind of visibility makes it easier to catch issues earlier, explain results more confidently, and operate with less spreadsheet guesswork. It also brings YAHSHUA One closer to being a complete payroll and HR backoffice, where planning, reporting, permissions, and execution all live together in one place. We are building toward a product that does not just record what happened, but helps business owners lead with better visibility before small variances become expensive surprises."
+    ]
+  },
+  {
     "date": "2026-04-18",
     "badge": "Improvement",
     "title": "Payroll Imports Get More Accurate, Leave Permissions Get Clearer",
