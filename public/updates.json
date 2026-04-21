@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-21",
+    "badge": "Progress Update",
+    "title": "Employee Self-Service Steps Forward",
+    "description": "We pushed YAHSHUA One's employee self-service experience forward with a more dedicated portal flow, easier employee-filed leave requests, and better visibility into leave activity for the teams managing it.",
+    "body": [
+      "For many Filipino business owners, payroll and HR friction does not only happen inside the admin team. It also shows up when employees have to keep asking HR for simple things they should be able to do themselves. Filing leave, checking requests, or accessing a basic employee portal should not feel like a manual workaround in 2026. When those everyday actions stay clunky, HR becomes a bottleneck and employees feel like the system was not really built for them. This update matters because a modern backoffice platform has to serve not just managers and payroll admins, but the workforce using it day to day.",
+      "Yesterday's progress pushed that employee side of YAHSHUA One further into real usability. We continued building a more dedicated employee self-service portal experience, including the kiosk and portal flows that give employees a clearer place to interact with the system. We also moved employee-filed leave applications forward, which means the platform is getting better at letting staff submit their own leave requests without depending on back-and-forth manual encoding. On the management side, leave monitoring is also becoming more complete, so teams can review and track leave activity more clearly from the admin view. We also pushed forward a cancellation and withdrawal workflow for certain request types, which matters because real businesses need a clean way to reverse or correct requests when plans change.",
+      "What this means for you is a product that is steadily becoming more complete on both sides of the experience. Employees get closer to a cleaner self-service flow, while HR and payroll teams get better oversight of the requests coming in. That reduces repetitive admin work, shortens turnaround time, and helps everyone interact with the system in a more natural way. It also moves YAHSHUA One closer to being a full payroll and HR backoffice, where employee actions, approvals, and operational visibility all connect properly in one place. We are building toward a platform that does not just help you process internal work faster, but also gives your people a smoother and more trustworthy way to handle their side of the process."
+    ]
+  },
+  {
     "date": "2026-04-20",
     "badge": "Progress Update",
     "title": "Budgets Meet Real Payroll Visibility",
