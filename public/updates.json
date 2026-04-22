@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-22",
+    "badge": "Progress Update",
+    "title": "Safer Access, Cleaner Payroll Corrections",
+    "description": "We strengthened account security, improved how payroll corrections work after a period is closed, and made request and reporting flows easier to trust as YAHSHUA One grows into a more complete backoffice platform.",
+    "body": [
+      "For many Filipino business owners, backoffice stress does not only come from calculating payroll correctly. It also comes from what happens around the edges: who is allowed to get in, what happens when a payroll period is already closed, and how teams handle last-minute changes without creating confusion. A system starts to feel truly reliable when it can protect access, prevent unsafe edits, and still give operators a clean way to fix legitimate issues. That matters even more as companies grow and more people touch payroll, HR requests, and internal records every day. This update is about making YAHSHUA One feel safer and more operationally mature, not just more feature-rich.",
+      "Yesterday we pushed several practical improvements that move the product in that direction. We strengthened account access so login checks are stricter and easier to trust, helping make sure the right people get through the door and the wrong ones do not. We also improved how payroll corrections can be handled after a period has already been finalized, which means businesses get a cleaner path for resolving changes without reopening everything in a messy way. On top of that, request workflows around post-dated check changes and division-related payroll actions became more disciplined, with better guardrails when a payroll period is locked and better handling when a request needs to be withdrawn or moved through multiple approval steps. We also tightened reporting behavior so long pages are easier to navigate and review, which sounds small but matters when teams are working through real payroll data under time pressure.",
+      "What this means for you is a platform that keeps getting stronger in the places where trust is won or lost. Your team gets better protection around account access, safer handling for sensitive payroll changes, and cleaner request flows when real-life situations force adjustments. That reduces the chances of avoidable mistakes, weak controls, or awkward workarounds that usually appear once a business starts scaling. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where security, approvals, corrections, and day-to-day usability all work together instead of living in separate tools and side processes. We are continuing to build toward a system that helps Filipino businesses operate with more confidence, even when payroll and people workflows get complicated."
+    ]
+  },
+  {
     "date": "2026-04-21",
     "badge": "Progress Update",
     "title": "Employee Self-Service Steps Forward",
