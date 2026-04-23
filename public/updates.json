@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-23",
+    "badge": "Progress Update",
+    "title": "Security and Oversight Get Sharper",
+    "description": "We tightened login protection, expanded audit visibility, and improved request oversight so growing Filipino businesses can run payroll operations with more trust and less guesswork.",
+    "body": [
+      "For many Filipino business owners, the hardest backoffice problems are not always dramatic ones. They show up when the wrong person might get into the system, when a sensitive action is hard to trace, or when a request sits in limbo without enough visibility. As teams grow, those small operational cracks become expensive because payroll and HR work depend on trust, timing, and accountability. A platform starts to feel truly dependable when it protects access and makes important activity easier to review. This update is about strengthening those everyday controls so YAHSHUA One feels safer and more credible in real business use.",
+      "Yesterday we pushed a set of improvements that make the product more disciplined behind the scenes and easier to trust in practice. We strengthened login protection so account access is handled with tighter checks, which helps reduce the chances of misuse before it becomes a bigger problem. We also moved audit visibility forward, giving payroll officers and admins a clearer way to review what has been happening inside the system without relying on fragmented follow-up. On top of that, we improved the request experience around post-dated check workflows by giving teams a more dedicated place to track and manage those actions. In plain language, this means safer entry, better visibility, and a cleaner operational view for the people responsible for sensitive work.",
+      "What this means for you is a platform that is steadily earning trust where it matters most. Your team gets better protection at login, better visibility into important activity, and a more organized way to stay on top of request-driven processes. That lowers the risk of confusion, reduces dependence on side conversations, and makes it easier to run payroll and HR operations with confidence. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where security, oversight, and day-to-day workflows all support each other instead of living in separate systems. We are continuing to build toward a product that helps Filipino businesses operate with stronger controls without making the work feel heavier."
+    ]
+  },
+  {
     "date": "2026-04-22",
     "badge": "Progress Update",
     "title": "Safer Access, Cleaner Payroll Corrections",
