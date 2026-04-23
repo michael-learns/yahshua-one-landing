@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-04-23",
+    "badge": "Improvement",
+    "title": "Safer Logins, Smarter Payroll Setup",
+    "description": "We added stronger login protection, made payroll calculations respect gross pay settings more accurately, and improved the guided payroll setup flow so teams can get things right with less guesswork.",
+    "body": [
+      "Yesterday's work focused on making YAHSHUA One feel safer and easier to set up correctly. We tightened login protection so repeated failed sign-in attempts now trigger an account lockout instead of letting someone keep guessing. For businesses handling payroll and employee records, that kind of guardrail matters because trust starts with basic access control.",
+      "We also improved the payroll setup experience in two practical ways. First, payroll components now respect gross pay settings more accurately, which helps reduce surprises when companies configure how pay should be computed. Second, the guided setup flow now does a better job walking admins through the payroll computation side of setup, so new teams have a clearer path to getting their payroll rules in place. In plain language: safer access, cleaner payroll behavior, and less setup guesswork."
+    ]
+  },
+  {
+    "date": "2026-04-23",
     "badge": "Progress Update",
     "title": "Security and Oversight Get Sharper",
     "description": "We tightened login protection, expanded audit visibility, and improved request oversight so growing Filipino businesses can run payroll operations with more trust and less guesswork.",
