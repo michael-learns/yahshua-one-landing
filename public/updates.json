@@ -2,6 +2,16 @@
   {
     "date": "2026-04-24",
     "badge": "Progress Update",
+    "title": "Employee Self-Service and Payroll Setup Get Clearer",
+    "description": "We made employee self-service more useful, gave payroll teams clearer setup visibility for government contribution tables, and added better controls for recurring deductions and edge-case payroll runs.",
+    "body": [
+      "Yesterday's work made YAHSHUA One more practical for both admins and employees. The employee side of the product now has a cleaner profile and kiosk experience, with easier access to payslips, deductions, announcements, and common requests like leave filing. That means less back-and-forth with HR for routine tasks and a clearer place for employees to check what matters to them.",
+      "On the admin side, payroll setup now shows contribution table names and values more clearly, recurring deduction types are easier to manage and import in bulk, and payroll runs now give better guidance when a result comes out to zero instead of leaving teams guessing. In plain language: cleaner self-service, clearer setup, and fewer confusing payroll moments."
+    ]
+  },
+  {
+    "date": "2026-04-24",
+    "badge": "Progress Update",
     "title": "Payroll Visibility Keeps Expanding",
     "description": "We expanded payroll reporting, pushed employee self-service further, and made recurring deductions easier to manage so Filipino businesses can run backoffice work with more clarity and less manual follow-up.",
     "body": [
