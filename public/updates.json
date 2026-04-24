@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-24",
+    "badge": "Progress Update",
+    "title": "Payroll Visibility Keeps Expanding",
+    "description": "We expanded payroll reporting, pushed employee self-service further, and made recurring deductions easier to manage so Filipino businesses can run backoffice work with more clarity and less manual follow-up.",
+    "body": [
+      "For many Filipino business owners, payroll pressure does not come from just one screen or one computation. It comes from the daily back-and-forth around reports, employee questions, deductions, and the constant need to see what is really happening inside the business. When that visibility is weak, teams fall back to spreadsheets, chat threads, and manual follow-up just to answer basic operational questions. That slows decision-making down and makes payroll feel heavier than it should. This update matters because YAHSHUA One keeps closing those gaps in the practical places where trust is either built or lost.",
+      "Yesterday we shipped a broad set of improvements that make the platform more useful for both admins and employees. We expanded payroll reporting so teams can review employee status, cash advances, attendance breakdowns, annual planning, payroll summaries, and final pay information with less guesswork. We also pushed the employee side of the product forward by improving kiosk and self-service flows, including better access to payslips, payroll history, deductions, and common request actions. On top of that, we completed recurring deduction management with stronger controls for creating, editing, importing, activating, and cleaning up these settings inside the system. In plain language, this means more visibility for management, more self-service for employees, and less manual patchwork behind the scenes.",
+      "What this means for you is a backoffice platform that is getting more complete from every angle. Admins can answer more questions directly inside the product instead of hunting through exports or asking for custom help, while employees move closer to a smoother experience for checking their own payroll-related records and requests. Better reporting and better self-service together reduce friction across the whole company because fewer tasks need to bounce around manually. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where reporting, deductions, employee access, and day-to-day operational control all work together in one place. We are continuing to build toward a system that helps Filipino businesses run with more confidence, more clarity, and far less chaos."
+    ]
+  },
+  {
     "date": "2026-04-23",
     "badge": "Improvement",
     "title": "Safer Logins, Smarter Payroll Setup",
