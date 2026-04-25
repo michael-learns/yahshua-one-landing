@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-04-25",
+    "badge": "Improvement",
+    "title": "Getting Started in YAHSHUA One Feels Clearer",
+    "description": "New teams now get better onboarding guidance and a starter setup, so the first steps inside YAHSHUA One feel less confusing and less manual.",
+    "body": [
+      "Yesterday's update focused on a simple but important part of the product: helping new teams get oriented faster. YAHSHUA One now does a better job guiding people through a key setup area during onboarding, so the first experience feels less like guesswork and more like a clear path forward.",
+      "We also added a starter setup to help new accounts begin with a more useful default foundation instead of facing a blank slate. In plain language: getting started should feel smoother, clearer, and less intimidating for businesses using YAHSHUA One for the first time."
+    ]
+  },
+  {
+    "date": "2026-04-25",
     "badge": "Progress Update",
     "title": "Onboarding Gets Smarter, Operations Get Clearer",
     "description": "We made first-time setup easier to understand, expanded key payroll and employee workflows, and kept strengthening the controls and visibility businesses need to run a serious backoffice.",
