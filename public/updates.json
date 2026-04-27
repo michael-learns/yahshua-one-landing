@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-27",
+    "badge": "Progress Update",
+    "title": "Operations Get Sharper and Easier",
+    "description": "We made YAHSHUA One better at handling day-to-day operations with new cash count workflows, smarter saved views, clearer payroll navigation, and stronger guidance for teams getting work done inside the platform.",
+    "body": [
+      "For many Filipino business owners, operational drag does not come from one huge system failure. It comes from small repeated frustrations like hunting for the same filters again, bouncing between unclear payroll pages, or relying on side notes to track simple cash count activity. Those little moments add up fast, especially when your team is already juggling payroll deadlines, admin work, and employee concerns at the same time. A backoffice platform only becomes truly useful when it helps people move through routine work with less friction and less second-guessing. That is the problem this latest round of progress is addressing inside YAHSHUA One.",
+      "Yesterday we shipped work that makes the product feel more structured and more practical in real use. We pushed forward a dedicated cash count experience so teams can record and manage this part of operations more cleanly instead of patching it together outside the system. We also improved company-level saved filters, which means people can return to the views they actually use without rebuilding them every time. Payroll pages are being updated to follow a clearer configuration structure, and new guides now help users understand areas like the employee kiosk, setup checklist, payroll runs, and compliance tables in plain language. In short, the platform is getting better at organizing both the work itself and the way people learn how to do it.",
+      "What this means for you is more clarity in the everyday parts of running a business. Your team gets a cleaner path for recurring admin tasks, faster access to the views that matter, and better support when they need to understand what to do next without waiting on someone else to explain it. That reduces wasted clicks, reduces avoidable confusion, and makes YAHSHUA One feel less like a tool you have to learn around and more like a backoffice that actually works with you. It also moves us closer to a complete payroll and HR backoffice where operations, payroll, guidance, and reporting all feel connected instead of scattered. We are continuing to build toward a platform that helps Filipino businesses run with more confidence, more consistency, and a lot less chaos."
+    ]
+  },
+  {
     "date": "2026-04-26",
     "badge": "Progress Update",
     "title": "Payroll Access and Self-Service Grow Up",
