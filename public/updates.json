@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-28",
+    "badge": "Progress Update",
+    "title": "Work Tracking Gets More Practical",
+    "description": "We pushed YAHSHUA One closer to a truly usable daily operations hub with better productivity reporting, cleaner payroll navigation, stronger company announcements, and smoother request follow-through.",
+    "body": [
+      "For many Filipino business owners, the hardest part of running a team is not only payroll day itself. It is staying on top of what people actually got done, keeping internal communication clear, and making sure routine approvals do not disappear into confusion. When those pieces are scattered across chat threads, spreadsheets, and memory, operations start to feel heavier than they should. A good backoffice should not only store records after the fact, it should help you see work more clearly while the business is moving. That is the need this latest update is addressing inside YAHSHUA One.",
+      "Yesterday we shipped progress that makes the platform more useful in plain day-to-day work. We moved productivity reporting forward so teams can better save, review, and export accomplishment data instead of piecing updates together manually. We also cleaned up payroll navigation so related payroll setup pages feel more organized and easier to understand when admins need to manage them. On top of that, company announcements are becoming easier to manage inside the system, which matters when you need one reliable place to share important updates with your team. We also continued improving approval-related request flows and status notifications so people are less likely to wonder what happened to a submitted request.",
+      "What this means for you is a platform that keeps getting better at the everyday rhythm of running a business. You can move closer to a setup where operational updates, payroll administration, company-wide communication, and request tracking all live in one cleaner system instead of bouncing between tools. That saves time, reduces follow-up, and gives managers a clearer picture of what is happening without having to chase people down for context. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where work visibility and internal coordination are treated as first-class parts of operations instead of afterthoughts. We are continuing to build toward a product that helps Filipino businesses run with more clarity, more accountability, and a lot less friction."
+    ]
+  },
+  {
     "date": "2026-04-27",
     "badge": "Progress Update",
     "title": "Operations Get Sharper and Easier",
