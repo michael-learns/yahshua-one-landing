@@ -1,5 +1,16 @@
 [
   {
+    "date": "2026-04-29",
+    "badge": "Progress Update",
+    "title": "Reporting Gets Much More Real",
+    "description": "We pushed YAHSHUA One further into real backoffice territory with stronger productivity reporting, saved export infrastructure, cleaner downloads, and better visibility for face data and audit activity.",
+    "body": [
+      "For many Filipino business owners, one of the most frustrating parts of running payroll and HR operations is not the lack of activity, but the lack of visibility. Work gets done, files get shared, and reports get requested, yet the actual record of what happened often ends up scattered across chats, email attachments, and last-minute exports. That creates delays when managers need answers fast, especially when they are trying to understand employee productivity, review supporting documents, or confirm whether operational data is complete. A real backoffice platform should not make you chase information across five places just to get a clear picture. This update matters because YAHSHUA One is getting much better at turning everyday work into organized, reviewable, downloadable business records.",
+      "Yesterday we moved several practical reporting and export capabilities forward inside the product. Productivity reporting now has a stronger foundation behind it, including clearer detail records, filters for exception-heavy situations like overtime and holiday work, and a more complete view of total hours worked all the way down to batch-level man-hours. We also pushed a proper saved reports library and background export flow, which means larger downloads can be prepared more cleanly instead of feeling like a fragile one-off action. On top of that, attachment downloads and bundled file exports are becoming more reliable, so supporting documents are easier to retrieve when teams need them. We also improved face-recognition data management with better filtering and export support, and strengthened audit-log forwarding so important activity is easier to trace across the system.",
+      "What this means for you is a product that is becoming far more useful once the real questions start coming in. You are moving closer to a setup where managers can review productivity with more confidence, admins can pull the files they need without awkward workarounds, and teams can keep a cleaner historical record of what happened and why. That reduces spreadsheet dependency, cuts down follow-up, and makes the platform more trustworthy when someone asks for proof, detail, or context. It also moves YAHSHUA One closer to being a complete payroll and HR backoffice, where reporting, downloads, auditability, and day-to-day operations all work together instead of living in separate systems. We are continuing to build toward a platform that helps Filipino businesses run with clearer records, faster answers, and a lot less chaos."
+    ]
+  },
+  {
     "date": "2026-04-28",
     "badge": "Progress Update",
     "title": "Work Tracking Gets More Practical",
