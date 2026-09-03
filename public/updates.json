@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-03",
+    "badge": "Progress Update",
+    "title": "Sales Invoices and Memos Now Connect",
+    "description": "Sales invoices can now be posted with a visible posting outcome, while credit and debit memos can be raised against the document they correct.",
+    "body": [
+      "What changed: The sales invoicing workflow now supports raising an invoice and seeing what it will post, with the invoice screen connected to the posting service. Credit and debit memos can also be issued and tied to the document they correct, giving corrections a clearer place in the sales document chain.",
+      "Where to find it: The confirmed product areas are the sales invoice screen, its posting workflow, and the credit and debit memo screens. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance teams can review the accounting effect of an invoice and keep corrective memos connected to the source document. That makes posting and correction work easier to follow and reduces ambiguity when reviewing sales records.",
+      "Who benefits / next step: Accounts receivable and finance users benefit most from this connected workflow. Open the sales invoicing area, review an invoice’s posting outcome, or raise a memo against the document it corrects."
+    ]
+  },
+  {
     "date": "2026-09-02",
     "badge": "Progress Update",
     "title": "Sales Document Voids Are Safer",
