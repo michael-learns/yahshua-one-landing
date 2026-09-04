@@ -1,4 +1,15 @@
 [{
+    "date": "2026-09-04",
+    "badge": "Progress Update",
+    "title": "Customer Pricing and Channels Are Clearer",
+    "description": "Customer records now show the price group and sales channel they belong to, making commercial context easier to identify.",
+    "body": [
+      "What changed: Customer records now include the price group and sales channel associated with each customer. This gives teams a clearer view of the commercial context attached to a customer when working with customer data.",
+      "Where to find it: The improvement appears on customer records and their related customer-management view. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Sales and finance teams can identify which pricing and channel context applies without relying on separate notes or manual lookups. That makes customer review clearer and supports more consistent handling of customer-related work.",
+      "Who benefits / next step: Customer-management, sales, and finance users benefit most from this added context. Open a customer record and review its assigned price group and sales channel."
+    ]
+  },
     "date": "2026-09-03",
     "badge": "Progress Update",
     "title": "Sales Invoices and Memos Now Connect",
