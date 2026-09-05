@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-05",
+    "badge": "Progress Update",
+    "title": "Customer and Void Context Is Clearer",
+    "description": "Customer records now show their price group and sales channel, while void processing keeps the source sales document connected to the correction.",
+    "body": [
+      "What changed: Customer records now identify the price group and sales channel they belong to. Sales-document void processing also closes the loop back to the source document, keeping the correction connected to the record it affects.",
+      "Where to find it: The pricing and channel details appear on customer records, while the void improvement appears in the sales-document void workflow. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams can understand a customer’s commercial context more quickly and keep void activity tied to the sales document under review. That makes customer review and document correction clearer to follow.",
+      "Who benefits / next step: Customer-management, sales, finance, and approval users benefit most from these improvements. Open a customer record to review its price group and sales channel, or use the sales-document void workflow when a correction is needed."
+    ]
+  },
+  {
     "date": "2026-09-04",
     "badge": "Progress Update",
     "title": "Customer Pricing and Channels Are Clearer",
