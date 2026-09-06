@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-06",
+    "badge": "Progress Update",
+    "title": "Proposals and Agreements Move Forward",
+    "description": "Proposal and agreement workflows now cover drafting, sending, acceptance, signed-document handling, revisions, and lifecycle signals.",
+    "body": [
+      "What changed: The proposal and agreement work now covers proposal drafts with priced lines from billing, a Documents tab, sending and freezing, PDF output, and a public accept or decline page. It also adds agreement creation from an accepted proposal, signature capture or signed-document upload, revisions, expiry and supersede handling, plus timeline and owner notifications.",
+      "Where to find it: The confirmed areas are the proposal draft workflow, its Documents tab, the send and public accept or decline pages, and the agreement workflow. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams get a clearer path from preparing a priced proposal through acceptance and agreement management. Revision, expiry, ownership, and timeline signals make the status of an active commercial document easier to follow.",
+      "Who benefits / next step: Sales, commercial, and approval users benefit most from this workflow progress. Review the proposal and agreement areas when available, then use the confirmed send, acceptance, signature, or signed-upload step that matches your process."
+    ]
+  },
+  {
     "date": "2026-09-05",
     "badge": "Progress Update",
     "title": "Customer and Void Context Is Clearer",
