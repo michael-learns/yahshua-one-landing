@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-07",
+    "badge": "Progress Update",
+    "title": "Commercial Document Controls Expand",
+    "description": "Proposal, agreement, approval, and document-chain workflows now cover more of the path from pricing and requests to controlled records.",
+    "body": [
+      "What changed: Commercial workflows now cover proposal drafts with priced lines, sending and acceptance, agreements, document revisions, and lifecycle signals. The product also advances purchase requests and approvals, document conversion, delivery, returns, sales invoicing, and credit or debit corrections while keeping related records connected.",
+      "Where to find it: The confirmed areas are the proposal and agreement workflows, purchase-request approval flow, document-chain screens, delivery and return workflows, and sales-invoicing area. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Teams can move commercial work through clearer stages while preserving the relationship between requests, documents, deliveries, returns, invoices, and corrections. Approval limits, reversal behavior, and connected records make consequential finance and operations activity easier to review.",
+      "Who benefits / next step: Sales, purchasing, finance, operations, and approval users benefit most from this progress. Review the relevant proposal, agreement, document-chain, purchasing, or invoicing workflow in the app when available and follow the next supported step for the record you are handling."
+    ]
+  },
+  {
     "date": "2026-09-06",
     "badge": "Progress Update",
     "title": "Proposals and Agreements Move Forward",
