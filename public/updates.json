@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-08",
+    "badge": "Progress Update",
+    "title": "Audit Trail Traceability Improves",
+    "description": "The audit area now lets teams review a company-wide trail and trace an individual document back to who decided it.",
+    "body": [
+      "What changed: YAHSHUA One now provides a dedicated audit area for reading a company’s audit trail. Teams can also open a document’s trace and see the decision associated with that document.",
+      "Where to find it: Open Enquiry → Audit to review the audit trail. The document trace appears in the audit-trail workflow, while the available evidence does not confirm a deeper navigation path.",
+      "Why it helps: Finance and operations teams can investigate important activity from a central trail and connect a document to the decision recorded against it. That makes review clearer and helps teams understand what happened without relying on disconnected notes.",
+      "Who benefits / next step: Finance teams, operations users, and approvers benefit most from this traceability. Open the Audit area in Enquiry and review the trail or a document’s trace when you need to verify an action."
+    ]
+  },
+  {
     "date": "2026-09-07",
     "badge": "Progress Update",
     "title": "Commercial Document Controls Expand",
