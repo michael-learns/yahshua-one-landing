@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-09",
+    "badge": "Progress Update",
+    "title": "Receivables Workflows Gain More Control",
+    "description": "Customer tax details, ageing, statements, collection promises, and connected ledger accounts now give receivables teams clearer control over customer balances.",
+    "body": [
+      "What changed: Receivables work now includes customer tax identity fields, ageing views tied to the ledger, customer statements as at a chosen date, and collection worklists for promises and follow-up notes. The workflow also connects collection postings to the accounts they affect, giving customer-balance work a more complete operational record.",
+      "Where to find it: The improvements appear in the customer records, receivables ageing and statement areas, collections worklist, and related account setup screens. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance and collections teams can see why a customer balance exists, how overdue amounts are grouped, and what follow-up commitments have been recorded. This makes customer review more consistent and reduces the need to reconcile separate notes, reports, and ledger references.",
+      "Who benefits / next step: Accounts receivable teams, collectors, finance managers, and approvers benefit most from this progress. Open the relevant customer or receivables area to review ageing, generate a dated statement, or record the next promise and collection note."
+    ]
+  },
+  {
     "date": "2026-09-08",
     "badge": "Progress Update",
     "title": "Audit Trail Traceability Improves",
