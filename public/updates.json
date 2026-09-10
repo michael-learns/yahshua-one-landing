@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-10",
+    "badge": "Progress Update",
+    "title": "Numbers Workspaces Get a Unified Redesign",
+    "description": "The Numbers module now has a more consistent workspace experience across navigation, search, dashboards, ledger, chart of accounts, and company setup.",
+    "body": [
+      "What changed: YAHSHUA One redesigned core Numbers workspaces, including the navigation and header search, the General Ledger, the Numbers Today dashboard, Chart of Accounts, statement captions, fiscal calendar, branches, and company setup. These areas now share a more consistent interface and clearer workspace structure.",
+      "Where to find it: The improvements appear across the Numbers module, including its navigation, dashboard, General Ledger, Chart of Accounts, captions, fiscal calendar, branches, and company setup screens. The available evidence does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Finance teams can move between essential accounting workspaces with less visual and interaction friction. Clearer navigation, search, and consistent data views make setup and ledger review easier to understand and maintain.",
+      "Who benefits / next step: Accounting users and company setup owners benefit most from this redesign. Open the Numbers module and review the workspace that supports your next accounting or configuration task."
+    ]
+  },
+  {
     "date": "2026-09-09",
     "badge": "Progress Update",
     "title": "Receivables Workflows Gain More Control",
