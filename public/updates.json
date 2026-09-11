@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-11",
+    "badge": "Progress Update",
+    "title": "Audit Review Gets More Direct",
+    "description": "A dedicated Audit area now gives teams a clearer way to review the company audit trail and trace decisions on individual documents.",
+    "body": [
+      "What changed: YAHSHUA One now gives Audit its own area for reviewing a company's audit trail. Teams can also see who decided an individual document, making document-level accountability easier to follow.",
+      "Where to find it: Open Enquiry → Audit to review the audit trail. The document decision detail appears within the audit-trail workflow, and the available evidence does not confirm a more specific path.",
+      "Why it helps: Audit and operations teams can investigate activity from a central place and connect a document to the decision recorded against it. This makes reviews clearer and reduces the need to piece together evidence from disconnected records.",
+      "Who benefits / next step: Audit reviewers, finance and operations users, and document approvers benefit most from this improvement. Open Enquiry → Audit when you need to review the trail or verify who decided a document."
+    ]
+  },
+  {
     "date": "2026-09-10",
     "badge": "Progress Update",
     "title": "Numbers Workspaces Get a Unified Redesign",
