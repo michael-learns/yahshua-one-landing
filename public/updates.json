@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-17",
+    "badge": "Progress Update",
+    "title": "Configuration Workspace Gets Clearer",
+    "description": "Configuration work is now organized into a denser workspace, with document numbering and related register and settings screens easier to find.",
+    "body": [
+      "What changed: YAHSHUA One now has a redesigned Configuration workspace for document numbering, with related register and settings screens grouped in the Configuration area. This gives setup work a more focused place in the product.",
+      "Where to find it: The confirmed evidence places these improvements in Configuration, including the document-numbering workspace and the grouped register and settings screens. It does not confirm a more specific in-app menu path, so no deeper navigation path is provided.",
+      "Why it helps: Company setup owners can review numbering rules and related configuration screens with less searching and a clearer view of the settings that belong together. A denser workspace also makes routine configuration review more efficient.",
+      "Who benefits / next step: Configuration owners and finance administrators benefit most from this improvement. Open the Configuration area and review the document-numbering or related settings screens for the next setup task."
+    ]
+  },
+  {
     "date": "2026-09-16",
     "badge": "Progress Update",
     "title": "Bank Reconciliation and Purchasing Controls",
