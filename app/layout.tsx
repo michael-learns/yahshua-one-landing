@@ -151,7 +151,7 @@ export default function RootLayout({
                   },
                   inLanguage: "en-PH",
                   isAccessibleForFree: true,
-                  screenshot: `${BASE_URL}/og-image.jpg`,
+                  screenshot: `${BASE_URL}/opengraph-image`,
                   publisher: { "@id": PARENT_ORG_ID },
                 },
                 {
@@ -221,3 +221,4 @@ export default function RootLayout({
     </html>
   );
 }
+

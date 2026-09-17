@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { Newspaper } from "lucide-react";
 import type { Metadata } from "next";
 import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 
@@ -71,12 +72,42 @@ export default async function BlogPostPage({
     inLanguage: "en-PH",
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${BASE_URL}/blog/${slug}` },
+    ],
+  };
+
+  const faqSchema = post.faq && post.faq.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: post.faq.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  } : null;
+
   return (
     <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh", fontFamily: "var(--font-geist, sans-serif)" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Nav */}
       <nav style={{
@@ -104,6 +135,41 @@ export default async function BlogPostPage({
 
       {/* Article */}
       <article style={{ maxWidth: 720, margin: "0 auto", padding: "60px 28px 80px" }}>
+
+        {/* Cover */}
+        {post.coverImage ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={post.coverImage}
+            alt=""
+            style={{
+              width: "100%",
+              aspectRatio: "1200 / 628",
+              objectFit: "cover",
+              borderRadius: 18,
+              display: "block",
+              marginBottom: 40,
+            }}
+          />
+        ) : (
+          <div
+            aria-hidden
+            style={{
+              width: "100%",
+              aspectRatio: "1200 / 628",
+              borderRadius: 18,
+              border: "1px solid var(--line)",
+              background:
+                "radial-gradient(90% 140% at 10% 20%, var(--accent-glow), transparent 60%), var(--surface)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: 40,
+            }}
+          >
+            <Newspaper size={36} strokeWidth={1.5} color="var(--soft)" />
+          </div>
+        )}
 
         {/* Meta */}
         <header style={{ marginBottom: 40 }}>
@@ -162,19 +228,39 @@ export default async function BlogPostPage({
           background: "radial-gradient(70% 140% at 0% 100%, var(--accent-glow), transparent 60%), var(--surface)",
         }}>
           <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 18, margin: "0 0 8px" }}>
-            Stop computing this by hand.
+            {post.ctaHeading ?? "Stop computing this by hand."}
           </p>
           <p style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6, margin: "0 0 20px", maxWidth: 440 }}>
-            YAHSHUA One automatically computes SSS, PhilHealth, Pag-IBIG, and BIR withholding tax for every employee — every cutoff, zero manual work.
+            {post.ctaBody ?? "YAHSHUA One automatically computes SSS, PhilHealth, Pag-IBIG, and BIR withholding tax for every employee, every cutoff, zero manual work."}
           </p>
           <a href="/#waitlist" style={{
             display: "inline-flex", alignItems: "center", gap: 8, padding: "11px 24px",
             background: "var(--ink)", color: "#fff", borderRadius: 999,
             fontWeight: 500, fontSize: 14,
           }}>
-            Join the waitlist →
+            Book a Free Demo →
           </a>
         </div>
+
+        {/* Sources */}
+        {post.sources && post.sources.length > 0 && (
+          <div style={{ marginTop: 40, paddingTop: 24, borderTop: "1px solid var(--line)" }}>
+            <p style={{ fontSize: 13, fontWeight: 600, color: "var(--muted)", margin: "0 0 10px", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+              Sources
+            </p>
+            <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 6 }}>
+              {post.sources.map((source, i) => (
+                <li key={i} style={{ fontSize: 13, color: "var(--soft)", lineHeight: 1.6 }}>
+                  {source}
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 12.5, color: "var(--soft)", marginTop: 14 }}>
+              Written and reviewed by the YAHSHUA One editorial team, part of The ABBA Initiative (OPC).
+              Published {formatDate(post.date)}.
+            </p>
+          </div>
+        )}
       </article>
 
       {/* Footer */}
