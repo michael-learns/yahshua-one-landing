@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-18",
+    "badge": "Progress Update",
+    "title": "Approval Roles and Company Access",
+    "description": "Administrators can now define who may approve and assign people to roles and branches with clearer control over company access.",
+    "body": [
+      "What changed: YAHSHUA One now connects approval settings to the roles that may approve, while preventing approval rules that nobody can satisfy. Administrators can also add people, assign their roles, and say which branches they work in.",
+      "Where to find it: The confirmed evidence places these improvements in the approval settings screen and the People and role-management areas. It does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Companies can make approval responsibilities clearer and keep access aligned with the people and branches they actually manage. This reduces ambiguous approval routing and makes permission reviews easier to maintain.",
+      "Who benefits / next step: Company administrators and approval owners benefit most from this progress. Open the confirmed approval or people-management area and review the roles, approvers, and branch assignments for your company."
+    ]
+  },
+  {
     "date": "2026-09-17",
     "badge": "Progress Update",
     "title": "Configuration Workspace Gets Clearer",
