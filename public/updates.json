@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-19",
+    "badge": "Progress Update",
+    "title": "Setup and Finance Workspaces Refined",
+    "description": "Company setup, approval controls, permissions, and core finance workspaces now provide clearer ways to configure and review day-to-day operations.",
+    "body": [
+      "What changed: YAHSHUA One now includes refreshed workspaces for company preferences, permissions, tax settings, bank matching, statement imports, deposits and transfers, document trace, audit trails, and bank accounts. Setup screens also carry their progress context, company preferences save as users make changes, and approval settings now distinguish who must approve from who may approve.",
+      "Where to find it: The confirmed evidence places these improvements in the Configuration, Money, and Enquiry workspaces, plus the approval settings and setup screens. The source does not confirm a more specific in-app navigation path for this combined update, so no deeper menu path is provided.",
+      "Why it helps: Administrators and finance teams get clearer places to configure company rules, manage access, review bank activity, and trace documents and audit history. Saving preferences as users work and showing setup progress in context can make configuration easier to follow and reduce avoidable review steps.",
+      "Who benefits / next step: Company administrators, finance users, accounting reviewers, and approval owners benefit most from this progress. Open the relevant Configuration, Money, Enquiry, or approval area and review the updated workspace for your next setup or finance task."
+    ]
+  },
+  {
     "date": "2026-09-18",
     "badge": "Progress Update",
     "title": "Approval Roles and Company Access",
