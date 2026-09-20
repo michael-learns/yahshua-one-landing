@@ -1,4 +1,16 @@
 [{
+    "date": "2026-09-20",
+    "badge": "Progress Update",
+    "title": "Tax Settings and Audit Workspaces Refined",
+    "description": "Tax settings and document-trace work now use clearer, more stable workspaces, while setup screens show progress and company preferences save as changes are made.",
+    "body": [
+      "What changed: YAHSHUA One now presents tax policy configuration in a redesigned workspace, with the editor sized to the form and the policy version record typeset as a document. Document trace and journal entry views also sit within their related workspaces, while setup screens carry progress and company preferences save as users make changes.",
+      "Where to find it: The confirmed evidence places these improvements in the Configuration tax settings workspace, the Enquiry document-trace workspace, the register workflow for journal entries, and the setup and company-preferences screens. It does not confirm a more specific in-app navigation path, so no deeper menu path is provided.",
+      "Why it helps: Configuration and review work should be easier to follow because related forms, policy records, traces, and journal entries stay in clearer workspaces. Saving preferences as users work and showing setup progress in context can reduce unnecessary steps during company setup.",
+      "Who benefits / next step: Company administrators, tax configuration owners, and audit or finance reviewers benefit most from this progress. Open the relevant Configuration, Enquiry, setup, or company-preferences area and review the updated workspace for your next task."
+    ]
+  },
+  {
     "date": "2026-09-19",
     "badge": "Progress Update",
     "title": "Setup and Finance Workspaces Refined",
