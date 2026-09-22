@@ -1,4 +1,15 @@
 [{
+    "date": "2026-09-22",
+    "badge": "Progress Update",
+    "title": "Settings Navigation Follows Workflows",
+    "description": "Settings now groups configuration work by workflow with a steadier layout, clearer way back, and navigation that keeps the active module open.",
+    "body": [
+      "What changed: YAHSHUA One now organizes configuration screens on a dedicated Settings page instead of spreading them through the main navigation rail. The rail groups work by workflow, keeps the active module open when its branch is open, and provides a consistent way back to Settings.",
+      "Where to find it: Open the Settings page to access the grouped configuration screens and their related workflows. The confirmed evidence does not specify deeper menu names, so no more detailed navigation path is provided.",
+      "Why it helps: Administrators can find related configuration work in one place and move between settings without losing their current context. The steadier header, page-sized layout, and pinned rail footer also make longer configuration sessions easier to follow.",
+      "Who benefits / next step: Company administrators and configuration owners benefit most from this improvement. Open Settings and use the workflow-based groups to review the configuration area you need next."
+    ]
+  }, {
     "date": "2026-09-20",
     "badge": "Progress Update",
     "title": "Tax Settings and Audit Workspaces Refined",
