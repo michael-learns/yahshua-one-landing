@@ -61,6 +61,8 @@ function CategoryBadge({ label }: { label: string }) {
 
 export default function BlogPage() {
   const posts = getAllPosts();
+  const featuredPost = posts.find((post) => post.featured) ?? posts[0];
+  const recentPosts = featuredPost ? posts.filter((post) => post.slug !== featuredPost.slug) : posts;
 
   return (
     <div style={{ background: "var(--bg)", color: "var(--ink)", minHeight: "100vh", fontFamily: "var(--font-geist, sans-serif)" }}>
@@ -81,10 +83,10 @@ export default function BlogPage() {
           </a>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <a href="/" style={{ fontSize: 14, color: "var(--muted)", display: "flex", alignItems: "center", gap: 6 }}>← Back</a>
-            <a href="https://app.yahshua.one/" style={{
+            <a href="https://calendly.com/clientrelations-abba/presentation?utm_source=blog&utm_medium=web&utm_campaign=yahshuaone" target="_blank" rel="noopener noreferrer" style={{
               fontSize: 13.5, fontWeight: 500, color: "#fff", padding: "8px 16px",
               background: "var(--ink)", borderRadius: 999,
-            }}>Start free</a>
+            }}>Book a Free Demo</a>
           </div>
         </div>
       </nav>
@@ -110,43 +112,95 @@ export default function BlogPage() {
             <p style={{ fontSize: 18, color: "var(--muted)" }}>No posts yet — check back soon.</p>
           </div>
         ) : (
-          <div className="grid-blog">
-            {posts.map((post) => (
+          <>
+            {featuredPost && (
               <a
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                style={{ display: "block", textDecoration: "none" }}
+                href={`/blog/${featuredPost.slug}`}
+                style={{ display: "block", textDecoration: "none", marginBottom: 56 }}
               >
-                <article className="blog-card">
-                  <CoverThumbnail src={post.coverImage} />
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-                    <CategoryBadge label={post.category} />
-                    {post.readTime && (
-                      <span style={{ fontSize: 12, color: "var(--soft)" }}>{post.readTime}</span>
-                    )}
-                  </div>
-                  <h2 style={{
-                    fontSize: "clamp(1.05rem, 2vw, 1.15rem)",
-                    fontWeight: 600,
-                    color: "var(--ink)",
-                    lineHeight: 1.35,
-                    letterSpacing: "-0.01em",
-                    margin: 0,
-                    flex: 1,
-                  }}>
-                    {post.title}
-                  </h2>
-                  <p style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
-                    {post.description}
-                  </p>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 4 }}>
-                    <span style={{ fontSize: 12, color: "var(--soft)" }}>{formatDate(post.date)}</span>
-                    <span style={{ fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)" }}>Read →</span>
+                <article className="featured-post">
+                  <CoverThumbnail src={featuredPost.coverImage} />
+                  <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                      <CategoryBadge label="Featured" />
+                      <CategoryBadge label={featuredPost.category} />
+                      {featuredPost.readTime && (
+                        <span style={{ fontSize: 12, color: "var(--soft)" }}>{featuredPost.readTime}</span>
+                      )}
+                    </div>
+                    <h2 style={{
+                      fontSize: "clamp(1.4rem, 3vw, 1.75rem)",
+                      fontWeight: 600,
+                      color: "var(--ink)",
+                      lineHeight: 1.25,
+                      letterSpacing: "-0.015em",
+                      margin: 0,
+                    }}>
+                      {featuredPost.title}
+                    </h2>
+                    <p style={{ fontSize: 15, color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
+                      {featuredPost.description}
+                    </p>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 4 }}>
+                      <span style={{ fontSize: 12, color: "var(--soft)" }}>{formatDate(featuredPost.date)}</span>
+                      <span style={{ fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)" }}>Read article →</span>
+                    </div>
                   </div>
                 </article>
               </a>
-            ))}
-          </div>
+            )}
+
+            {recentPosts.length > 0 && (
+              <>
+                <h2 style={{
+                  fontSize: "clamp(1.1rem, 2.2vw, 1.3rem)",
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                  letterSpacing: "-0.01em",
+                  margin: "0 0 20px",
+                }}>
+                  Recent articles
+                </h2>
+                <div className="grid-blog">
+                  {recentPosts.map((post) => (
+                    <a
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      style={{ display: "block", textDecoration: "none" }}
+                    >
+                      <article className="blog-card">
+                        <CoverThumbnail src={post.coverImage} />
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                          <CategoryBadge label={post.category} />
+                          {post.readTime && (
+                            <span style={{ fontSize: 12, color: "var(--soft)" }}>{post.readTime}</span>
+                          )}
+                        </div>
+                        <h3 style={{
+                          fontSize: "clamp(1.05rem, 2vw, 1.15rem)",
+                          fontWeight: 600,
+                          color: "var(--ink)",
+                          lineHeight: 1.35,
+                          letterSpacing: "-0.01em",
+                          margin: 0,
+                          flex: 1,
+                        }}>
+                          {post.title}
+                        </h3>
+                        <p style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
+                          {post.description}
+                        </p>
+                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 4 }}>
+                          <span style={{ fontSize: 12, color: "var(--soft)" }}>{formatDate(post.date)}</span>
+                          <span style={{ fontSize: 13.5, fontWeight: 500, color: "var(--accent-2)" }}>Read →</span>
+                        </div>
+                      </article>
+                    </a>
+                  ))}
+                </div>
+              </>
+            )}
+          </>
         )}
       </main>
 
@@ -159,7 +213,7 @@ export default function BlogPage() {
         }}>
           <p style={{ fontWeight: 600, color: "var(--ink)", fontSize: 20, margin: "0 0 8px" }}>See YAHSHUA One in action.</p>
           <p style={{ color: "var(--muted)", fontSize: 15, margin: "0 0 24px" }}>Walk through payroll, BIR compliance, and HR with our team — free, no commitment.</p>
-          <a href="/#waitlist" style={{
+          <a href="https://calendly.com/clientrelations-abba/presentation?utm_source=blog&utm_medium=web&utm_campaign=yahshuaone" target="_blank" rel="noopener noreferrer" style={{
             display: "inline-flex", alignItems: "center", gap: 8, padding: "12px 28px",
             background: "var(--ink)", color: "#fff", borderRadius: 999,
             fontWeight: 500, fontSize: 14.5,

@@ -242,6 +242,79 @@ const SHOWCASE = [
 ] as const;
 
 /* ══════════════════════════════════════════════════════════
+   ASK THEO DATA
+══════════════════════════════════════════════════════════ */
+const THEO_QUESTIONS = [
+  {
+    q: "Why is Maria's net pay lower this cutoff?",
+    a: "Theo traces her entry line by line and shows what changed. If your role can't view calculation details, you get a shorter answer with the formulas hidden.",
+  },
+  {
+    q: "What's the attendance coverage for this run?",
+    a: "You get a coverage figure for the pay period, like \"Coverage for run 42: 87%,\" so you know whether time logs are complete before you process.",
+  },
+  {
+    q: "Summarize recent payroll runs.",
+    a: "Period, status and totals for your last five runs, in one reply.",
+  },
+  {
+    q: "How many pending leave requests do I have?",
+    a: "The total, how many are still pending, and up to five recent ones with employee, status and dates.",
+  },
+  {
+    q: "What's Pedro's current rate?",
+    a: "The rate type (daily, monthly or supervisor) and the amount. If no rate is on file, Theo says so.",
+  },
+  {
+    q: "What department and schedule is Juan dela Cruz on?",
+    a: "Department, position, location, employment type and the schedule that applies today.",
+  },
+] as const;
+
+const THEO_DATA_RULES = [
+  {
+    label: "Same permissions as the app.",
+    text: "Each lookup checks the same permission as the matching screen. If your role doesn't have it, the lookup is refused and Theo tells you.",
+  },
+  {
+    label: "One company at a time.",
+    text: "Every lookup is limited to your company, and a conversation belongs to the user who started it.",
+  },
+  {
+    label: "No changes without your yes.",
+    text: "A change needs a role that's allowed to make it, plus your explicit confirmation.",
+  },
+  {
+    label: "Switched on deliberately.",
+    text: "Theo is enabled per company, and only for the roles on its allowed list.",
+  },
+] as const;
+
+/* ══════════════════════════════════════════════════════════
+   MOBILE APP DATA
+══════════════════════════════════════════════════════════ */
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.abba.yahshuaone.mobile";
+
+const MOBILE_FEATURES = [
+  {
+    title: "Clock in with a face or an ID.",
+    text: "Employees pick their company in Kiosk, then time in and out with facial recognition or their system ID. Geo-fencing validates where each clock-in happens.",
+  },
+  {
+    title: "File requests from the phone.",
+    text: "Employees file requests such as leave under Self-service and see what's still pending.",
+  },
+  {
+    title: "Approve from anywhere.",
+    text: "Managers approve requests from any device, and the same requests appear in the web app's approval workspace.",
+  },
+  {
+    title: "Syncs on its own.",
+    text: "Logs and requests sync to the cloud as soon as the device is online. Clock-ins show up under Timesheets, then Attendance, in the web app.",
+  },
+] as const;
+
+/* ══════════════════════════════════════════════════════════
    PAGE
 ══════════════════════════════════════════════════════════ */
 export default function PayrollPage() {
@@ -373,35 +446,13 @@ export default function PayrollPage() {
                         <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 1 }}>Automated payroll & compliance</div>
                       </div>
                     </a>
-                    <div style={{ borderTop: "1px solid var(--line)", margin: "6px 4px 2px", paddingTop: 6 }}>
-                      <div style={{ fontSize: 10.5, fontWeight: 500, color: "var(--soft)", padding: "2px 10px 4px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                        Existing customer? Sign in
-                      </div>
-                      {[
-                        { label: "YAHSHUA Payroll", href: "https://www.yahshuapayroll.com" },
-                        { label: "YAHSHUA HRIS", href: "https://www.yahshuahris.com" },
-                        { label: "YAHSHUA Books", href: "https://yahshuabooksonline.com" },
-                        { label: "YAHSHUA Tax", href: "https://www.yahshuataxonline.com" },
-                      ].map((legacyApp) => (
-                        <a key={legacyApp.label} href={legacyApp.href} target="_blank" rel="noopener noreferrer" style={{
-                          display: "block",
-                          padding: "7px 12px", borderRadius: 8,
-                          color: "var(--muted)", textDecoration: "none", fontSize: 13,
-                          transition: "background .15s ease",
-                        }}
-                          onMouseEnter={(e) => (e.currentTarget.style.background = "var(--bg-tint)")}
-                          onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}>
-                          {legacyApp.label}
-                        </a>
-                      ))}
-                    </div>
                   </div>
                 )}
               </div>
             </nav>
             <div className="nav-cta">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
+              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Book a Demo <Arrow /></button>
             </div>
             <button className="nav-burger" onClick={() => setMobileNavOpen(v => !v)} aria-label="Toggle menu" aria-expanded={mobileNavOpen}>
               {mobileNavOpen
@@ -423,7 +474,7 @@ export default function PayrollPage() {
             <hr />
             <div className="mobile-menu__ctas">
               <a href="https://app.yahshua.one/" style={{ ...btnGhost, ...btnSm }}>Sign in</a>
-              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Get Started <Arrow /></button>
+              <button onClick={() => setCtaOpen(true)} style={{ ...btnPrimary, ...btnSm }}>Book a Free Demo <Arrow /></button>
             </div>
           </div>
         </div>
@@ -461,7 +512,7 @@ export default function PayrollPage() {
                 </Reveal>
                 <Reveal delay={180}>
                   <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                    <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Get Started <Arrow /></button>
+                    <button onClick={() => setCtaOpen(true)} style={btnHeroPrimary}>Book a Free Demo <Arrow /></button>
                     <a href="#features" style={btnHeroGhost}>See how it works</a>
                   </div>
                 </Reveal>
@@ -609,7 +660,7 @@ export default function PayrollPage() {
                           </li>
                         ))}
                       </ul>
-                      <button onClick={() => setCtaOpen(true)} style={d ? btnDarkCta : btnPrimary}>Get Started <Arrow /></button>
+                      <button onClick={() => setCtaOpen(true)} style={d ? btnDarkCta : btnPrimary}>Book a Free Demo <Arrow /></button>
                     </div>
                   </Reveal>
 
@@ -634,6 +685,132 @@ export default function PayrollPage() {
           );
         })}
       </div>
+
+      {/* ── ASK THEO ── */}
+      <section id="ask-theo" className="section-pad" aria-labelledby="ask-theo-heading">
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <h2 id="ask-theo-heading" style={{
+                fontSize: "clamp(1.75rem, 4vw, 2.75rem)", letterSpacing: "-0.03em",
+                fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px",
+                textWrap: "balance" as React.CSSProperties["textWrap"],
+              }}>
+                Why did net pay change?{" "}
+                <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Ask Theo.</em>
+              </h2>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 480, margin: "0 auto" }}>
+                Every answer comes from your own payroll records, not the internet.
+              </p>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 }}>
+            {THEO_QUESTIONS.map((item, i) => (
+              <Reveal key={item.q} delay={i * 50}>
+                <div style={{
+                  height: "100%", padding: "24px 24px 26px", borderRadius: "var(--radius)",
+                  background: "var(--surface)", border: "1px solid var(--line)",
+                }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.35, margin: "0 0 10px", color: "var(--ink)" }}>
+                    &ldquo;{item.q}&rdquo;
+                  </h3>
+                  <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)", margin: 0 }}>{item.a}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <p style={{ textAlign: "center", fontSize: 13, color: "var(--soft)", margin: "20px 0 0" }}>
+            Example questions. Employee names are placeholders.
+          </p>
+          <p style={{ textAlign: "center", fontSize: 14, color: "var(--muted)", margin: "12px 0 0" }}>
+            Theo is optional and runs on pay-as-you-go credits, from ₱100.{" "}
+            <a href="/pricing#theo-credits" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>See how credits work</a>.
+          </p>
+
+          <Reveal>
+            <div style={{ marginTop: 72 }}>
+              <h3 style={{ fontSize: "clamp(1.25rem, 2.6vw, 1.625rem)", fontWeight: 500, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
+                How Theo handles your data
+              </h3>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, margin: "0 0 28px", maxWidth: 560 }}>
+                Theo only sees what the person asking is allowed to see, and only inside their own company.
+              </p>
+              <ul style={{
+                listStyle: "none", padding: 0, margin: 0,
+                display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px 32px",
+              }}>
+                {THEO_DATA_RULES.map((rule) => (
+                  <li key={rule.label} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <span style={{
+                      width: 20, height: 20, borderRadius: 6, background: "var(--accent-50)",
+                      display: "grid", placeItems: "center", flexShrink: 0, marginTop: 2,
+                    }}>
+                      <Check size={11} />
+                    </span>
+                    <span style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)" }}>
+                      <strong style={{ color: "var(--ink)", fontWeight: 500 }}>{rule.label}</strong>{" "}{rule.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div style={{ marginTop: 40 }}>
+                <a
+                  href="https://calendly.com/clientrelations-abba/presentation?utm_source=payroll&utm_medium=web&utm_campaign=yahshuaone_theo"
+                  target="_blank" rel="noopener noreferrer" style={btnPrimary}
+                >
+                  Book a Free Demo <Arrow />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── MOBILE APP ── */}
+      <section id="mobile-app" className="section-pad" aria-labelledby="mobile-app-heading" style={{ borderTop: "1px solid var(--line)" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto", padding: "0 28px" }}>
+          <Reveal>
+            <div style={{ textAlign: "center", marginBottom: 48 }}>
+              <h2 id="mobile-app-heading" style={{
+                fontSize: "clamp(1.75rem, 4vw, 2.75rem)", letterSpacing: "-0.03em",
+                fontWeight: 500, lineHeight: 1.1, margin: "0 0 14px",
+                textWrap: "balance" as React.CSSProperties["textWrap"],
+              }}>
+                Clock in from the phone.{" "}
+                <em style={{ fontStyle: "normal", color: "var(--accent-2)" }}>Approve from the dashboard.</em>
+              </h2>
+              <p style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.6, maxWidth: 520, margin: "0 auto" }}>
+                The YAHSHUA One mobile app is where your team clocks in and files requests. It&apos;s currently available on Google Play for Android only, and everything syncs to the payroll web app under one account.
+              </p>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))", gap: 16 }}>
+            {MOBILE_FEATURES.map((item, i) => (
+              <Reveal key={item.title} delay={i * 50}>
+                <div style={{
+                  height: "100%", padding: "24px 24px 26px", borderRadius: "var(--radius)",
+                  background: "var(--surface)", border: "1px solid var(--line)",
+                }}>
+                  <h3 style={{ fontSize: 16, fontWeight: 500, letterSpacing: "-0.01em", lineHeight: 1.35, margin: "0 0 10px", color: "var(--ink)" }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "var(--muted)", margin: 0 }}>{item.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={200}>
+            <div style={{ marginTop: 32, textAlign: "center" }}>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" style={btnPrimary}>
+                Get it on Google Play <Arrow />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* ── COMPLIANCE ── */}
       <section id="compliance" className="section-pad" style={{ borderTop: "1px solid var(--line)" }}>
@@ -792,6 +969,18 @@ export default function PayrollPage() {
               </>} />
             <FaqItem delay={320} q='What does "AI-driven payroll" mean?'
               a="Y1P includes an AI copilot accessible from within the app. It helps you understand payroll computations, surface discrepancies, and answer questions about your payroll data in plain language — without needing to dig through reports manually. It works on top of your actual company data, not generic templates." />
+            <FaqItem delay={360} q="Does Theo read my actual payroll data?"
+              a="Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds." />
+            <FaqItem delay={400} q="Can Theo change my payroll?"
+              a="Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation." />
+            <FaqItem delay={440} q="Who can see what Theo shows?"
+              a="Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden." />
+            <FaqItem delay={440} q="How much does YAHSHUA One Payroll cost?"
+              a={<>₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, plus a one-time ₱35,000 setup fee. Plan prices exclude VAT, and the trial is 30 days. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan. <a href="/pricing" style={{ color: "var(--accent-2)", textDecoration: "underline", textUnderlineOffset: 2 }}>See the full pricing</a>.</>} />
+            <FaqItem delay={440} q="Does YAHSHUA One have a mobile app?"
+              a="Yes. The YAHSHUA One mobile app is currently available on Google Play for Android only. Employees clock in and out with facial recognition or their system ID, with geo-fencing for location validation, and file requests such as leave. Managers can approve requests from any device, and everything syncs to the payroll web app." />
+            <FaqItem delay={440} q="Is there an iPhone or iOS version of the YAHSHUA One app?"
+              a="No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device." />
             <FaqItem delay={360} q="Will Y1P support our current payroll processes?"
               a="Yes. Y1P covers the complete Philippine payroll cycle: time and attendance, leave management, pay computation with full premium pay support, government contributions (SSS, PhilHealth, Pag-IBIG), BIR withholding tax, payslip generation, and all statutory compliance reports. Complex setups — multiple pay schedules, shift work, night differential, per-employee rate overrides — are all supported through the three-tier configuration system." />
             <FaqItem delay={400} q="What pay frequencies does Y1P support?"
@@ -870,7 +1059,7 @@ export default function PayrollPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section id="waitlist" style={{ borderTop: "1px solid var(--line)" }}>
+      <section id="book-demo" style={{ borderTop: "1px solid var(--line)" }}>
         <div style={{ background: "var(--ink)", paddingTop: "clamp(56px, 8vw, 100px)", paddingBottom: "clamp(56px, 8vw, 100px)", paddingLeft: 28, paddingRight: 28, position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, pointerEvents: "none", background: "radial-gradient(60% 80% at 50% 110%, oklch(0.78 0.13 215 / 0.22), transparent 60%)" }} />
           <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 1 }}>
@@ -879,11 +1068,11 @@ export default function PayrollPage() {
                 Stop doing payroll<br />manually.
               </h2>
               <p style={{ color: "oklch(0.65 0.01 250)", fontSize: 18, maxWidth: 460, margin: "0 auto 36px", lineHeight: 1.6 }}>
-                Join 1,200+ Filipino business owners on the YAHSHUA One waitlist. No credit card required.
+                See YAHSHUA One Payroll in action. Book a free 30-minute demo with our team.
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <button onClick={() => setCtaOpen(true)} style={{ ...btnBase, background: "#fff", color: "var(--ink)", borderColor: "#fff", boxShadow: "0 1px 2px rgba(0,0,0,0.12)" }}>
-                  Get Started <Arrow />
+                  Book a Free Demo <Arrow />
                 </button>
                 <a href="/" style={{ ...btnBase, background: "transparent", color: "#fff", borderColor: "oklch(0.35 0.02 250)" }}>
                   See all modules
@@ -909,7 +1098,7 @@ export default function PayrollPage() {
             <span style={{ fontWeight: 600, fontSize: 14, color: "var(--ink)" }}>YAHSHUA One</span>
           </a>
           <nav style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
-            {[{ label: "Home", href: "/" }, { label: "Modules", href: "/#modules" }, { label: "Support", href: "/support" }, { label: "Updates", href: "/updates" }, { label: "Waitlist", href: "/#waitlist" }].map((link) => (
+            {[{ label: "Home", href: "/" }, { label: "Modules", href: "/#modules" }, { label: "Support", href: "/support" }, { label: "Updates", href: "/updates" }, { label: "Pricing", href: "/pricing" }].map((link) => (
               <a key={link.label} href={link.href}
                 style={{ color: "var(--muted)", transition: "color .15s ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--ink)")}
@@ -991,7 +1180,7 @@ export default function PayrollPage() {
       {ctaOpen && (
         <div
           onClick={() => setCtaOpen(false)}
-          role="dialog" aria-modal="true" aria-label="Get started"
+          role="dialog" aria-modal="true" aria-label="Book a free demo"
           style={{
             position: "fixed", inset: 0, zIndex: 300,
             background: "rgba(10,14,20,0.72)", backdropFilter: "blur(8px)",
@@ -1041,23 +1230,21 @@ export default function PayrollPage() {
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "#fff" }}>I&apos;m new to YAHSHUA</span>
-                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free presentation with our team</span>
+                <span style={{ fontSize: 13, color: "oklch(0.58 0.01 250)" }}>Book a free demo with our team</span>
               </a>
 
-              <button
-                onClick={() => {
-                  setCtaOpen(false);
-                  window.location.href = "/#waitlist";
-                }}
+              <a
+                href="/support"
+                onClick={() => setCtaOpen(false)}
                 style={{
                   display: "flex", flexDirection: "column", gap: 3, padding: "16px 20px",
                   borderRadius: 12, background: "var(--surface)", border: "1px solid var(--line)",
-                  textAlign: "left", cursor: "pointer", fontFamily: "inherit",
+                  textDecoration: "none",
                 }}
               >
                 <span style={{ fontWeight: 500, fontSize: 15, color: "var(--ink)" }}>Yes, I&apos;m an existing client</span>
-                <span style={{ fontSize: 13, color: "var(--muted)" }}>Join the waitlist for early platform access</span>
-              </button>
+                <span style={{ fontSize: 13, color: "var(--muted)" }}>Get help from support or your account manager</span>
+              </a>
             </div>
           </div>
         </div>

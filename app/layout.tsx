@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import ConversionTracker from "./components/ConversionTracker";
 import "./globals.css";
 
 const geist = Geist({
@@ -15,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 const BASE_URL = "https://www.yahshua.one";
+const GA_MEASUREMENT_ID = "G-RCH2HNM48V";
 const PARENT_ORG_ID = "https://www.theabbainitiative.com/#organization";
 
 export const metadata: Metadata = {
@@ -122,9 +125,9 @@ export default function RootLayout({
                   operatingSystem: "Web",
                   offers: {
                     "@type": "Offer",
-                    price: "0",
                     priceCurrency: "PHP",
-                    description: "Free early access — join the waitlist",
+                    description: "YAHSHUA One Payroll with YAHSHUA HRIS included: PHP 7,000 per month for up to 100 employees, PHP 60 per additional employee, plus a one-time PHP 35,000 setup fee. Plan prices exclude VAT. Theo AI is optional: pay-as-you-go credits from PHP 100, none included in the plan.",
+                    url: `${BASE_URL}/pricing`,
                   },
                   featureList: [
                     "Automated payroll generation",
@@ -150,7 +153,6 @@ export default function RootLayout({
                     },
                   },
                   inLanguage: "en-PH",
-                  isAccessibleForFree: true,
                   screenshot: `${BASE_URL}/opengraph-image`,
                   publisher: { "@id": PARENT_ORG_ID },
                 },
@@ -217,7 +219,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         {children}
+        {process.env.NODE_ENV === "production" && <ConversionTracker />}
       </body>
+      {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }

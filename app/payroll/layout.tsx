@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 const BASE_URL = "https://www.yahshua.one";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.abba.yahshuaone.mobile";
 
 export const metadata: Metadata = {
   title: "YAHSHUA One Payroll — Automated Payroll & Statutory Contributions for Filipino Businesses ",
@@ -78,15 +79,36 @@ const payrollSchema = {
       ],
       offers: {
         "@type": "Offer",
-        price: "0",
+        price: "7000",
         priceCurrency: "PHP",
-        description: "Free early access — join the waitlist",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "7000",
+          priceCurrency: "PHP",
+          unitText: "month",
+          valueAddedTaxIncluded: false,
+        },
+        description: "PHP 7,000 per month for up to 100 employees with YAHSHUA HRIS included, plus PHP 60 per additional employee per month and a one-time PHP 35,000 setup fee. Plan prices exclude VAT. 30-day trial. Theo AI is optional: pay-as-you-go credits from PHP 100, none included in the plan.",
+        url: `${BASE_URL}/pricing`,
       },
       audience: {
         "@type": "Audience",
         audienceType: "Filipino business owners, HR managers, payroll officers",
         geographicArea: { "@type": "Country", name: "Philippines" },
       },
+      inLanguage: "en-PH",
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": `${BASE_URL}/payroll#mobile-app`,
+      name: "YAHSHUA One",
+      operatingSystem: "ANDROID",
+      applicationCategory: "BusinessApplication",
+      downloadUrl: PLAY_STORE_URL,
+      installUrl: PLAY_STORE_URL,
+      url: `${BASE_URL}/payroll#mobile-app`,
+      description:
+        "Employee mobile app for YAHSHUA One Payroll. Clock in and out with facial recognition or a system ID with geo-fencing, file requests such as leave, and approve requests from any device. Syncs to the payroll web app.",
       inLanguage: "en-PH",
     },
     {
@@ -123,6 +145,54 @@ const payrollSchema = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes. YAHSHUA One Payroll is built for the Philippine Labor Code — including semi-monthly cutoff schedules, 13th month pay, overtime, holiday pay, and night differential computation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does Theo read my actual payroll data?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. Theo looks up records in your company's account, including payroll runs, employee records, leave requests and attendance logs, and answers from what it finds.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can Theo change my payroll?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Only with your say-so. A change needs a role that's allowed to make it and your explicit confirmation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Who can see what Theo shows?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Each person sees only what their role allows. Users without access to calculation details get a shorter answer with the formulas hidden.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does YAHSHUA One Payroll cost?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "₱7,000 per month for up to 100 employees, with YAHSHUA HRIS included. Above 100 employees it is ₱60 per additional employee per month, plus a one-time ₱35,000 setup fee. Plan prices exclude VAT, and the trial is 30 days. Theo AI is optional, with pay-as-you-go credits from ₱100, and no credits are included in the plan. See the full pricing.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Does YAHSHUA One have a mobile app?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. The YAHSHUA One mobile app is currently available on Google Play for Android only. Employees clock in and out with facial recognition or their system ID, with geo-fencing for location validation, and file requests such as leave. Managers can approve requests from any device, and everything syncs to the payroll web app.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is there an iPhone or iOS version of the YAHSHUA One app?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. The YAHSHUA One mobile app is currently available on Google Play for Android only. Managers can still approve requests from any device.",
           },
         },
       ],
