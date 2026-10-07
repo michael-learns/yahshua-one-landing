@@ -5,6 +5,7 @@ description: "In-house payroll run on software costs roughly one payroll officer
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
 readTime: "6 min read"
+coverImage: "/Blog/In-House%20Payroll.png"
 ctaHeading: "Keep payroll in-house without the manual burden."
 ctaBody: "Book a 30-minute call and see what running payroll with real AI support actually looks like, no third party holding your employee data."
 faq:
@@ -80,7 +81,9 @@ Most businesses outgrow pure outsourcing before they're ready to hire a dedicate
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
+- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), the software side of the cost comparison
 - [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines)
+- [Can AI Replace a Payroll Officer in the Philippines?](/blog/can-ai-replace-payroll-officer-philippines), what to hand to AI and what to keep human
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)
 - [YAHSHUA One Payroll](/payroll), the product this guide is written around
 

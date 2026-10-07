@@ -50,8 +50,8 @@ The two products solve different starting problems, which shows clearly once you
 | Core focus | Unified payroll, HR, and accounting | Biometric attendance for shift-based teams |
 | Best fit | SMBs prioritizing payroll accuracy and compliance | Multi-branch retail and F&B with hourly staff |
 | AI assistant | Theo, reads your actual configured data | Not documented on their product pages |
-| Pricing model | Flat monthly rate: PHP 7,000 for up to 100 employees, PHP 60 per additional employee, PHP 35,000 one-time setup (VAT excluded) | $3.50/employee/month base, add-ons priced separately in USD |
-| Full payroll setup cost | The same flat rate, with YAHSHUA HRIS included; Theo AI credits are optional, from PHP 100 | About $6.50/employee/month (base + payroll add-on) |
+| Pricing model | Flat monthly rate: PHP 7,000 for up to 100 employees, PHP 60 per additional employee, no setup fee (VAT excluded) | $3.50/employee/month base, add-ons priced separately in USD |
+| Full payroll setup cost | The same flat rate, with YAHSHUA HRIS included; Theo AI credits are optional and priced separately | About $6.50/employee/month (base + payroll add-on) |
 | Statutory compliance (SSS, PhilHealth, Pag-IBIG, BIR) | Core product function | Supported, secondary to attendance |
 
 ## Which One Fits Your Business
@@ -63,6 +63,7 @@ If your bottleneck is payroll accuracy, statutory compliance, or the manual work
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
+- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), where each vendor's price crosses over
 - [Excel vs. Payroll Software: When Spreadsheets Stop Being Enough](/blog/excel-vs-payroll-software-philippines)
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines)
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines)

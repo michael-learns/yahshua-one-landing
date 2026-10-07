@@ -4,6 +4,7 @@ date: "2026-10-01"
 description: "Spreadsheets handle payroll fine until a government rate changes, a formula gets copied wrong, or the one person who built the sheet is out. Here's when the risk actually outweighs the zero cost."
 category: "Buying Guide"
 author: "YAHSHUA One Editorial Team"
+coverImage: "/Blog/Excel%20vs.%20Payroll.png"
 readTime: "6 min read"
 ctaHeading: "Stop reconciling payroll by hand."
 ctaBody: "Book a 30-minute call and see how statutory rate updates, audit trails, and formula errors stop being your problem."
@@ -86,6 +87,7 @@ Theo can answer a specific question about your own numbers, flag an employee who
 ## Related reading
 
 - [Payroll Software in the Philippines: What Actually Matters Before You Switch](/blog/payroll-software-philippines-buying-guide), the buying-guide pillar this post builds on
+- [What Payroll Software Costs a Philippine SMB at 10, 50, 100 and 150 Employees](/blog/payroll-software-cost-by-headcount-philippines), what payroll software costs once you outgrow the spreadsheet
 - [In-House Payroll vs. Outsourcing: Which Actually Fits a Philippine SMB](/blog/in-house-vs-outsourcing-payroll-philippines)
 - [How to Switch Payroll Providers Mid-Year in the Philippines](/blog/switch-payroll-providers-mid-year-philippines)
 - [What "AI-Native" Payroll Actually Means (vs. a Chatbot Bolted On)](/blog/ai-native-payroll-vs-chatbot-philippines)
